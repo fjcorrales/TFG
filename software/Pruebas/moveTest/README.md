@@ -1,4 +1,4 @@
-esteMoveTest se creo con la intención de saber como se le puede dar movimiento a un mesh además de investigar las posibles colisiones.
+este MoveTest se creo con la intención de saber como se le puede dar movimiento a un mesh además de investigar las posibles colisiones.
 
 Lo que se encuentra en esta carpeta son los ficheros del propio nivel, sin embargo los importantes son los de move.h y move.cpp, estos son los que generan un componente de escena generico al cual se le ha ido añadiendo código para implementar la funcionalidad deseada.
 
