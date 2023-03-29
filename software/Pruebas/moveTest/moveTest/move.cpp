@@ -28,6 +28,11 @@ void Umove::ResetMovement()
 	SetRelativeLocation(StartRelativeLocation);
 }
 
+void Umove::SetMoveDirection(int Direction)
+{
+	MoveDirection = Direction >= 1 ? 1 : -1;
+}
+
 // Called when the game starts
 void Umove::BeginPlay()
 {
@@ -72,4 +77,5 @@ void Umove::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentT
 	// Compute and sert current location
 	SetRelativeLocation(StartRelativeLocation + MoveOffsetNorm * CurDistance);
 }
+
 

@@ -24,6 +24,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void ResetMovement();
 
+	UFUNCTION(BlueprintCallable)
+	void SetMoveDirection(int Direction);
+
 
 protected:
 	// Called when the game starts
@@ -47,7 +50,7 @@ private:
 	//Enable the movement of the component
 	UPROPERTY(EditAnywhere)
 	bool MoveEnable = true;
-	
+
 	//On extreme reached event
 	UPROPERTY(BlueprintAssignable)
 	FOnMoveReachEndPointSignature OnEndpointReached;
@@ -60,3 +63,4 @@ private:
 	int MoveDirection = 1;
 	
 };
+
