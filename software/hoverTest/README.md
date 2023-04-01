@@ -1,0 +1,1 @@
+Testeo de implementación del modo hover a un dron. Este modo será implementado como un componente de escena al cual poder modificar los parámetros para ajustar la altura deseada y poder iniciar el mofo pulsando una tecla
