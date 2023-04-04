@@ -19,19 +19,11 @@ void UHoverComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// Conseguimos la posicion de inicio del objeto
-	StartRelLocation = this->GetRelativeLocation();
+	//Set Start location
+	StartRelativeLocation = GetRelativeLocation();
 
-	//Compute normalized movement
-	MoveOffset.Z = MaxHeight;
-	MoveOffset.X = 1.0f;
-	MoveOffset.Y = 1.0f;
-	MoveOffsetNorm = MoveOffset;
-	MoveOffsetNorm.Normalize();
-	MaxDistance = MoveOffset.Size();
-
-	//Seteamos el tick a true
-	SetComponentTickEnabled(true);
+	EndRelativeLocation = StartRelativeLocation;
+	EndRelativeLocation.Z += 100.0f;
 	
 }
 
@@ -41,15 +33,7 @@ void UHoverComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActor
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	// En base a la altura especificada en la variable Height, subimos al dron a esa altura y hacemos que oscile ligeramente en el sitio
-	CurDistance += DeltaTime * Speed * MoveDirection;
-		if(CurDistance >= MaxDistance || CurDistance <= 0.0f){
-
-			//Clamp distance
-			CurDistance = FMath::Clamp(CurDistance, 0.0f, MaxDistance);
-		}
-
-	// Compute and sert current location
-	SetRelativeLocation(StartRelLocation + MoveOffsetNorm * CurDistance);
+	//Compute and set current location
+	SetRelativeLocation(EndRelativeLocation);
 }
 

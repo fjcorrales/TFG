@@ -26,24 +26,9 @@ public:
 
 private:
 
-	//Height
-	UPROPERTY(EditAnywhere)
-	float Height = 1.0f;
-
-	//Speed
-	UPROPERTY(EditAnywhere)
-	float Speed = 1.0f;
-
-	//Ubicaciones computadas 
-	FVector StartRelLocation;
-	FVector MoveOffsetNorm;
-	int MoveDirection = 1;
-	int MaxHeight = 0;
-	float CurDistance = 0.0f;
-	float MaxDistance = 0.0f;
-
-	//Offset para moverse
-	FVector MoveOffset;
+	//Relative locations
+	FVector StartRelativeLocation;
+	FVector EndRelativeLocation;
 
 	
 };
