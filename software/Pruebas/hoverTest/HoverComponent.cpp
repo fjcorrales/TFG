@@ -23,9 +23,11 @@ void UHoverComponent::BeginPlay()
 	StartRelativeLocation = GetRelativeLocation();
 
 	//Computamos el movimiento normalizado y la ubicacion final del dron
-	EndRelativeLocation = StartRelativeLocation;
-	EndRelativeLocation.Z += Height;
-	HeightNorm = EndRelativeLocation;
+	//EndRelativeLocation = StartRelativeLocation;
+	//EndRelativeLocation.Z += Height;
+	//HeightNorm = EndRelativeLocation;
+	HeightNorm = StartRelativeLocation;
+	HeightNorm.Z += Height;
 	HeightNorm.Normalize();
 	MaxHeight = Height;
 

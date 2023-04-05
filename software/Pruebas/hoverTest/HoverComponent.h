@@ -36,7 +36,6 @@ private:
 
 	//Ubicaciones computadas o a computar
 	FVector StartRelativeLocation;
-	FVector EndRelativeLocation;
 	FVector HeightNorm;					//Variable para normalizar el vector d ela posicion final y poder mover el dron de "poco en poco"
 	float MaxHeight = 0.0f;
 	float ActualHeight = 0.0f;
