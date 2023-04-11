@@ -15,6 +15,14 @@ public:
 	// Sets default values for this pawn's properties
 	ADronePawn();
 
+	//Functions to modify the speed on each axis
+	void ModifySpeedX();
+	void ModifySpeedNegativeX();
+	void ModifySpeedY();
+	void ModifySpeedNegativeY();
+	void ModifySpeedZ();
+	void ModifySpeedNegativeZ();
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -27,5 +35,20 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 private:
+
+	//Variables for speed control
+	FVector realVelocity;
+	FVector targetVelocity;
+	FVector deltaVelocity;
+
+	UPROPERTY(EditAnywhere) 
+	float velocityConstant;
+
+	UPROPERTY(EditAnywhere)
+	float upperLimit;
+
+	UPROPERTY(EditAnywhere)
+	float lowerLimit;
 	
+
 };
