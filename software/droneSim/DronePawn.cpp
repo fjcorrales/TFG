@@ -34,6 +34,13 @@ void ADronePawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	//Setting up bindings to add or subtract from the targetVelocity
+	PlayerInputComponent->BindAction("XPositive", IE_Pressed, this, &ADronePawn::ModifySpeedX);
+	PlayerInputComponent->BindAction("XNegative", IE_Pressed, this, &ADronePawn::ModifySpeedNegativeX);
+	PlayerInputComponent->BindAction("YPositive", IE_Pressed, this, &ADronePawn::ModifySpeedY);
+	PlayerInputComponent->BindAction("YNegative", IE_Pressed, this, &ADronePawn::ModifySpeedNegativeY);
+	PlayerInputComponent->BindAction("ZPositive", IE_Pressed, this, &ADronePawn::ModifySpeedZ);
+	PlayerInputComponent->BindAction("ZNegative", IE_Pressed, this, &ADronePawn::ModifySpeedNegativeZ);
 }
 
 
