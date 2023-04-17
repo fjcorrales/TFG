@@ -18,7 +18,10 @@ void ADronePawn::Tick(float DeltaTime)
 	
 	realVelocity = GetActorLocation() * DeltaTime;
 	CalculateDelta();
-	SetVelocity();
+	CalculateVelocity(); //CalculateVelocity
+	FVector pos = GetActorLocation();
+	pos += DeltaTime*realVelocity;
+	SetActorLocation(pos);
 }
 
 // Called when the game starts or when spawned
@@ -72,7 +75,7 @@ void ADronePawn::ModifySpeedZ()
 
 void ADronePawn::ModifySpeedNegativeZ()
 {
-	targetVelocity.Y -= 10.0f;
+	targetVelocity.Z -= 10.0f;
 }
 
 /*
@@ -88,7 +91,7 @@ void ADronePawn::CalculateDelta()
 Function to add to the realVelocity the values needed
 to make the drone reach the intended velocity
 */
-void ADronePawn::SetVelocity()
+void ADronePawn::CalculateVelocity()
 {
 	if(deltaVelocity.X >= upperLimit)
 	{

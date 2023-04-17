@@ -23,7 +23,7 @@ public:
 	void ModifySpeedZ();
 	void ModifySpeedNegativeZ();
 	void CalculateDelta();
-	void SetVelocity();
+	void CalculateVelocity();
 
 protected:
 	// Called when the game starts or when spawned
@@ -39,14 +39,17 @@ public:
 private:
 
 	//Variables for speed control
+	UPROPERTY(EditAnywhere)
 	FVector realVelocity;
+
+	UPROPERTY(EditAnywhere)
 	FVector deltaVelocity;
 	
 	UPROPERTY(EditAnywhere)
 	FVector targetVelocity;
 
 	UPROPERTY(EditAnywhere) 
-	float velocityConstant = 1.0f;
+	float velocityConstant = 0.5f;
 
 	UPROPERTY(EditAnywhere)
 	float upperLimit = 1000.0f;
