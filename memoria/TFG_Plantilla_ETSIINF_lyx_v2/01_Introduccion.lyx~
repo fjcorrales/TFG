@@ -342,7 +342,8 @@ name "sec:Unreal Engine 5"
 
 \begin_layout Standard
 Como he mencionado previamente, el simulador se va a desarrollar para el
- motor de juego Unreal Engine 5 desarrollado por la compañía Epic Games.
+ motor de juego Unreal Engine 5 (UE5) desarrollado por la compañía Epic
+ Games.
  Esta herramienta es muy reciente y cuenta con unos avances gráficos enormes,
  puediendo llegar a generar entornos que luven casi idénticos a los reales
  dando la impresión d eser grabaciones reales y no simulaciones generadas
@@ -355,7 +356,49 @@ Como he mencionado previamente, el simulador se va a desarrollar para el
 \end_layout
 
 \begin_layout Standard
-Uno de los principales motivos para hacer uso de esta herramienta es e
+El principal motivo para realizar el desarrollo en este motor, es con vistas
+ a futuro, gracias a la gran capacidad gráfica que proporciona y la oportunidad
+ de hacer uso de IA, hacer el entrenamiento de los drones dentro del simulador
+ para luego poder transferirlo a máquinas reales y así no arriesgarse a
+ dañar los reales.
+\end_layout
+
+\begin_layout Section
+ROS 2
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:ROS2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ROS 2, o también conocido como Robot Operating System 2, es un SDK (System
+ Development Kit) open source, el cuál ofrece una plataforma estándar para
+ desarrollar software de cualquier rama de la industria que implique el
+ uso de robots.
+ Este framework se desarrolló en 2007 por el Laboratorio de Inteligencia
+ Artificial de Standford y su desarrollo se ha continuado desde esntonces.
+ 
+\end_layout
+
+\begin_layout Standard
+La versión de este framework con la que estamos trabajando es la versión
+ humble, la ultima versión publicada a la fecha de realización de este trabajo.
+ Entrando a describir más específicamente en que consiste este software,
+ ROS se compone de 2 partes básicas, el sistema operativo ros, y ros-pkg,
+ un conjunto de paquetes creados por la comunidad que implementan diversas
+ funcionalidades como puede ser; localización; mapeo simultáneo; planificación;
+ percepción y simulación...etc.
+ 
+\end_layout
+
+\begin_layout Standard
+Sin embargo, el uso principal de este conjunto de librerías es el paso de
+ mensajes entre un controlador y la máquina en cuestión.
+ 
 \end_layout
 
 \begin_layout Standard
