@@ -311,14 +311,53 @@ Descripción General
 \begin_layout Standard
 La simulación de drones es un campo relativamente nuevo, sin embargo, eso
  no implica que sea poco extenso.
- En los recientes años se han eralizado grandes avances e investigaciones
+ En los recientes años se han realizado grandes avances e investigaciones
  con diversos fines.
- Desde el estudio de sus fisicas para su posterior implementación en entonrnos
+ Desde el estudio de sus físicas para su posterior implementación en entonrnos
  virtuales para su simulación, como estudios para descubrir los posibles
  usos que se les puede dar a estas versátiles máquinas, como puede ser su
- uso en seguridad de edificios, mantenimiento de campos de placas solares
- e incluso entretenimiento con enjambres de cientos de estos pequeños robots.
+ uso en seguridad[2], mantenimiento de campos de placas solares[3] e incluso
+ entretenimiento[1] con enjambres de cientos de estos pequeños robots.
  
+\end_layout
+
+\begin_layout Standard
+Los drones son vehiculoas aéreos no tripulados que se crearon, en un inicio,
+ con fines militares.
+ Sin embargo, con el paso del tiempo se han encontrado una amplia variedad
+ de usos como mencionaba anteriormente.
+ Es esta diversificación y popularización de los drones la que nos lleva
+ a querer aplicarlos en problemas de la vida cotidiana.
+ Es por esto que simular el comportamiento de una máquina de este tipo se
+ ha vuelto esencial, tanto para preveer que movimientos según que condiciones
+ es capaz de realizar e incluso poder hacer pruebas sin equipamiento real
+ para así no dañarlo.
+ Con esto en mente es que se crean los simuladores, entornos virtuales tridimens
+ionales los cuales pueden recrear una gran variedad de entornos y situaciones.
+ 
+\end_layout
+
+\begin_layout Standard
+Con respecto a los avances actuales en el campo de los simuladores podemos
+ encontrar una gran cantidad de simuladores gratuitos los cuales sirven
+ para aprender a controlar un dron con un mando e incluso videojuegos de
+ simulación de carreras de drones[4].
+ A nivel más profesional podemos encontrar AirSim[5], simulador de vuelo
+ creado por Microsoft en el motor de juego de Unreal Engine.
+ Al mismo tiempo está 
+\end_layout
+
+\begin_layout Standard
+La mayoría de los simuladores previamente descritos hacen uso de 2 SDK externos,
+ Gazebo y ROS/ROS2.
+ El primero es un motor de físicas el cual gestiona todo lo relacionado
+ con la física que interactua con el dron, ya sea su movimiento, velocidad...etc.
+ El segundo, ROS, es un software que se centra en el intercambio de mensajes,
+ más concretamente, se encarga de enviarle las instrucciones al controlador
+ del dron para manejar al mismo.
+ Le envía datos como por ejemplo el modo de vuelo, velocidad y demás.
+ Estos modos de vuelo y datos pueden variar dependiendo de que tipo de dron
+ y que tipo de software tenga este por dertrás.
 \end_layout
 
 \begin_layout Standard
@@ -327,6 +366,11 @@ Asi pues, este trabajo tiene como objetivo crear un simulador de vuelo de
  con la librería de comunicación de C ROS2 para así crear un sistema de
  manejo automático de la trayectoría del dron.
  La implementación de la gran mayoría del proyecto se realizará en C++.
+ Al mismo tiempo, al crear este simulador en Unreal Engine 5, lo que se
+ quiere es evitar el uso de Gazebo como motor de físicas ya que este es
+ un tanto límitado.
+ En compensación por perder Gazebo, se pretende simular la física del dron
+ con el propio motor de físicas del motor de juego Unreal Engine 5.
 \end_layout
 
 \begin_layout Section
@@ -398,7 +442,17 @@ La versión de este framework con la que estamos trabajando es la versión
 \begin_layout Standard
 Sin embargo, el uso principal de este conjunto de librerías es el paso de
  mensajes entre un controlador y la máquina en cuestión.
- 
+ En este trabajo, el objetivo, adenás de poder tener un dron cuyo movimiento
+ sea lo más fiel a la realidad posible, implementar ROS 2 para poder realizar
+ el control del dron de forma 
+\begin_inset Quotes eld
+\end_inset
+
+externa
+\begin_inset Quotes erd
+\end_inset
+
+, y así simular un vuelo real.
 \end_layout
 
 \begin_layout Standard
