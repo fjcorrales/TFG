@@ -342,18 +342,25 @@ name "sec:Unreal Engine 5"
 
 \begin_layout Standard
 Como he mencionado previamente, el simulador se va a desarrollar para el
- motor de juego Unreal Engine 5 desarrollado por la compañía Epic Games.
+ motor de juego Unreal Engine 5 (UE5) desarrollado por la compañía Epic
+ Games.
  Esta herramienta es muy reciente y cuenta con unos avances gráficos enormes,
  puediendo llegar a generar entornos que luven casi idénticos a los reales
  dando la impresión d eser grabaciones reales y no simulaciones generadas
  por ordenador.
  Asimismo cuenta con un sistema de físicas y colisiones integrado, lo que
  fácilitará las tareas de implementación más adelante.
- Como añadido, este entorno también cuenta con 
+ Como añadido, este entorno también cuenta con herramientas de Inteligencia
+ Artifical, que se pueden usar para que controlen los actores que podamos
+ llegar a tener en la escena.
 \end_layout
 
 \begin_layout Standard
-Uno de los principales motivos para hacer uso de esta herramienta es e
+El principal motivo para realizar el desarrollo en este motor, es con vistas
+ a futuro, gracias a la gran capacidad gráfica que proporciona y la oportunidad
+ de hacer uso de IA, hacer el entrenamiento de los drones dentro del simulador
+ para luego poder transferirlo a máquinas reales y así no arriesgarse a
+ dañar los reales.
 \end_layout
 
 \begin_layout Standard

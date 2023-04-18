@@ -341,7 +341,21 @@ name "sec:Unreal Engine 5"
 \end_layout
 
 \begin_layout Standard
+Como he mencionado previamente, el simulador se va a desarrollar para el
+ motor de juego Unreal Engine 5 desarrollado por la compañía Epic Games.
+ Esta herramienta es muy reciente y cuenta con unos avances gráficos enormes,
+ puediendo llegar a generar entornos que luven casi idénticos a los reales
+ dando la impresión d eser grabaciones reales y no simulaciones generadas
+ por ordenador.
+ Asimismo cuenta con un sistema de físicas y colisiones integrado, lo que
+ fácilitará las tareas de implementación más adelante.
+ Como añadido, este entorno también cuenta con herramientas de Inteligencia
+ Artifical, que se pueden usar para que controlen los actores que podamos
+ llegar a tener en la escena.
+\end_layout
 
+\begin_layout Standard
+Uno de los principales motivos para hacer uso de esta herramienta es e
 \end_layout
 
 \begin_layout Standard
