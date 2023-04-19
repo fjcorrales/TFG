@@ -313,13 +313,11 @@ Como se mencionó en la introducción, el desarrollo de esta aplicación será
  principalmente en C++ dado que es el lenguaje en el que se escribe en Unreal
  Engine 5 y ROS2.
  La fase de desarrollo se basa en 2 partes principales.
- Esta fase de desarrollo se basa en dos partes.
  Una primera de puesta a punto, o de prototipado, donde se ha experimentado
  con el motor de juego para descubrir la mejor forma de implementar los
  requisitos pedidos.
- Y una segunda fase en la que, ya con un esquema general del funcionamiento
- completo del simulador y todas las funcionalidades que se desea implemente
- en esta primera versión se desarrolla la aplicación al completo.
+ Y una segunda fase en la que, ya , en esta primera versión se desarrolla
+ la aplicación al completo.
 \end_layout
 
 \begin_layout Section
@@ -330,7 +328,226 @@ Fase de prototipado
 Esta ha sido la primera fase del desarrollo del simulador, en la cual he
  realizado algunas pruebas para encontrar la mejor forma de implementar
  un dron y su movimiento en el sandbox proporcionado por Unreal.
- Las pruebas realizadas han sido un total de 3
+ Las pruebas realizadas han sido un total de 3 en relación a los elementos
+ que personalmente he considerado más importantes para crear un simulador:
+ el movimiento, tener una malla, o 
+\shape slanted
+mesh
+\shape default
+, con la forma del dron y finalmente el control de la velocidad que usaremos
+ para controlar la posición del dron.
+\end_layout
+
+\begin_layout Subsection
+Pruebas de movimiento de actores:
+\end_layout
+
+\begin_layout Standard
+Para comenzar, estudie formas de poder mover actores o elementos dentro
+ de Unreal.
+ En este aspecto cabe destacar que Unreal ofrece una serie clases propias
+ que nos permiten crear elementos que situar en la escena a los cuales añadirles
+ componentes.
+ Estas clases son: actor, peón y personaje, donde cabe decir que las dos
+ últimas heredan de actor, lo cual nos indica que todas las funciones de
+ actor se encuentran disponibles tanto en peón y personaje.
+ Estos elementos son los objetos que podemos añadir a un nivel o escena
+ creado en unreal, es decir son los elementos que interactuarán con el entorno
+ y el usuario una vez comienza el juego.
+ A pesar de que todas sean clases casi hermanas, las principales diferencias
+ entre ellas son en relación a que utilidad de Unreal son capaces de usar.
+ Los actores son los objetos más límitados ya que estos no ofrecen opción
+ a que los maneje la IA ni permiten tener inputs de teclado.
+ Los peónes son el siguiente paso en la cadena, los cuales permiten ser
+ controlados por la IA de Unreal y permiten inputs de teclado, sin embargo
+ no tienen físicas integradas.
+ Finalmente nos encontramos a los personajes, estos son actores creados
+ principalmente para simular personas, estos incluyen todo lo mencionado
+ previamente y además, incluyen las físicas necesarias para simular un humano.
+\end_layout
+
+\begin_layout Standard
+En cuanto a los de los componentes que se pueden añadir a estos actores,
+ estos son elementos que añaden funcionalidad a los mismos.
+ Podemos encontrar 2 tipos de componentes: componentes de actor y componenetes
+ de escena.
+ El componente de actor no hace nada esencialmente, sin embargo es imprescindibl
+e dado que es la base del resto de componentes.
+ Los componentes de escena son aquellos que podemos usar como apoyo para
+ incluir funcionalidades a los actores.
+\end_layout
+
+\begin_layout Standard
+Ahora, todos estos elementos se integran en el editor de Unreal mediante
+ jerarquías donde predominan las acciones que tome el componente raíz de
+ la misma.
+\end_layout
+
+\begin_layout Standard
+(foto de las jerarquías del editor en Unreal)
+\end_layout
+
+\begin_layout Standard
+Con esto en mente, realicé un primer prototipo para estudiar el movimiento
+ en los actores y como poder implementar el movimiento de un dron.
+ Tras investigar y revisar tutoriales de diversas fuentes[tutorial de youtube
+ y página de unreal] decidí crear un componente de escena que se encargara
+ de modificar la localización de una 
+\shape slanted
+mesh
+\shape default
+ (malla).
+ Es decir, crear un componente de escena que fuera el raíz de la jerarquía
+ que moviera un modelo 3D, en este caso de un cubo en base a un vector de
+ posición al cual se le podían ajustar las componentes tanto desde el editor
+ como desde un blueprint como desde el propio código fuente.
+ 
+\end_layout
+
+\begin_layout Standard
+Esta prueba sin embargo no termina aquí,ya que, para indagar también en
+ la cuestión de las colisiones, probé a añadir lo que es comúnmente conocido
+ como 
+\shape slanted
+Hitbox 
+\shape default
+(caja de colisiones).
+ Para esto simplemente añadí un componente de escena de tipo hitbox, lo
+ ajusté al tamaño de la mesh elegida y configuré un gráfico de eventos para
+ que cuando el jugador entrara en contacto con el objeto este empezara a
+ moverse.
+ Asimismo icluí otra Hitbox para delimitar un área amplia alrededor de la
+ malla elegida para que en el caso de que detectara que el jugador abandonaba
+ el área el objeto volviera a su posición original.
+\end_layout
+
+\begin_layout Standard
+A continuación adjunto el código generado para este componente de escena
+ 
+\begin_inset Quotes eld
+\end_inset
+
+move.h
+\begin_inset Quotes erd
+\end_inset
+
+ y 
+\begin_inset Quotes eld
+\end_inset
+
+move.cpp
+\begin_inset Quotes erd
+\end_inset
+
+:
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Pruebas/moveTest/moveTest/move.h"
+lstparams "caption={Header del componente de escena move},label={Img.1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Pruebas/moveTest/moveTest/move.cpp"
+lstparams "caption={Código fuente del componente de escena move},label={Img.2}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Adjunto también el gráfico de eventos creado para esta funcionalidad:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename D:/TFG/software/Pruebas/moveTest/eventGraph.jpeg
+	lyxscale 50
+	scale 50
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El código y el gráfico de eventos fue obtenido de la guía creada por Lötwig
+ Fusel [referencia que toque]
+\end_layout
+
+\begin_layout Standard
+Posteriormente, tras este primer acercamiento a los actores y componentes,
+ decidí realizar pruebas para intentar implementar un modo de vuelo típico
+ de los drones, el modo 
+\shape slanted
+Hover.
+ 
+\shape default
+Este modo es un modo simple en el que el dron se eleva hasta una altura
+ pre establecida y la mantiene hasta que se le envíe una señal para moverse
+ o volver a su posición original.
+\end_layout
+
+\begin_layout Standard
+Este caso es muy similar al anterior dado que también he creado un componente
+ de escena, sin embargo, hay algún cambio respecto al funcionamiento.
+ El código para modificar la posición sigue siendo el mismo, solo que en
+ este caso, podemos modificar únicamente la altura máxima que queremos que
+ alcance el dron y la velocidad del mismo.
+ También implemente dos funciones, una para comenzar el vuelo y otra para
+ resetearlo y cabe mencionar que esta vez no se ha implementado ningún grafico
+ de eventos dado que la interacción de esta prueba se basa en mandar la
+ señal de activación del hover o de reset.
+\end_layout
+
+\begin_layout Standard
+Adjunto tanto el header como el código del componente en cuestión 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape slanted
+HoverComponent
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Pruebas/hoverTest/HoverComponent.h"
+lstparams "caption={Header del componente de escena HoverComponent},label={Img.3}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Pruebas/hoverTest/HoverComponent.cpp"
+lstparams "caption={Código fuente del componente de escena HoverComponent},label={Img.4}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Prueba de importación de mallas:
+\end_layout
+
+\begin_layout Subsection
+Prueba de implementación de un control diferencial de la velocidad:
 \end_layout
 
 \begin_layout Standard
