@@ -309,33 +309,26 @@ Descripción General
 \end_layout
 
 \begin_layout Standard
-bla bla bla bla bla bla bla bla bla b la bla bla bla PPS
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "PPS"
-description "Polyphenylene sulfide"
-literal "true"
-
-\end_inset
-
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla, see 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Rich1921,Marq1963"
-literal "true"
-
-\end_inset
-
-.
+Como se mencionó en la introducción, el desarrollo de esta aplicación será
+ principalmente en C++ dado que es el lenguaje en el que se escribe en Unreal
+ Engine 5 y ROS2.
+ La fase de desarrollo se basa en 2 partes principales.
+ Una primera de puesta a punto, o de prototipado, donde se ha experimentado
+ con el motor de juego para descubrir la mejor forma de implementar los
+ requisitos pedidos.
+ Y una segunda fase en la que, ya ,  en esta primera versión se desarrolla
+ la aplicación al completo.
 \end_layout
 
 \begin_layout Section
-The next section
+Fase de prototipado
+\end_layout
+
+\begin_layout Standard
+Esta ha sido la primera fase del desarrollo del simulador, en la cual he
+ realizado algunas pruebas para encontrar la mejor forma de implementar
+ un dron y su movimiento en el sandbox proporcionado por Unreal.
+ Las pruebas realizadas han sido un total de 3
 \end_layout
 
 \begin_layout Standard

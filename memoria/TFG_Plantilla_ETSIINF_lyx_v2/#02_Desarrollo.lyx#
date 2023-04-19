@@ -323,14 +323,14 @@ Como se mencionó en la introducción, el desarrollo de esta aplicación será
 \end_layout
 
 \begin_layout Section
-Fase de prototipado
+Fase de prootipado
 \end_layout
 
 \begin_layout Standard
 Esta ha sido la primera fase del desarrollo del simulador, en la cual he
  realizado algunas pruebas para encontrar la mejor forma de implementar
  un dron y su movimiento en el sandbox proporcionado por Unreal.
- Las pruebas realizadas han sido un total de 3
+ 
 \end_layout
 
 \begin_layout Standard
