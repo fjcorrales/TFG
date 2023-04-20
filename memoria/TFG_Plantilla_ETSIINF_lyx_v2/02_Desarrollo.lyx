@@ -472,10 +472,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Graphics
 	filename C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/moveTest/eventGraph.jpeg
 	lyxscale 50
@@ -491,6 +487,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Gráfico de eventos de activación de movimiento por colisión de hitbox
 \end_layout
 
