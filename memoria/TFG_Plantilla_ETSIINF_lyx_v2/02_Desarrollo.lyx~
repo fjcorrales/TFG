@@ -442,7 +442,7 @@ move.cpp
 :
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "D:/TFG/software/Pruebas/moveTest/moveTest/move.h"
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/moveTest/moveTest/move.h"
 lstparams "caption={Header del componente de escena move},label={Img.1}"
 
 \end_inset
@@ -453,7 +453,7 @@ lstparams "caption={Header del componente de escena move},label={Img.1}"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "D:/TFG/software/Pruebas/moveTest/moveTest/move.cpp"
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/moveTest/moveTest/move.cpp"
 lstparams "caption={Código fuente del componente de escena move},label={Img.2}"
 
 \end_inset
@@ -466,11 +466,40 @@ Adjunto también el gráfico de eventos creado para esta funcionalidad:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/moveTest/eventGraph.jpeg
-	lyxscale 50
 	scale 50
-	BoundingBox 0bp 0bp 672bp 672bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gráfico de eventos de activación de movimiento por colisión de hitbox
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
 
 \end_inset
 
@@ -526,7 +555,7 @@ HoverComponent
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "D:/TFG/software/Pruebas/hoverTest/HoverComponent.h"
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/hoverTest/HoverComponent.h"
 lstparams "caption={Header del componente de escena HoverComponent},label={Img.3}"
 
 \end_inset
@@ -534,7 +563,7 @@ lstparams "caption={Header del componente de escena HoverComponent},label={Img.3
 
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "D:/TFG/software/Pruebas/hoverTest/HoverComponent.cpp"
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/hoverTest/HoverComponent.cpp"
 lstparams "caption={Código fuente del componente de escena HoverComponent},label={Img.4}"
 
 \end_inset
