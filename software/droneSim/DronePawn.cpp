@@ -1,5 +1,5 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
+//Daniel Corrales 2023
+//TFG UPM 
 
 #include "DronePawn.h"
 
