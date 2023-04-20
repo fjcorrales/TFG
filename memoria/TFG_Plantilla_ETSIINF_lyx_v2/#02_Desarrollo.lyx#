@@ -467,7 +467,10 @@ Adjunto también el gráfico de eventos creado para esta funcionalidad:
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename D:/TFG/software/Pruebas/moveTest/eventGraph.jpeg
+	filename C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/moveTest/eventGraph.jpeg
+	lyxscale 50
+	scale 50
+	BoundingBox 0bp 0bp 672bp 672bp
 
 \end_inset
 
@@ -493,23 +496,272 @@ Este modo es un modo simple en el que el dron se eleva hasta una altura
 \end_layout
 
 \begin_layout Standard
-Este caso es muy similar al anterior solo que con algún cambio respecto
- al funcionamiento.
+Este caso es muy similar al anterior dado que también he creado un componente
+ de escena, sin embargo, hay algún cambio respecto al funcionamiento.
  El código para modificar la posición sigue siendo el mismo, solo que en
  este caso, podemos modificar únicamente la altura máxima que queremos que
  alcance el dron y la velocidad del mismo.
  También implemente dos funciones, una para comenzar el vuelo y otra para
- resetearlo.
- Cabe mencionar que esta vez no se ha implementado ningún grafico de eventos
- dado que el funciona
+ resetearlo y cabe mencionar que esta vez no se ha implementado ningún grafico
+ de eventos dado que la interacción de esta prueba se basa en mandar la
+ señal de activación del hover o de reset.
+\end_layout
+
+\begin_layout Standard
+Adjunto tanto el header como el código del componente en cuestión 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape slanted
+HoverComponent
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Pruebas/hoverTest/HoverComponent.h"
+lstparams "caption={Header del componente de escena HoverComponent},label={Img.3}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Pruebas/hoverTest/HoverComponent.cpp"
+lstparams "caption={Código fuente del componente de escena HoverComponent},label={Img.4}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tras desarrollar estos módulos de prueba basados en componentes de escena
+ y observar su funcionamiento llegamos a la conclusión de que no se ajustaba
+ completamente a los requisitos especificados.
+ A pesar de ofrecernos una gran versatilidad a la hora de poder crear objetos
+ a base de unir componentes independientes, algo que nos interesaba en gran
+ medida, no estabamos desarrollando un actor como tal, si no componentes
+ que no podrán comunicarse entre si a no ser que estén completamente integrados
+ en un actor.
+ Por lo que descartamos estos prototipos y buscamos otra forma de enfocar
+ el proyecto basándonos en la creación de un peón e implementar en el mismo
+ un control diferencial de la velocidad, prueba que describiremos más adelante.
 \end_layout
 
 \begin_layout Subsection
 Prueba de importación de mallas:
 \end_layout
 
+\begin_layout Standard
+Durante el desarrollo de la prueba anteriormente descrita, busqué formas
+ de poder integrar un modelo 3D, conocido como 
+\shape slanted
+mesh
+\shape default
+, de un cuadricóptero en el editor de Unreal y como hacer que los componentes
+ lo movieran.
+ 
+\end_layout
+
+\begin_layout Standard
+Para empezar busqué en internet un modelo 3D gratuito de un cuadricóptero[refere
+ncia a la página del modelo 3D del dron].
+ Una vez descargado faltaba importarlo a la carpeta de contenidos de Unreal
+ Engine para su uso.
+ Cabe mencionar que estos modelos 3D han de estar exportados de sus respectivas
+ aplicaciones en formato .fbx ya que este es el que reconoce Unreal.
+ El proceso de importación es muy simple pudiendo simplemente arrastrar
+ el archivo al editor y tras una simple ventana de configuración tener ya
+ disponible el modelo para su uso.
+ El modelo seleccionado fue el siguiente:
+\end_layout
+
+\begin_layout Standard
+(foto del mesh del dron en el entorno)
+\end_layout
+
+\begin_layout Standard
+Si se deseata Epic Games también cuenta con una paltaforma en la que los
+ usuarios pueden subir sus modelos 3D ya sea de niveles u objetos a una
+ tienda online.
+ La desventaja es que la mayoría del contenido es de pago.
+ 
+\end_layout
+
+\begin_layout Standard
+Con esto quedaba solventado el problema de poder tener un modelo tridimensional
+ de un dron.
+ A pesar de esto, surje una duda en relación a las colisiones de la 
+\shape italic
+mesh
+\shape default
+, pues no sabemos con certeza si el propio Unreal genera las colisiones
+ automáticamente al proporcionarle una 
+\shape slanted
+hitbox
+\shape default
+ al modelo o si estas han de ser programadas desde 0.
+\end_layout
+
 \begin_layout Subsection
 Prueba de implementación de un control diferencial de la velocidad:
+\end_layout
+
+\begin_layout Standard
+Finalmente y tras las primeras pruebas de movimiento decidimos crear un
+ peón ya que este es el objeo ideal sobre el que crear un dron dado a las
+ características que ofrece, comentadas al principio de este bloque de desarroll
+o.
+\end_layout
+
+\begin_layout Standard
+Así pues, tras crear una clase en C++ de un peón implementamos en la misma
+ un control de la velocidad, un concepto simple basado en 3 vectores, uno
+ para establecer la velocidad deseada, otro para definir la velocidad real
+ del dron y un tercero que se encarga de calcular un delta con la velocidad
+ real actual del dron, la velocidad objetivo y el tiempo transcurrido.
+ 
+\end_layout
+
+\begin_layout Standard
+Importante comentar que unreal nos proporciona una función tick dentro de
+ todas sus clases, la cual se ejecuta a cada frame generado por el motor
+ y ejecuta las instrucciones descritas en la misma.
+ Al mismo tiempo, esta función nos poporciona una variable 
+\shape slanted
+DeltaTime
+\shape default
+ la cual lleva la cuenta del tiempo que pasa dentro del editor durante la
+ ejecución del programa.
+ Esta función será la que más carga computacional tenga al final, dado que
+ es la que utilizaremos para poder generar un movimiento fluido en un futuro.
+\end_layout
+
+\begin_layout Standard
+Otra función generada automáticamente y que merece la pena comentar es 
+\shape slanted
+BeginPlay
+\shape default
+, esta se ejecuta en el primer instante en que se entra al nivel creado
+ y solo esa vez.
+ Esta resulta utíl para establecer variables iniciales o si por ejemplo
+ se desea almacenar la posición inicial de algún objeto.
+\end_layout
+
+\begin_layout Standard
+Una vez explicados los conceptos anteriores pasamos a la implementación
+ del control en cuestión, una implementación simple y que nos permite configurar
+ una velocidad máxima, una minima y una constante para ajustar la velocidad
+ en el calculo del delta de la velocidad.
+ La implementación queda tal que así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/DronePawn.h"
+lstparams "caption={Header del peón DronePawn},label={Img.5}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/DronePawn.cpp"
+lstparams "caption={Código fuente del peón DronePawn},label={Img.6}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Asimismo, gracias a utilizar un peón tenemos acceso a entradas de teclado
+ mediante la función SetupPlayerInputComponent, la cual nos permite aumentar
+ y disminuir los valores de las componentes del vector de la velocidad objetivo
+ mediante teclas durante la ejecución del nivel.
+ Muy relevante tener en cuenta que estos 
+\shape italic
+keybinds
+\shape default
+ también han de configurarse dentro del editor de Unreal:
+\end_layout
+
+\begin_layout Standard
+(insertar captura de la configuración del editor)
+\end_layout
+
+\begin_layout Standard
+Y no solo eso, si no que además hemos de configurar el DefaultPawn del nivel
+ al peón de la clase que hemos creado DronePawn, dado que es este 
+\begin_inset Quotes eld
+\end_inset
+
+peón por defecto
+\begin_inset Quotes erd
+\end_inset
+
+ el que recoje las entradas del teclado y las transfiere al propio peón.
+ Este cambio solamene lo podemos realizar desde el código del modo de juego
+ que se generó autómaticamente al crear el proyecto en Unreal.
+ Dentro del archivo NombreProyectoGameModeBase.h y NombreProyectoGameModeBase.cpp
+ hemos de añadir las 2 siguientes líneas (En mi caso el nombre de los archivos
+ es droneSimGameModeBase.h y droneSimGameModeBase.cpp):
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/droneSimGameModeBase.h"
+lstparams "caption={Header del modo de juego droneSimGameModeBase},label={Img.7}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/droneSimGameModeBase.cpp"
+lstparams "caption={Código fuente del modo de juego droneSimGameModeBase},label={Img.8}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez realizados todos estos cambios veremos que aparece esto en el editor
+ al ejecutar y seleccionar el peón:
+\end_layout
+
+\begin_layout Standard
+(imagen de los valores de los vectores)
+\end_layout
+
+\begin_layout Standard
+Para finalizar esta prueba se intentó configurar que se modificara la posición
+ del peón basandose en la posición actual y la velocidad resultante del
+ cálculo diferencial.
+ Sin embargo no se consiguó hacer que se moviera la cámara.
+ Esto puede deberse a varios factores, pero lo más seguro es que sea necesario
+ implementar una mesh y cámara para poder observar que el peón se mueva.
+\end_layout
+
+\begin_layout Standard
+Tras esta úñtima
 \end_layout
 
 \begin_layout Standard
