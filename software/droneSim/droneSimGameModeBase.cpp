@@ -1,4 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
+//Daniel Corrales 2023
+//TFG UPM 
 
 
 #include "droneSimGameModeBase.h"
