@@ -487,6 +487,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Gráfico de eventos de activación de movimiento por colisión de hitbox
 \end_layout
 
