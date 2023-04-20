@@ -327,7 +327,11 @@ Fase de prototipado
 \begin_layout Standard
 Esta ha sido la primera fase del desarrollo del simulador, en la cual he
  realizado algunas pruebas para encontrar la mejor forma de implementar
- un dron y su movimiento en el sandbox proporcionado por Unreal.
+ un dron y su movimiento en el 
+\shape slanted
+sandbox
+\shape default
+ proporcionado por Unreal.
  Las pruebas realizadas han sido un total de 3 en relación a los elementos
  que personalmente he considerado más importantes para crear un simulador:
  el movimiento, tener una malla, o 
@@ -343,8 +347,8 @@ Pruebas de movimiento de actores:
 \end_layout
 
 \begin_layout Standard
-Para comenzar, estudie formas de poder mover actores o elementos dentro
- de Unreal.
+Para comenzar, se analizaron las posibilidades de movimiento de actores
+ dentro de Unreal.
  En este aspecto cabe destacar que Unreal ofrece una serie clases propias
  que nos permiten crear elementos que situar en la escena a los cuales añadirles
  componentes.
@@ -355,24 +359,24 @@ Para comenzar, estudie formas de poder mover actores o elementos dentro
  creado en unreal, es decir son los elementos que interactuarán con el entorno
  y el usuario una vez comienza el juego.
  A pesar de que todas sean clases casi hermanas, las principales diferencias
- entre ellas son en relación a que utilidad de Unreal son capaces de usar.
- Los actores son los objetos más límitados ya que estos no ofrecen opción
- a que los maneje la IA ni permiten tener inputs de teclado.
- Los peónes son el siguiente paso en la cadena, los cuales permiten ser
+ entre ellas son en relación a qué utilidad de Unreal son capaces de acceder.
+ Los actores son los objetos más límitados ya que no ofrecen opción a que
+ los maneje la IA ni permiten tener inputs de teclado.
+ Los peones son el siguiente paso en la cadena, los cuales permiten ser
  controlados por la IA de Unreal y permiten inputs de teclado, sin embargo
  no tienen físicas integradas.
- Finalmente nos encontramos a los personajes, estos son actores creados
- principalmente para simular personas, estos incluyen todo lo mencionado
- previamente y además, incluyen las físicas necesarias para simular un humano.
+ Finalmente, los personajes son actores creados principalmente para simular
+ personas, estos incluyen todo lo mencionado previamente y además, integran
+ las físicas necesarias para simular un humano.
 \end_layout
 
 \begin_layout Standard
-En cuanto a los de los componentes que se pueden añadir a estos actores,
- estos son elementos que añaden funcionalidad a los mismos.
+En cuanto a los componentes que se pueden añadir a estos actores, son elementos
+ que añaden funcionalidad a los mismos.
  Podemos encontrar 2 tipos de componentes: componentes de actor y componenetes
  de escena.
  El componente de actor no hace nada esencialmente, sin embargo es imprescindibl
-e dado que es la base del resto de componentes.
+e dado que es la base de la jeraquía del resto de componentes.
  Los componentes de escena son aquellos que podemos usar como apoyo para
  incluir funcionalidades a los actores.
 \end_layout
@@ -388,8 +392,9 @@ Ahora, todos estos elementos se integran en el editor de Unreal mediante
 \end_layout
 
 \begin_layout Standard
-Con esto en mente, realicé un primer prototipo para estudiar el movimiento
- en los actores y como poder implementar el movimiento de un dron.
+Haciendo uso de estos componentes diseñamos un primer prototipo para estudiar
+ el movimiento en los actores y planificar la futura implementación del
+ movimiento de un dron.
  Tras investigar y revisar tutoriales de diversas fuentes[tutorial de youtube
  y página de unreal] decidí crear un componente de escena que se encargara
  de modificar la localización de una 
@@ -398,16 +403,20 @@ mesh
 \shape default
  (malla).
  Es decir, crear un componente de escena que fuera el raíz de la jerarquía
- que moviera un modelo 3D, en este caso de un cubo en base a un vector de
- posición al cual se le podían ajustar las componentes tanto desde el editor
- como desde un blueprint como desde el propio código fuente.
+ que moviera un modelo 3.
+ En este caso, un cubo cuyo movimiento se basa en un vector de posición
+ al cual se le podían ajustar las componentes tanto desde el editor como
+ desde un 
+\shape slanted
+blueprint
+\shape default
+ como desde el propio código fuente.
  
 \end_layout
 
 \begin_layout Standard
-Esta prueba sin embargo no termina aquí,ya que, para indagar también en
- la cuestión de las colisiones, probé a añadir lo que es comúnmente conocido
- como 
+A continuación abordamos la cuestión de las colisiones, añadiendo la propiedad
+ comunmente conocida como 
 \shape slanted
 Hitbox 
 \shape default
@@ -416,14 +425,14 @@ Hitbox
  ajusté al tamaño de la mesh elegida y configuré un gráfico de eventos para
  que cuando el jugador entrara en contacto con el objeto este empezara a
  moverse.
- Asimismo icluí otra Hitbox para delimitar un área amplia alrededor de la
- malla elegida para que en el caso de que detectara que el jugador abandonaba
+ Asimismo incluí otra Hitbox para delimitar un área amplia alrededor de
+ la malla para que en el caso de que detectara que el jugador abandonaba
  el área el objeto volviera a su posición original.
+ 
 \end_layout
 
 \begin_layout Standard
-A continuación adjunto el código generado para este componente de escena
- 
+A continuación se adjuntan los ficheros 
 \begin_inset Quotes eld
 \end_inset
 
@@ -439,10 +448,10 @@ move.cpp
 \begin_inset Quotes erd
 \end_inset
 
-:
+ que contienen el código generado para este componente:
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/moveTest/moveTest/move.h"
+filename "D:/TFG/software/Pruebas/moveTest/moveTest/move.h"
 lstparams "caption={Header del componente de escena move},label={Img.1}"
 
 \end_inset
@@ -453,7 +462,7 @@ lstparams "caption={Header del componente de escena move},label={Img.1}"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/moveTest/moveTest/move.cpp"
+filename "D:/TFG/software/Pruebas/moveTest/moveTest/move.cpp"
 lstparams "caption={Código fuente del componente de escena move},label={Img.2}"
 
 \end_inset
@@ -462,7 +471,7 @@ lstparams "caption={Código fuente del componente de escena move},label={Img.2}"
 \end_layout
 
 \begin_layout Standard
-Adjunto también el gráfico de eventos creado para esta funcionalidad:
+Adjunto también el gráfico de eventos creado para completar su funcionalidad:
 \end_layout
 
 \begin_layout Standard
@@ -473,7 +482,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/moveTest/eventGraph.jpeg
+	filename D:/TFG/software/Pruebas/moveTest/eventGraph.jpeg
 	lyxscale 50
 	scale 50
 	rotateOrigin center
@@ -494,10 +503,6 @@ Gráfico de eventos de activación de movimiento por colisión de hitbox
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -525,15 +530,15 @@ Este modo es un modo simple en el que el dron se eleva hasta una altura
 \end_layout
 
 \begin_layout Standard
-Este caso es muy similar al anterior dado que también he creado un componente
- de escena, sin embargo, hay algún cambio respecto al funcionamiento.
+Esta prueba es muy similar a la anterior dado que también se basa en un
+ componente de escena, sin embargo, hay algún cambio respecto al funcionamiento.
  El código para modificar la posición sigue siendo el mismo, solo que en
  este caso, podemos modificar únicamente la altura máxima que queremos que
  alcance el dron y la velocidad del mismo.
- También implemente dos funciones, una para comenzar el vuelo y otra para
- resetearlo y cabe mencionar que esta vez no se ha implementado ningún grafico
- de eventos dado que la interacción de esta prueba se basa en mandar la
- señal de activación del hover o de reset.
+ También se implementaron dos funciones, una para comenzar el vuelo y otra
+ para resetearlo y cabe mencionar que esta vez no se ha implementado ningún
+ grafico de eventos dado que la interacción de esta prueba se basa en mandar
+ la señal de activación del hover o de reset.
 \end_layout
 
 \begin_layout Standard
@@ -555,7 +560,7 @@ HoverComponent
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/hoverTest/HoverComponent.h"
+filename "D:/TFG/software/Pruebas/hoverTest/HoverComponent.h"
 lstparams "caption={Header del componente de escena HoverComponent},label={Img.3}"
 
 \end_inset
@@ -563,7 +568,7 @@ lstparams "caption={Header del componente de escena HoverComponent},label={Img.3
 
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/hoverTest/HoverComponent.cpp"
+filename "D:/TFG/software/Pruebas/hoverTest/HoverComponent.cpp"
 lstparams "caption={Código fuente del componente de escena HoverComponent},label={Img.4}"
 
 \end_inset
@@ -573,15 +578,12 @@ lstparams "caption={Código fuente del componente de escena HoverComponent},labe
 
 \begin_layout Standard
 Tras desarrollar estos módulos de prueba basados en componentes de escena
- y observar su funcionamiento llegamos a la conclusión de que no se ajustaba
- completamente a los requisitos especificados.
- A pesar de ofrecernos una gran versatilidad a la hora de poder crear objetos
- a base de unir componentes independientes, algo que nos interesaba en gran
- medida, no estabamos desarrollando un actor como tal, si no componentes
- que no podrán comunicarse entre si a no ser que estén completamente integrados
- en un actor.
- Por lo que descartamos estos prototipos y buscamos otra forma de enfocar
- el proyecto basándonos en la creación de un peón e implementar en el mismo
+ y observar su funcionamiento nuestro siguiente paso sería crear objetos
+ basados en la unión de componentes independientes, lo que nos interesa
+ en gran medida para proporcionarle cierta modularidad.
+ La idea sería gestionar la comunición entre los componentes desde un actor
+ propio.
+ Con este fin proponemos la creación de un peon e implementar en el mismo
  un control diferencial de la velocidad, prueba que describiremos más adelante.
 \end_layout
 
@@ -605,7 +607,7 @@ Para empezar busqué en internet un modelo 3D gratuito de un cuadricóptero[refe
 ncia a la página del modelo 3D del dron].
  Una vez descargado faltaba importarlo a la carpeta de contenidos de Unreal
  Engine para su uso.
- Cabe mencionar que estos modelos 3D han de estar exportados de sus respectivas
+ Cabe mencionar que estos modelos 3D han de ser exportados de sus respectivas
  aplicaciones en formato .fbx ya que este es el que reconoce Unreal.
  El proceso de importación es muy simple pudiendo simplemente arrastrar
  el archivo al editor y tras una simple ventana de configuración tener ya
@@ -618,9 +620,8 @@ ncia a la página del modelo 3D del dron].
 \end_layout
 
 \begin_layout Standard
-Si se deseata Epic Games también cuenta con una paltaforma en la que los
- usuarios pueden subir sus modelos 3D ya sea de niveles u objetos a una
- tienda online.
+Si se desea Epic Games también cuenta con una paltaforma en la que los usuarios
+ pueden subir sus modelos 3D ya sea de niveles u objetos a una tienda online.
  La desventaja es que la mayoría del contenido es de pago.
  
 \end_layout
@@ -628,12 +629,8 @@ Si se deseata Epic Games también cuenta con una paltaforma en la que los
 \begin_layout Standard
 Con esto quedaba solventado el problema de poder tener un modelo tridimensional
  de un dron.
- A pesar de esto, surje una duda en relación a las colisiones de la 
-\shape italic
-mesh
-\shape default
-, pues no sabemos con certeza si el propio Unreal genera las colisiones
- automáticamente al proporcionarle una 
+ LA siguiente cuestión será determinar si Unreal genera las colisiones automátic
+amente al proporcionarle una 
 \shape slanted
 hitbox
 \shape default
@@ -646,9 +643,7 @@ Prueba de implementación de un control diferencial de la velocidad:
 
 \begin_layout Standard
 Finalmente y tras las primeras pruebas de movimiento decidimos crear un
- peón ya que este es el objeo ideal sobre el que crear un dron dado a las
- características que ofrece, comentadas al principio de este bloque de desarroll
-o.
+ peón ya que este es el objeo ideal sobre el que crear un dron.
 \end_layout
 
 \begin_layout Standard
@@ -696,7 +691,7 @@ Una vez explicados los conceptos anteriores pasamos a la implementación
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/DronePawn.h"
+filename "D:/TFG/software/droneSim/DronePawn.h"
 lstparams "caption={Header del peón DronePawn},label={Img.5}"
 
 \end_inset
@@ -707,7 +702,7 @@ lstparams "caption={Header del peón DronePawn},label={Img.5}"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/DronePawn.cpp"
+filename "D:/TFG/software/droneSim/DronePawn.cpp"
 lstparams "caption={Código fuente del peón DronePawn},label={Img.6}"
 
 \end_inset
@@ -752,7 +747,7 @@ peón por defecto
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/droneSimGameModeBase.h"
+filename "D:/TFG/software/droneSim/droneSimGameModeBase.h"
 lstparams "caption={Header del modo de juego droneSimGameModeBase},label={Img.7}"
 
 \end_inset
@@ -763,7 +758,7 @@ lstparams "caption={Header del modo de juego droneSimGameModeBase},label={Img.7}
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/droneSimGameModeBase.cpp"
+filename "D:/TFG/software/droneSim/droneSimGameModeBase.cpp"
 lstparams "caption={Código fuente del modo de juego droneSimGameModeBase},label={Img.8}"
 
 \end_inset
