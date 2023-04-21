@@ -644,21 +644,22 @@ Prueba de implementación de un control diferencial de la velocidad:
 \begin_layout Standard
 Finalmente y tras las primeras pruebas de movimiento decidimos crear un
  peón ya que este es el objeo ideal sobre el que crear un dron.
-\end_layout
-
-\begin_layout Standard
-Así pues, tras crear una clase en C++ de un peón implementamos en la misma
- un control de la velocidad, un concepto simple basado en 3 vectores, uno
- para establecer la velocidad deseada, otro para definir la velocidad real
- del dron y un tercero que se encarga de calcular un delta con la velocidad
- real actual del dron, la velocidad objetivo y el tiempo transcurrido.
+ Así pues, tras crear una clase en C++ de un peón, implementamos en la misma
+ un control diferencial de la velocidad, un concepto simple basado en 3
+ vectores, uno para establecer la velocidad deseada, otro para definir la
+ velocidad real del dron y un tercero que se encarga de calcular un delta
+ con la velocidad real actual del dron, la velocidad objetivo y el tiempo
+ transcurrido.
  
 \end_layout
 
 \begin_layout Standard
-Importante comentar que unreal nos proporciona una función tick dentro de
- todas sus clases, la cual se ejecuta a cada frame generado por el motor
- y ejecuta las instrucciones descritas en la misma.
+Es relevante considerar que unreal proporciona una función 
+\shape slanted
+tick
+\shape default
+ dentro de todas sus clases, la cual se ejecuta a cada frame generado por
+ el motor y ejecuta las instrucciones descritas en la misma.
  Al mismo tiempo, esta función nos poporciona una variable 
 \shape slanted
 DeltaTime
@@ -670,7 +671,8 @@ DeltaTime
 \end_layout
 
 \begin_layout Standard
-Otra función generada automáticamente y que merece la pena comentar es 
+Otra función generada automáticamente y que merece la pena considerar es
+ 
 \shape slanted
 BeginPlay
 \shape default
@@ -776,18 +778,15 @@ Una vez realizados todos estos cambios veremos que aparece esto en el editor
 \end_layout
 
 \begin_layout Standard
-Para finalizar esta prueba se intentó configurar que se modificara la posición
- del peón basandose en la posición actual y la velocidad resultante del
- cálculo diferencial.
- Sin embargo no se consiguó hacer que se moviera la cámara.
- Esto puede deberse a varios factores, pero lo más seguro es que sea necesario
- implementar una mesh y cámara para poder observar que el peón se mueva.
+Ya configurado y testado el correcto funcionamiento de las funciones previamente
+ descritas, el siguiente paso es modificar la posición del propio peón con
+ las velocidades calculadas.
 \end_layout
 
 \begin_layout Standard
-Tras esta última prueba concluímos en que el movimiento del dron basado
- en este control diferencial es justo lo que necesitamos para simular correctame
-nte el movimiento y poder realizar una integración con ROS 2 ya que pretendemos
+Tras esta última prueba concluímos que el movimiento del dron basado en
+ este control diferencial es lo necesario para simular correctamente el
+ movimiento y poder realizar una integración con ROS 2 ya que pretendemos
  que el movimiento se rija mediante la velocidad que se enviará mediante
  los servicios de mensajería ofrecidos por ese framework.
 \end_layout

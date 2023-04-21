@@ -451,7 +451,7 @@ move.cpp
  que contienen el código generado para este componente:
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "D:/TFG/software/Pruebas/moveTest/moveTest/move.h"
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/moveTest/moveTest/move.h"
 lstparams "caption={Header del componente de escena move},label={Img.1}"
 
 \end_inset
@@ -462,7 +462,7 @@ lstparams "caption={Header del componente de escena move},label={Img.1}"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "D:/TFG/software/Pruebas/moveTest/moveTest/move.cpp"
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/moveTest/moveTest/move.cpp"
 lstparams "caption={Código fuente del componente de escena move},label={Img.2}"
 
 \end_inset
@@ -482,7 +482,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename D:/TFG/software/Pruebas/moveTest/eventGraph.jpeg
+	filename C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/moveTest/eventGraph.jpeg
 	lyxscale 50
 	scale 50
 	rotateOrigin center
@@ -560,7 +560,7 @@ HoverComponent
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "D:/TFG/software/Pruebas/hoverTest/HoverComponent.h"
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/hoverTest/HoverComponent.h"
 lstparams "caption={Header del componente de escena HoverComponent},label={Img.3}"
 
 \end_inset
@@ -568,7 +568,7 @@ lstparams "caption={Header del componente de escena HoverComponent},label={Img.3
 
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "D:/TFG/software/Pruebas/hoverTest/HoverComponent.cpp"
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/hoverTest/HoverComponent.cpp"
 lstparams "caption={Código fuente del componente de escena HoverComponent},label={Img.4}"
 
 \end_inset
@@ -693,7 +693,7 @@ Una vez explicados los conceptos anteriores pasamos a la implementación
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "D:/TFG/software/droneSim/DronePawn.h"
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/DronePawn.h"
 lstparams "caption={Header del peón DronePawn},label={Img.5}"
 
 \end_inset
@@ -704,7 +704,7 @@ lstparams "caption={Header del peón DronePawn},label={Img.5}"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "D:/TFG/software/droneSim/DronePawn.cpp"
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/DronePawn.cpp"
 lstparams "caption={Código fuente del peón DronePawn},label={Img.6}"
 
 \end_inset
@@ -749,7 +749,7 @@ peón por defecto
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "D:/TFG/software/droneSim/droneSimGameModeBase.h"
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/droneSimGameModeBase.h"
 lstparams "caption={Header del modo de juego droneSimGameModeBase},label={Img.7}"
 
 \end_inset
@@ -760,7 +760,7 @@ lstparams "caption={Header del modo de juego droneSimGameModeBase},label={Img.7}
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "D:/TFG/software/droneSim/droneSimGameModeBase.cpp"
+filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/droneSimGameModeBase.cpp"
 lstparams "caption={Código fuente del modo de juego droneSimGameModeBase},label={Img.8}"
 
 \end_inset
