@@ -388,7 +388,36 @@ Ahora, todos estos elementos se integran en el editor de Unreal mediante
 \end_layout
 
 \begin_layout Standard
-(foto de las jerarquías del editor en Unreal)
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 18-50-18.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jerarquías de componentes en un blueprint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -451,7 +480,7 @@ move.cpp
  que contienen el código generado para este componente:
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/moveTest/moveTest/move.h"
+filename "D:/TFG/software/Pruebas/moveTest/moveTest/move.h"
 lstparams "caption={Header del componente de escena move},label={Img.1}"
 
 \end_inset
@@ -462,7 +491,7 @@ lstparams "caption={Header del componente de escena move},label={Img.1}"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/moveTest/moveTest/move.cpp"
+filename "D:/TFG/software/Pruebas/moveTest/moveTest/move.cpp"
 lstparams "caption={Código fuente del componente de escena move},label={Img.2}"
 
 \end_inset
@@ -476,15 +505,16 @@ Adjunto también el gráfico de eventos creado para completar su funcionalidad:
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/moveTest/eventGraph.jpeg
-	lyxscale 50
-	scale 50
+	filename D:/TFG/software/Pruebas/moveTest/eventGraph.jpeg
+	lyxscale 30
+	scale 30
 	rotateOrigin center
 
 \end_inset
@@ -560,7 +590,7 @@ HoverComponent
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/hoverTest/HoverComponent.h"
+filename "D:/TFG/software/Pruebas/hoverTest/HoverComponent.h"
 lstparams "caption={Header del componente de escena HoverComponent},label={Img.3}"
 
 \end_inset
@@ -568,7 +598,7 @@ lstparams "caption={Header del componente de escena HoverComponent},label={Img.3
 
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/Pruebas/hoverTest/HoverComponent.cpp"
+filename "D:/TFG/software/Pruebas/hoverTest/HoverComponent.cpp"
 lstparams "caption={Código fuente del componente de escena HoverComponent},label={Img.4}"
 
 \end_inset
@@ -616,7 +646,34 @@ ncia a la página del modelo 3D del dron].
 \end_layout
 
 \begin_layout Standard
-(foto del mesh del dron en el entorno)
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 18-58-01.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mesh del dron en el entorno de Unreal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -693,7 +750,7 @@ Una vez explicados los conceptos anteriores pasamos a la implementación
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/DronePawn.h"
+filename "D:/TFG/software/droneSim/DronePawn.h"
 lstparams "caption={Header del peón DronePawn},label={Img.5}"
 
 \end_inset
@@ -704,7 +761,7 @@ lstparams "caption={Header del peón DronePawn},label={Img.5}"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/DronePawn.cpp"
+filename "D:/TFG/software/droneSim/DronePawn.cpp"
 lstparams "caption={Código fuente del peón DronePawn},label={Img.6}"
 
 \end_inset
@@ -725,7 +782,42 @@ keybinds
 \end_layout
 
 \begin_layout Standard
-(insertar captura de la configuración del editor)
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 18-59-47.png
+	lyxscale 30
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Asociación de teclas en la configuración del proyecto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -739,7 +831,7 @@ peón por defecto
 \end_inset
 
  el que recoje las entradas del teclado y las transfiere al propio peón.
- Este cambio solamene lo podemos realizar desde el código del modo de juego
+ Este cambio solamente lo podemos realizar desde el código del modo de juego
  que se generó autómaticamente al crear el proyecto en Unreal.
  Dentro del archivo NombreProyectoGameModeBase.h y NombreProyectoGameModeBase.cpp
  hemos de añadir las 2 siguientes líneas (En mi caso el nombre de los archivos
@@ -749,7 +841,7 @@ peón por defecto
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/droneSimGameModeBase.h"
+filename "D:/TFG/software/droneSim/droneSimGameModeBase.h"
 lstparams "caption={Header del modo de juego droneSimGameModeBase},label={Img.7}"
 
 \end_inset
@@ -760,7 +852,7 @@ lstparams "caption={Header del modo de juego droneSimGameModeBase},label={Img.7}
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "C:/Users/prestamo_admin/Desktop/TFG/TFG/software/droneSim/droneSimGameModeBase.cpp"
+filename "D:/TFG/software/droneSim/droneSimGameModeBase.cpp"
 lstparams "caption={Código fuente del modo de juego droneSimGameModeBase},label={Img.8}"
 
 \end_inset
@@ -774,7 +866,46 @@ Una vez realizados todos estos cambios veremos que aparece esto en el editor
 \end_layout
 
 \begin_layout Standard
-(imagen de los valores de los vectores)
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 19-00-30.png
+	lyxscale 30
+	scale 20
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 19-00-17.png
+	lyxscale 30
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores del editor del modo de juego y los vectores asociados al peón
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

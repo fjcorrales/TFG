@@ -388,7 +388,36 @@ Ahora, todos estos elementos se integran en el editor de Unreal mediante
 \end_layout
 
 \begin_layout Standard
-(foto de las jerarquías del editor en Unreal)
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 18-50-18.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jerarquías de componentes en un blueprint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -476,6 +505,7 @@ Adjunto también el gráfico de eventos creado para completar su funcionalidad:
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -483,8 +513,8 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename D:/TFG/software/Pruebas/moveTest/eventGraph.jpeg
-	lyxscale 50
-	scale 50
+	lyxscale 30
+	scale 30
 	rotateOrigin center
 
 \end_inset
@@ -616,7 +646,48 @@ ncia a la página del modelo 3D del dron].
 \end_layout
 
 \begin_layout Standard
-(foto del mesh del dron en el entorno)
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 18-58-01.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 18-58-45.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mesh del dron en el entorno de Unreal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -725,7 +796,42 @@ keybinds
 \end_layout
 
 \begin_layout Standard
-(insertar captura de la configuración del editor)
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 18-59-47.png
+	lyxscale 30
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Asociación de teclas en la configuración del proyecto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -739,7 +845,7 @@ peón por defecto
 \end_inset
 
  el que recoje las entradas del teclado y las transfiere al propio peón.
- Este cambio solamene lo podemos realizar desde el código del modo de juego
+ Este cambio solamente lo podemos realizar desde el código del modo de juego
  que se generó autómaticamente al crear el proyecto en Unreal.
  Dentro del archivo NombreProyectoGameModeBase.h y NombreProyectoGameModeBase.cpp
  hemos de añadir las 2 siguientes líneas (En mi caso el nombre de los archivos
@@ -774,7 +880,46 @@ Una vez realizados todos estos cambios veremos que aparece esto en el editor
 \end_layout
 
 \begin_layout Standard
-(imagen de los valores de los vectores)
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 19-00-30.png
+	lyxscale 30
+	scale 20
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 19-00-17.png
+	lyxscale 30
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores del editor del modo de juego y los vectores asociados al peón
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
