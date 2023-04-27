@@ -84,42 +84,6 @@ void end()
   rclcpp::shutdown();
 }
 
-int main_og1(int argc, char *argv[])
-{
-  rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<MinimalSubscriber>());
-  rclcpp::shutdown();
-  return 0;
-}
-int main_og2(int argc, char *argv[])
-{
-  rclcpp::init(argc, argv);
-  rclcpp::executors::SingleThreadedExecutor executor;
-  auto node = std::make_shared<MinimalSubscriber>();
-  executor.add_node(node);
-  executor.spin();
-  return 0;
-}
-int main_og3(int argc, char *argv[])
-{
-  rclcpp::init(argc, argv);
-  auto executor = std::make_shared<Executor>();
-  auto node = std::make_shared<MinimalSubscriber>();
-  executor->add_node(node);
-  executor->spin();
-  rclcpp::shutdown();
-  return 0;
-}
-int main_og4(int argc, char *argv[])
-{
-  rclcpp::init(argc, argv);
-  executor = std::make_shared<Executor>();
-  auto node = std::make_shared<MinimalSubscriber>();
-  executor->add_node(node);
-  executor->spin();
-  rclcpp::shutdown();
-  return 0;
-}
 int main(int argc, char *argv[])
 {
   rclcpp::init(argc, argv);
