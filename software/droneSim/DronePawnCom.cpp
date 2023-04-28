@@ -18,8 +18,51 @@ ADronePawnCom::ADronePawnCom()
 // Called when the game starts or when spawned
 void ADronePawnCom::BeginPlay()
 {
+
 	Super::BeginPlay();
 	
+	//Here we'll set the call to the dinamic library created for the ros2 comunication
+	void *handle;
+    int (*start)(int num);
+	int (*update)(int num);
+	int (*end)(int num);
+	handle = dlopen("../ros2_ws/src/droneCom/src/subscriber_member_function.h", RTLD_LAZY);
+
+	if (!handle)
+    {
+        /* fail to load the library */
+        fprintf(stderr, "Error: %s\n", dlerror());
+        exit(1);
+    }
+
+    *(void **)(&start) = dlsym(handle, "dummy");
+
+    if (!start)
+    {
+        /* no such symbol */
+        fprintf(stderr, "Error: %s\n", dlerror());
+        dlclose(handle);
+        exit(1);
+    }
+	*(void **)(&update) = dlsym(handle, "dummy");
+
+    if (!UpdateComponentTransforms)
+    {
+        /* no such symbol */
+        fprintf(stderr, "Error: %s\n", dlerror());
+        dlclose(handle);
+        exit(1);
+    }
+	*(void **)(&end) = dlsym(handle, "dummy");
+
+    if (!end)
+    {
+        /* no such symbol */
+        fprintf(stderr, "Error: %s\n", dlerror());
+        dlclose(handle);
+        exit(1);
+    }
+    dlclose(handle);
 }
 
 // Called every frame
