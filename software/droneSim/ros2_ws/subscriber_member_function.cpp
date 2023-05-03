@@ -84,6 +84,11 @@ void end()
   rclcpp::shutdown();
 }
 
+int dummy(int num)
+{
+  return num;
+}
+
 int main(int argc, char *argv[])
 {
   rclcpp::init(argc, argv);

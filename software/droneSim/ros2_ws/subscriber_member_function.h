@@ -12,6 +12,8 @@ extern "C"
     void *start();
 
     int update(vector3_transfer *, void *);
+    
+    int dummy(int num);
 
     void end();
 #ifdef __cplusplus
