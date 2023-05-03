@@ -15,10 +15,11 @@ ADronePawnCom::ADronePawnCom()
 
 }
 
-    //void (*start)();
-	//void (*update)();
-	//int (*end)();
-    int (*dummy)(int num);
+ADronePawnCom::~ADronePawnCom()
+{
+ 	dlclose(handle);
+    end();
+}
 // Called when the game starts or when spawned
 void ADronePawnCom::BeginPlay()
 {
@@ -26,59 +27,65 @@ void ADronePawnCom::BeginPlay()
 	Super::BeginPlay();
 	
 	//Here we'll set the call to the dinamic library created for the ros2 comunication
-	void *handle;
+	//And all the functions neccesary in order to set up the functioning listener
    
-    int resultado;
-	handle = dlopen("../ros2_ws/src/droneCom/src/subscriber_member_function.h", RTLD_LAZY);
+	handle = dlopen("/home/daniel/ros2_ws/build/droneCom/liblistenerlib.so", RTLD_LAZY);
 
 	if (!handle)
     {
         /* fail to load the library */
         fprintf(stderr, "Error: %s\n", dlerror());
-        exit(1);
+        return;
     }
-    *(void **)(&dummy) = dlsym(handle, "dummy");
+
+    void* temp = dlsym(handle, "dummy");
+    dummy = (fun_dummy)temp;
 
     if (!dummy)
     {
         /* no such symbol */
         fprintf(stderr, "Error: %s\n", dlerror());
         dlclose(handle);
+    }else{    
+        int aux = dummy(1);
+        UE_LOG(LogTemp, Warning, TEXT("%d"),aux);
     }
-
-   /* (void **)(&start) = dlsym(handle, "start");
+   
+    void* temp1 = dlsym(handle, "start");
+    start = (fun_start)temp1;
 
     if (!start)
     {
-       // no such symbol 
+        /* no such symbol */
         fprintf(stderr, "Error: %s\n", dlerror());
         dlclose(handle);
-        exit(1);
+        return;
     }
-	*(void **)(&update) = dlsym(handle, "update");
 
-    if (!UpdateComponentTransforms)
+    void* temp2 = dlsym(handle, "update");
+    update = (fun_update)temp2;
+
+    if (!update)
     {
-        // no such symbol 
+        /* no such symbol */
         fprintf(stderr, "Error: %s\n", dlerror());
         dlclose(handle);
-        exit(1);
+        return;
     }
-	
 
-    *(void **)(&end) = dlsym(handle, "end");
+    void* temp3 = dlsym(handle, "end");
+    end = (fun_end)temp3;
 
     if (!end)
     {
-        //no such symbol 
+        /* no such symbol */
         fprintf(stderr, "Error: %s\n", dlerror());
         dlclose(handle);
-        exit(1);
+        return;
     }
-    
+
+    //We call the start function to set up the listener
     start();
-    //dlclose(handle);
-    */
 }
 
 // Called every frame
@@ -86,7 +93,7 @@ void ADronePawnCom::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
     //update();
-
+    
 }
 
 // Called to bind functionality to input
