@@ -17,8 +17,8 @@ ADronePawnCom::ADronePawnCom()
 
 ADronePawnCom::~ADronePawnCom()
 {
- 	dlclose(handle);
-    end();
+ 	//dlclose(handle);
+    //end();
 }
 // Called when the game starts or when spawned
 void ADronePawnCom::BeginPlay()
@@ -59,6 +59,7 @@ void ADronePawnCom::BeginPlay()
         /* no such symbol */
         fprintf(stderr, "Error: %s\n", dlerror());
         dlclose(handle);
+        UE_LOG(LogTemp, Error, TEXT("Error a la hora de cargar start"));
         return;
     }
 
@@ -70,6 +71,7 @@ void ADronePawnCom::BeginPlay()
         /* no such symbol */
         fprintf(stderr, "Error: %s\n", dlerror());
         dlclose(handle);
+        UE_LOG(LogTemp, Error, TEXT("Error a la hora de cargar update"));
         return;
     }
 
@@ -81,6 +83,7 @@ void ADronePawnCom::BeginPlay()
         /* no such symbol */
         fprintf(stderr, "Error: %s\n", dlerror());
         dlclose(handle);
+        UE_LOG(LogTemp, Error, TEXT("Error a la hora de cargar end"));
         return;
     }
 

@@ -49,7 +49,7 @@ private:
 	typedef struct vector3_transfer vector3_transfer;
 
 	//Update function will be called in the tick, used for recieving info from talker/publisher
-	typedef int (*fun_update)(vector3_transfer *, void *);	
+	typedef int (*fun_update)(vector3_transfer *, void *subscriber);	
 	fun_update update;
 
 	//End function for closing the library 
