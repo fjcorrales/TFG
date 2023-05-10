@@ -9,9 +9,9 @@ extern "C"
     };
     typedef struct vector3_transfer vector3_transfer;
 
-    void *start();
+    void start();
 
-    int update(vector3_transfer *, void *);
+    int update(vector3_transfer *);
     
     int dummy(int num);
 

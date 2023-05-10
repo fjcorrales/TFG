@@ -1,5 +1,7 @@
 #include <chrono>
 #include <memory>
+#include <iostream>
+#include <fstream>
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
@@ -21,14 +23,15 @@ public:
 private:
 	void timer_callback()
 	{
-		auto message = std_msgs::msg::String();
-		message.data = "Hello, world!" + std::to_string(count_++);
-		RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", message.data.c_str());
-		publisher_->publish(message);
+		auto message = geometry_msgs::msg::Vector3();
+    	message.x = getDirection("DIRECTION_X");
+    	message.y = getDirection("DIRECTION_Y");
+    	message.z = getDirection("DIRECTION_Z");
+    	RCLCPP_INFO(this->get_logger(), "Publishing: '%f' '%f' '%f'", message.x, message.y, message.z);
+    	publisher_->publish(message);
 	}
-	rclcpp::TimerBase::SharedPtr timer_;
-	rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;
-	size_t count_;
+  	rclcpp::TimerBase::SharedPtr timer_;
+  	rclcpp::Publisher<geometry_msgs::msg::Vector3>::SharedPtr publisher_;
 
 };
 

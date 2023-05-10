@@ -42,12 +42,14 @@ private:
   }
   rclcpp::Subscription<geometry_msgs::msg::Vector3>::SharedPtr subscription_;
 };
-typedef rclcpp::executors::SingleThreadedExecutor Executor;
-// rclcpp::executors::SingleThreadedExecutor executor;
-// rclcpp::executors::StaticSingleThreadedExecutor executor;
-std::shared_ptr<Executor> executor;
 
-void *start()
+typedef rclcpp::executors::SingleThreadedExecutor Executor;
+
+std::shared_ptr<Executor> executor;
+//The node as a global variable
+std::shared_ptr<MinimalSubscriber> node;
+
+void start()
 {
   int argc = 1;
   char name[] = "subscriber";
@@ -55,22 +57,20 @@ void *start()
 
   rclcpp::init(argc, argv);
   executor = std::make_shared<Executor>();
-  auto node = std::make_shared<MinimalSubscriber>();
+  node = std::make_shared<MinimalSubscriber>();
   executor->add_node(node);
-  return node.get();
 }
 // PILA
 // OPCION 1: devolver void* en start, recibirlo en el update y hacer cast a MinimalSubscriber
 // OPCION 2: cola como atributo general, al principio del fichero
 
-int update(vector3_transfer *ptr, void *subscriber)
+int update(vector3_transfer *ptr)
 {
-  MinimalSubscriber *minimalSubscriber = (MinimalSubscriber *)subscriber;
   executor->spin_some();
-  if (!minimalSubscriber->deque.empty())
+  if (!node->deque.empty())
   {
-    auto msg = minimalSubscriber->deque.front();
-    minimalSubscriber->deque.pop_front();
+    auto msg = node->deque.front();
+    node->deque.pop_front();
     ptr->x = msg->x;
     ptr->y = msg->y;
     ptr->z = msg->z;
@@ -81,6 +81,7 @@ int update(vector3_transfer *ptr, void *subscriber)
 
 void end()
 {
+  node.reset();
   rclcpp::shutdown();
 }
 
@@ -91,15 +92,13 @@ int dummy(int num)
 
 int main(int argc, char *argv[])
 {
-  rclcpp::init(argc, argv);
-  executor = std::make_shared<Executor>();
-  auto node = std::make_shared<MinimalSubscriber>();
-  executor->add_node(node);
-  for (int i = 0; i < 2; i++)
+  start();
+  vector3_transfer data;
+  for (int i = 0; i < 5; i++)
   {
-    executor->spin_some();
+    update(&data);
     sleep(1);
   }
-  rclcpp::shutdown();
+  end();
   return 0;
 }

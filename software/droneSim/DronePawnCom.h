@@ -33,12 +33,9 @@ public:
 private:
 //Here i'll define all the variables needed inside the pawn built to test the communication
 	void *handle; 
-
-	typedef int (*fun_dummy)(int num);
-	fun_dummy dummy;
 	
 	//Start function, sets the listener up
-	typedef void *(*fun_start)();
+	typedef void (*fun_start)();
 	fun_start start;
 
 	//struct which holds the information needed in the update function
@@ -49,10 +46,16 @@ private:
 	typedef struct vector3_transfer vector3_transfer;
 
 	//Update function will be called in the tick, used for recieving info from talker/publisher
-	typedef int (*fun_update)(vector3_transfer *, void *subscriber);	
+	typedef int (*fun_update)(vector3_transfer *);	
 	fun_update update;
 
 	//End function for closing the library 
 	typedef void (*fun_end)();
 	fun_end end;
+
+	//Coordinates wich will be recieved by the subscriptor and managed by the update function
+	vector3_transfer *coordinates;
+	
+	//Vector used to update the position of the pawn
+	FVector pos;
 };

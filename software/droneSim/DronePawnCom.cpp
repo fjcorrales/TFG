@@ -38,19 +38,6 @@ void ADronePawnCom::BeginPlay()
         return;
     }
 
-    void* temp = dlsym(handle, "dummy");
-    dummy = (fun_dummy)temp;
-
-    if (!dummy)
-    {
-        /* no such symbol */
-        fprintf(stderr, "Error: %s\n", dlerror());
-        dlclose(handle);
-    }else{    
-        int aux = dummy(1);
-        UE_LOG(LogTemp, Warning, TEXT("%d"),aux);
-    }
-   
     void* temp1 = dlsym(handle, "start");
     start = (fun_start)temp1;
 
@@ -61,6 +48,8 @@ void ADronePawnCom::BeginPlay()
         dlclose(handle);
         UE_LOG(LogTemp, Error, TEXT("Error a la hora de cargar start"));
         return;
+    }else{
+        UE_LOG(LogTemp, Warning, TEXT("Start importado"));
     }
 
     void* temp2 = dlsym(handle, "update");
@@ -73,6 +62,8 @@ void ADronePawnCom::BeginPlay()
         dlclose(handle);
         UE_LOG(LogTemp, Error, TEXT("Error a la hora de cargar update"));
         return;
+    }else{
+        UE_LOG(LogTemp, Warning, TEXT("Update importado"));
     }
 
     void* temp3 = dlsym(handle, "end");
@@ -85,9 +76,10 @@ void ADronePawnCom::BeginPlay()
         dlclose(handle);
         UE_LOG(LogTemp, Error, TEXT("Error a la hora de cargar end"));
         return;
+    }else{
+        UE_LOG(LogTemp, Warning, TEXT("End importado"));
     }
 
-    //We call the start function to set up the listener
     start();
 }
 
@@ -95,8 +87,11 @@ void ADronePawnCom::BeginPlay()
 void ADronePawnCom::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-    //update();
-    
+    update(coordinates);
+    /*pos.X=coordinates->x;
+    pos.Y=coordinates->y;
+    pos.Z=coordinates->z;
+    */
 }
 
 // Called to bind functionality to input
