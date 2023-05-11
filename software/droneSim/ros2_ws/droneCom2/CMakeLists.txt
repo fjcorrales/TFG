@@ -17,7 +17,7 @@ find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
 add_executable(talker src/publisher_member_function.cpp)
-ament_target_dependencies(talker rclcpp std_msgs)
+ament_target_dependencies(talker rclcpp geometry_msgs)
 
 add_executable(listener src/subscriber_member_function.cpp)
 ament_target_dependencies(listener rclcpp geometry_msgs)
