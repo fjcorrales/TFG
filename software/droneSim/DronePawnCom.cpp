@@ -38,6 +38,8 @@ void ADronePawnCom::BeginPlay()
         return;
     }
 
+    //Once the library is open, we take the finctions we want to use, in this case, start, update and end
+
     void* temp1 = dlsym(handle, "start");
     start = (fun_start)temp1;
 
@@ -80,6 +82,9 @@ void ADronePawnCom::BeginPlay()
         UE_LOG(LogTemp, Warning, TEXT("End importado"));
     }
 
+    //Here sice unreal only executes this begin play once and at the start of the level
+    //we call the start function which sets the listener in order to recieve the coordinates 
+    //from the ROS2 publisher/talker
     start();
 }
 
@@ -87,6 +92,8 @@ void ADronePawnCom::BeginPlay()
 void ADronePawnCom::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+    //In here, we call the update finction which will be constantly looking at the queue 
+    //of published messages from the publisher in order to recieve the coordiantes
     update(&coordinates);
     pos.X=coordinates.x;
     pos.Y=coordinates.y;
