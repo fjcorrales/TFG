@@ -29,6 +29,7 @@ private:
 		while(3 == scanf("%lf %lf %lf", &(message.x), &(message.y), &(message.z))){//loop to read coordinates from file and send them as a message
 			RCLCPP_INFO(this->get_logger(), "Publishing: '%f' '%f' '%f'", message.x, message.y, message.z);
     		publisher_->publish(message);
+			sleep(5);
 		}    	
     	
 	}
