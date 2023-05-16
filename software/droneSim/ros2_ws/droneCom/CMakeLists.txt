@@ -16,7 +16,7 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
-add_executable(talker src/publisher_member_function.cpp)
+add_executable(talker src/CoordinatesPublisher.cpp)
 ament_target_dependencies(talker rclcpp geometry_msgs)
 
 add_executable(listener src/subscriber_member_function.cpp)
