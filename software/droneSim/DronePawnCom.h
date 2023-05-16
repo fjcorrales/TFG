@@ -54,8 +54,9 @@ private:
 	fun_end end;
 
 	//Coordinates wich will be recieved by the subscriptor and managed by the update function
-	vector3_transfer *coordinates;
+	vector3_transfer coordinates;
 	
 	//Vector used to update the position of the pawn
+	UPROPERTY(EditAnywhere)
 	FVector pos;
 };

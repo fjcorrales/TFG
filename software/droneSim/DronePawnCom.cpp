@@ -87,11 +87,10 @@ void ADronePawnCom::BeginPlay()
 void ADronePawnCom::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-    update(coordinates);
-    /*pos.X=coordinates->x;
-    pos.Y=coordinates->y;
-    pos.Z=coordinates->z;
-    */
+    update(&coordinates);
+    pos.X=coordinates.x;
+    pos.Y=coordinates.y;
+    pos.Z=coordinates.z;
 }
 
 // Called to bind functionality to input
