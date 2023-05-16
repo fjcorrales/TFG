@@ -17,7 +17,8 @@ class DRONESIM_API ADronePawnCom : public APawn
 public:
 	// Sets default values for this pawn's properties
 	ADronePawnCom();
-	~ADronePawnCom();
+	virtual ~ADronePawnCom()override;
+	int EndPlay();
 	
 protected:
 	// Called when the game starts or when spawned

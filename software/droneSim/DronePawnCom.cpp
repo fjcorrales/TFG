@@ -15,10 +15,17 @@ ADronePawnCom::ADronePawnCom()
 
 }
 
+int ADronePawnCom::EndPlay()
+{
+    //end();
+ 	//dlclose(handle);
+}
+
 ADronePawnCom::~ADronePawnCom()
 {
+ 	//end();
  	//dlclose(handle);
-    //end();
+    
 }
 // Called when the game starts or when spawned
 void ADronePawnCom::BeginPlay()
