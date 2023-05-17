@@ -15,8 +15,6 @@ ADronePawnCom::ADronePawnCom()
 
 }
 
-
-
 // Called when the game starts or when spawned
 void ADronePawnCom::BeginPlay()
 {
