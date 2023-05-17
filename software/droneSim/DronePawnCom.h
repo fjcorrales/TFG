@@ -17,12 +17,13 @@ class DRONESIM_API ADronePawnCom : public APawn
 public:
 	// Sets default values for this pawn's properties
 	ADronePawnCom();
-	virtual ~ADronePawnCom()override;
-	int EndPlay();
+	//virtual ~ADronePawnCom()override;
+	
 	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
 public:	
 	// Called every frame
