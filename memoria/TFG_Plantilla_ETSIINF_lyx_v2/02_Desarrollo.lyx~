@@ -649,7 +649,7 @@ ncia a la página del modelo 3D del dron].
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -660,20 +660,6 @@ status collapsed
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 18-58-45.png
-	lyxscale 30
-	scale 30
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -934,6 +920,161 @@ Tras esta última prueba concluímos que el movimiento del dron basado en
  movimiento y poder realizar una integración con ROS 2 ya que pretendemos
  que el movimiento se rija mediante la velocidad que se enviará mediante
  los servicios de mensajería ofrecidos por ese framework.
+\end_layout
+
+\begin_layout Section
+Desarrollo final
+\end_layout
+
+\begin_layout Standard
+Tras la realización de las pruebas anteriormente descritas, fue posible
+ visualizar con mayor precisión el resultado final deseado para este proyecto.
+ Teniedo en cuenta el tiempo restante para la entrega final de la memoria,
+ se decidió reajustar el scope del proyecto.
+ Finalmente, el objetivo de este trabajo consistira en la realización de
+ un visualizador de vuelo de un dron en un entorno tridimensional.
+ Esto sentará las bases para futuros trabajos en los cuales se itere sobre
+ los programas aquí desarrollados para alcanzar la meta descrita al principio
+ de este escrito.
+\end_layout
+
+\begin_layout Standard
+Una vez explicado esto, procederé a explicar la fase de desarrollo del visualiza
+dor de vuelo.
+ Este también consistirá de tres partes: el desarrollo de un sistema publicador
+ subscriptor de ROS2 para poder comunicar el dron dentro del entorno de
+ UE5, el desarrollo del movimiento de un dron en base a las coordenadas
+ publicadas en el publicador y la importación de escenarios tridimensionales
+ en UE5 y sus capacidades.
+\end_layout
+
+\begin_layout Subsection
+Desarrollo de un sisetma pub/sub de ROS2:
+\end_layout
+
+\begin_layout Standard
+En la realidad, el control remoto de un dron es posible gracias a la biblioteca
+ de C previamente descrita ROS2.
+ Esta permite el intercambio de todo tipo de mensajes entre un publicador
+ y un subscriptor, los cuales se pueden desarrollar libremente para cada
+ caso particular.
+ Para este visualizador de vuelo la intención es poder leer coordenadas
+ de la entrada estandar, que el publicador lo convierta en un vector y lo
+ publique para ser recibido posteriormente por el subscriptor.
+ Este subscriptor va a ser un tanto especial puesto que ha de ser accesible
+ desde un peón dentro de Unreal para poder moverlo más adelante.
+ 
+\end_layout
+
+\begin_layout Standard
+Este último detalle mencionado es muy importante puesto que, para conseguirlo,
+ habremos de hacer del subscriptor una librería la cual poder abrir en unreal
+ y poder usar sus funciones para recibir los mensajes del publicador.
+ Sin embargo, esta tarea fue ampliamente simplificada gracias al trabajo
+ de Juan Pares Guillen[link de su github], quien desarrolló un subscriptor
+ para su trabajo el cual podía importar a mi proyecto y hacer uso del mismo,
+ puesto que la funcionalidad que buscaba implementar es identica.
+ Este subscriptor cuenta con 3 funciones, start(), update() y end().
+ Cada una de estas funciones tiene un proposito y son las que más adelante
+ importaremos en el peón de UE5:
+\end_layout
+
+\begin_layout Itemize
+start(): Esta función se encarga de inicializar el subscriptor y subscribirse
+ al topic creado por el publicador.
+ Asimismo inicializa la funcion de callback, update(), encargada de recibir
+ los mensajes.
+\end_layout
+
+\begin_layout Itemize
+update(): Esta es la función de callback, la cual recibirá los mensajes
+ que se vayan publicando.
+ Esta función será ejecutada según el intervalo de tiempo puesto en su inicializ
+ación en la función de start().
+ 
+\end_layout
+
+\begin_layout Itemize
+end(): Se encarga de destruir el subscritor y liberar la memoria ocupada.
+\end_layout
+
+\begin_layout Standard
+Esta clase hace uso del tipo de mensaje Vector3, tipo propio de ROS2 el
+ cual necestia que se incluya en la clase y posteriormente ha de indicarse
+ en el CMAKE para su correcta compilación.
+\end_layout
+
+\begin_layout Standard
+A continuación, voy a comentar el desarrollo del publicador de ROS2.
+ Para este utilicé como base el publicador de ejemplo que ROS2 tiene en
+ sus tutoriales[ros2 tutoriales].
+ La base es la misma, solo que se hace uso de un tipo de mensaje diferente,
+ el vector3_msgs igual que el subscriptor, para el cual es necesario importar
+ la clase.
+ Una vez hecho esto, el otro cambio importante a realizar es la lectura
+ de los datos, para lo cual hago uso de la lectura por entrada estandar.
+ Este método es simple solo que hemos de tener en cuenta que hay que pasarle
+ los datos en la línea de ejecución.
+ En este caso se hace mediante el comando cat y el uso de una tubería para
+ pasar las coordenadas redactadas en un fichero 
+\begin_inset Quotes eld
+\end_inset
+
+coordinates.txt
+\begin_inset Quotes erd
+\end_inset
+
+ que se encuentra en la carpeta de ejecución del publicador.
+\end_layout
+
+\begin_layout Standard
+Con esto tenemos creados los ficheros fuente tanto del publicador como del
+ subscriptor:
+\end_layout
+
+\begin_layout Standard
+(Introducir código fuente de los ficheros)
+\end_layout
+
+\begin_layout Standard
+Ahora necesitamos poder compilarlos, para lo cual seguimos las idicaciones
+ de la guía oficial de ROS2[guia de ROS2], configurando correctamente el
+ CMAKE, puesto que nuestros programas son diferentesa los creados en el
+ tutorial.
+ Dado que usamos un tipo de mensajes diferente al indicado en la guía, tenemos
+ que indicar que se busque el paquete donde se encuentra el tipo de mensaje
+ Vector3, el paquete geometry_msgs, además de tener que usarlo también en
+ los add_executable del publicador y del subscriptor.
+ Finalmente es necesario añadir también un add_library para crear así la
+ librería del subscriptor que queremos utilizar en Unreal.
+ 
+\end_layout
+
+\begin_layout Standard
+(Introducir CMAKE)
+\end_layout
+
+\begin_layout Standard
+Tras estos cambios al CMAKE, podemos compilar el proyecto con la herramienta
+ colcon de ROS2.
+ 
+\end_layout
+
+\begin_layout Standard
+Una vez compilado, habremos creado la librería del subscriptor y consecuentement
+e un ejecutable del publicador.
+\end_layout
+
+\begin_layout Standard
+Ahora 
+\end_layout
+
+\begin_layout Subsection
+Mover un peón en UE5:
+\end_layout
+
+\begin_layout Subsection
+Importación de escenarios tridimensionales a UE5:
 \end_layout
 
 \begin_layout Standard
