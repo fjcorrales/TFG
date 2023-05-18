@@ -6,12 +6,26 @@
 #include <stdlib.h>
 #include <dlfcn.h>
 
-
+#include "Camera/CameraComponent.h"
+#include "GameFramework/SpringArmComponent.h"
 // Sets default values
 ADronePawnCom::ADronePawnCom()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+    //setup rootcomponent
+    RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
+    //Setup StaticMeshComponent
+    MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("DronMesh"));
+    MeshComponent->SetupAttachment(RootComponent);
+
+    //section for configuring the spring arm and camera attached to it
+    arm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
+    arm->SetupAttachment(RootComponent);
+
+    camera = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComponent"));
+    camera->SetupAttachment(arm,USpringArmComponent::SocketName);
 
 }
 
@@ -21,9 +35,9 @@ void ADronePawnCom::BeginPlay()
 
 	Super::BeginPlay();
 	
-	//Here we'll set the call to the dinamic library created for the ros2 comunication
+	//Section 1: Here i'll set the call to the dinamic library created for the ros2 comunication
 	//And all the functions neccesary in order to set up the functioning listener
-   
+    //All this part could be implemented in a separate function and call it from here
 	handle = dlopen("/home/daniel/ros2_ws/build/droneCom/liblistenerlib.so", RTLD_LAZY);
 
 	if (!handle)

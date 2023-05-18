@@ -7,8 +7,6 @@
 #include "DronePawnCom.generated.h"
 
 
-
-
 UCLASS()
 class DRONESIM_API ADronePawnCom : public APawn
 {
@@ -31,7 +29,7 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 private:
-//Here i'll define all the variables needed inside the pawn built to test the communication
+//Section 1: Here i'll define all the variables needed inside the pawn built to test the communication
 	void *handle; 
 	
 	//Start function, sets the listener up
@@ -59,4 +57,13 @@ private:
 	//Vector used to update the position of the pawn
 	UPROPERTY(EditAnywhere)
 	FVector pos;
+
+//Section 2, here i'll declare the variables needed for the moving the drone part
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category=Cam,meta=(AllowPrivateAccess = "true"))
+	class USpringArmComponent* arm;
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category=Cam,meta=(AllowPrivateAccess = "true"))
+	class UCameraComponent* camera;
+	UPROPERTY(EditAnywhere)
+    UStaticMeshComponent* MeshComponent; 
+
 };
