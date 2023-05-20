@@ -8,7 +8,7 @@
 #include "DronePawn.generated.h"
 
 UCLASS()
-class DRONESIM_API ADronePawn : public APawn
+class ADronePawn : public APawn
 {
 	GENERATED_BODY()
 
