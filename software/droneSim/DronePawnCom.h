@@ -65,5 +65,9 @@ private:
 	class UCameraComponent* camera;
 	UPROPERTY(EditAnywhere)
     UStaticMeshComponent* MeshComponent; 
-
+	FVector StartRelLocation;
+	FVector MoveOffsetNorm;
+	float CurrDistance;
+	float Speed = 100.f;
+	float MaxDistance = 0.0f;
 };

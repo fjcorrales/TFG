@@ -19,6 +19,11 @@ ADronePawnCom::ADronePawnCom()
     //Setup StaticMeshComponent
     MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("DronMesh"));
     MeshComponent->SetupAttachment(RootComponent);
+    FVector startPos;
+    startPos.X = 0;
+    startPos.Y = 0;
+    startPos.Z = 1;
+    MeshComponent->SetRelativeLocation(startPos);
 
     //section for configuring the spring arm and camera attached to it
     arm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
@@ -95,6 +100,7 @@ void ADronePawnCom::BeginPlay()
     //we call the start function which sets the listener in order to recieve the coordinates 
     //from the ROS2 publisher/talker
     start();
+
 }
 
 // Called every frame
@@ -104,9 +110,18 @@ void ADronePawnCom::Tick(float DeltaTime)
     //In here, we call the update finction which will be constantly looking at the queue 
     //of published messages from the publisher in order to recieve the coordiantes
     update(&coordinates);
+	//We store the vector mevement
     pos.X=coordinates.x;
     pos.Y=coordinates.y;
     pos.Z=coordinates.z;
+
+	StartRelLocation = GetActorLocation();
+	//We compute the normalized movement
+	MoveOffsetNorm = pos;
+	MoveOffsetNorm.Normalize();
+	MaxDistance = pos.Size();
+	CurrDistance += DeltaTime * Speed;
+    SetActorLocation(StartRelLocation + MoveOffsetNorm);
 }
 
 // Called to bind functionality to input
