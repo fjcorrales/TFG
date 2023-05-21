@@ -8,18 +8,30 @@
 
 
 UCLASS()
-class DRONESIM_API ADronePawnCom : public APawn
+class ADronePawnCom : public APawn
 {
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this pawn's properties
+	// Constructor
 	ADronePawnCom();	
 	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	//Called when the game is finished, modified to execute the end() function od the 
+	//ROS library to shut down the listener. After that, the library is closed
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+	
+	//Sets up components, called inside the constructor
+	void setComponents();
+
+	//Function to open the dynamic library and import its functions called in the BeginPlay
+	void dlImport();
+
+	//Function that moves the drone called in the Tick() function
+	void move(FVector pos1);
 
 public:	
 	// Called every frame
@@ -58,16 +70,26 @@ private:
 	UPROPERTY(EditAnywhere)
 	FVector pos;
 
-//Section 2, here i'll declare the variables needed for the moving the drone part
+//Section 2, here i'll declare the variables needed for moving the drone 
+
+	//Arm component to have a static camera attached to it
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category=Cam,meta=(AllowPrivateAccess = "true"))
 	class USpringArmComponent* arm;
+
+	//To attarch to the arm component and visualize the mesh
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category=Cam,meta=(AllowPrivateAccess = "true"))
 	class UCameraComponent* camera;
+
+	//Drone Mesh
 	UPROPERTY(EditAnywhere)
     UStaticMeshComponent* MeshComponent; 
+
+	//Starting location of the drone on each frame 
 	FVector StartRelLocation;
+
+	//Normalized vector to set the movement each frame (for a fluid moving animation)
 	FVector MoveOffsetNorm;
-	float CurrDistance;
+
+	//Set move speed for the drone
 	float Speed = 100.f;
-	float MaxDistance = 0.0f;
 };
