@@ -63,12 +63,7 @@ private:
 	typedef void (*fun_end)();
 	fun_end end;
 
-	//Coordinates wich will be recieved by the subscriptor and managed by the update function
-	vector3_transfer coordinates;
 	
-	//Vector used to update the position of the pawn
-	UPROPERTY(EditAnywhere)
-	FVector pos;
 
 //Section 2, here i'll declare the variables needed for moving the drone 
 
@@ -89,7 +84,12 @@ private:
 
 	//Normalized vector to set the movement each frame (for a fluid moving animation)
 	FVector MoveOffsetNorm;
+	
+	//Coordinates wich will be recieved by the subscriptor and managed by the update function
+	vector3_transfer coordinates;
+	
+	//Vector used to update the position of the pawn
+	UPROPERTY(EditAnywhere)
+	FVector pos;
 
-	//Set move speed for the drone
-	float Speed = 100.f;
 };
