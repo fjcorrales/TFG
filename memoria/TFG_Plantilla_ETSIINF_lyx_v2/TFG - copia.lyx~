@@ -760,37 +760,6 @@ filename "02_Desarrollo.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Branch Appendix
-inverted 0
-status open
-
-\begin_layout Standard
-\start_of_appendix
-\begin_inset CommandInset include
-LatexCommand include
-filename "10_Anexos.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Appendix is of course optional
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Newpage cleardoublepage
 \end_inset
 

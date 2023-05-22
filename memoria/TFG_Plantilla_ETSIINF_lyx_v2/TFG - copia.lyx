@@ -370,7 +370,6 @@ Atención: Para que la portada salga con los datos reales hay que rellenarlos
 \begin_layout Plain Layout
 2) En el área de texto de la izquierda buscar al final del todo los comandos:
  NombreAutor, Grado, Titulo, etc.
- 
 \end_layout
 
 \begin_layout Plain Layout
@@ -386,6 +385,166 @@ Atención: Para que la portada salga con los datos reales hay que rellenarlos
 \begin_inset CommandInset include
 LatexCommand input
 filename "include/Portada.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{plain}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Usually the summary should not have page headers.
+ If it should, remove this \SpecialChar TeX
+ code.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frontmatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch Summary
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "00_Resumen.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Acknowledgments
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+print 
+\begin_inset Quotes eld
+\end_inset
+
+Acknowledgments
+\begin_inset Quotes erd
+\end_inset
+
+ in the left header line
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Acknowledgments
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+print 
+\begin_inset Quotes eld
+\end_inset
+
+Acknowledgments
+\begin_inset Quotes erd
+\end_inset
+
+ in the right header line
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch Acknowledgments
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "00_Agradecimientos.lyx"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -760,6 +919,77 @@ filename "02_Desarrollo.lyx"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Branch chapter-3
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "03_Resultados.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch chapter-4
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "04_AnalisisImpacto.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch Appendix
+inverted 0
+status open
+
+\begin_layout Standard
+\start_of_appendix
+\begin_inset CommandInset include
+LatexCommand include
+filename "10_Anexos.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Appendix is of course optional
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage cleardoublepage
 \end_inset
 
@@ -845,7 +1075,6 @@ status open
 Nota: Para editar cómodamente el archivo de bibliografía se puede utilizar
  JabRef o bien directamente un editor de texto y utilizar copiar y pegar
  para generar nuevas entradas.
- 
 \end_layout
 
 \end_inset

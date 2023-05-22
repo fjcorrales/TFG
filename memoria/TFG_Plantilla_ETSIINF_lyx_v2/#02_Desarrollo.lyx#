@@ -360,7 +360,7 @@ Para comenzar, se analizaron las posibilidades de movimiento de actores
  y el usuario una vez comienza el juego.
  A pesar de que todas sean clases casi hermanas, las principales diferencias
  entre ellas son en relación a qué utilidad de Unreal son capaces de acceder.
- Los actores son los objetos más límitados ya que no ofrecen opción a que
+ Los actores son los objetos más limitados ya que no ofrecen opción a que
  los maneje la IA ni permiten tener inputs de teclado.
  Los peones son el siguiente paso en la cadena, los cuales permiten ser
  controlados por la IA de Unreal y permiten inputs de teclado, sin embargo
@@ -373,10 +373,10 @@ Para comenzar, se analizaron las posibilidades de movimiento de actores
 \begin_layout Standard
 En cuanto a los componentes que se pueden añadir a estos actores, son elementos
  que añaden funcionalidad a los mismos.
- Podemos encontrar 2 tipos de componentes: componentes de actor y componenetes
+ Podemos encontrar 2 tipos de componentes: componentes de actor y componentes
  de escena.
  El componente de actor no hace nada esencialmente, sin embargo es imprescindibl
-e dado que es la base de la jeraquía del resto de componentes.
+e dado que es la base de la jerarquía del resto de componentes.
  Los componentes de escena son aquellos que podemos usar como apoyo para
  incluir funcionalidades a los actores.
 \end_layout
@@ -611,9 +611,9 @@ Tras desarrollar estos módulos de prueba basados en componentes de escena
  y observar su funcionamiento nuestro siguiente paso sería crear objetos
  basados en la unión de componentes independientes, lo que nos interesa
  en gran medida para proporcionarle cierta modularidad.
- La idea sería gestionar la comunición entre los componentes desde un actor
- propio.
- Con este fin proponemos la creación de un peon e implementar en el mismo
+ La idea sería gestionar la comunicación entre los componentes desde un
+ actor propio.
+ Con este fin proponemos la creación de un peón e implementar en el mismo
  un control diferencial de la velocidad, prueba que describiremos más adelante.
 \end_layout
 
@@ -677,8 +677,8 @@ Mesh del dron en el entorno de Unreal
 \end_layout
 
 \begin_layout Standard
-Si se desea Epic Games también cuenta con una paltaforma en la que los usuarios
- pueden subir sus modelos 3D ya sea de niveles u objetos a una tienda online.
+Si se desea Epic Games también cuenta con una plataforma en la que los usuarios
+ pueden subir sus modelos 3D ya sea de niveles u objetos a una tienda on-line.
  La desventaja es que la mayoría del contenido es de pago.
  
 \end_layout
@@ -700,7 +700,7 @@ Prueba de implementación de un control diferencial de la velocidad:
 
 \begin_layout Standard
 Finalmente y tras las primeras pruebas de movimiento decidimos crear un
- peón ya que este es el objeo ideal sobre el que crear un dron.
+ peón ya que este es el objeto ideal sobre el que crear un dron.
  Así pues, tras crear una clase en C++ de un peón, implementamos en la misma
  un control diferencial de la velocidad, un concepto simple basado en 3
  vectores, uno para establecer la velocidad deseada, otro para definir la
@@ -717,7 +717,7 @@ tick
 \shape default
  dentro de todas sus clases, la cual se ejecuta a cada frame generado por
  el motor y ejecuta las instrucciones descritas en la misma.
- Al mismo tiempo, esta función nos poporciona una variable 
+ Al mismo tiempo, esta función nos proporciona una variable 
 \shape slanted
 DeltaTime
 \shape default
@@ -735,14 +735,14 @@ BeginPlay
 \shape default
 , esta se ejecuta en el primer instante en que se entra al nivel creado
  y solo esa vez.
- Esta resulta utíl para establecer variables iniciales o si por ejemplo
+ Esta resulta útil para establecer variables iniciales o si por ejemplo
  se desea almacenar la posición inicial de algún objeto.
 \end_layout
 
 \begin_layout Standard
 Una vez explicados los conceptos anteriores pasamos a la implementación
  del control en cuestión, una implementación simple y que nos permite configurar
- una velocidad máxima, una minima y una constante para ajustar la velocidad
+ una velocidad máxima, una mínima y una constante para ajustar la velocidad
  en el calculo del delta de la velocidad.
  La implementación queda tal que así:
 \end_layout
@@ -830,9 +830,9 @@ peón por defecto
 \begin_inset Quotes erd
 \end_inset
 
- el que recoje las entradas del teclado y las transfiere al propio peón.
+ el que recoge las entradas del teclado y las transfiere al propio peón.
  Este cambio solamente lo podemos realizar desde el código del modo de juego
- que se generó autómaticamente al crear el proyecto en Unreal.
+ que se generó automáticamente al crear el proyecto en Unreal.
  Dentro del archivo NombreProyectoGameModeBase.h y NombreProyectoGameModeBase.cpp
  hemos de añadir las 2 siguientes líneas (En mi caso el nombre de los archivos
  es droneSimGameModeBase.h y droneSimGameModeBase.cpp):
@@ -915,11 +915,15 @@ Ya configurado y testado el correcto funcionamiento de las funciones previamente
 \end_layout
 
 \begin_layout Standard
-Tras esta última prueba concluímos que el movimiento del dron basado en
+Tras esta última prueba concluimos que el movimiento del dron basado en
  este control diferencial es lo necesario para simular correctamente el
  movimiento y poder realizar una integración con ROS 2 ya que pretendemos
  que el movimiento se rija mediante la velocidad que se enviará mediante
  los servicios de mensajería ofrecidos por ese framework.
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -929,9 +933,9 @@ Desarrollo final
 \begin_layout Standard
 Tras la realización de las pruebas anteriormente descritas, fue posible
  visualizar con mayor precisión el resultado final deseado para este proyecto.
- Teniedo en cuenta el tiempo restante para la entrega final de la memoria,
+ Teniendo en cuenta el tiempo restante para la entrega final de la memoria,
  se decidió reajustar el scope del proyecto.
- Finalmente, el objetivo de este trabajo consistira en la realización de
+ Finalmente, el objetivo de este trabajo consistirá en la realización de
  un visualizador de vuelo de un dron en un entorno tridimensional.
  Esto sentará las bases para futuros trabajos en los cuales se itere sobre
  los programas aquí desarrollados para alcanzar la meta descrita al principio
@@ -949,7 +953,7 @@ dor de vuelo.
 \end_layout
 
 \begin_layout Subsection
-Desarrollo de un sisetma pub/sub de ROS2:
+Desarrollo de un sistema pub/sub de ROS2:
 \end_layout
 
 \begin_layout Standard
@@ -970,20 +974,20 @@ En la realidad, el control remoto de un dron es posible gracias a la biblioteca
 Este último detalle mencionado es muy importante puesto que, para conseguirlo,
  habremos de hacer del subscriptor una librería la cual poder abrir en unreal
  y poder usar sus funciones para recibir los mensajes del publicador.
- Sin embargo, esta tarea fue ampliamente simplificada gracias al trabajo
- de Juan Pares Guillen[link de su github], quien desarrolló un subscriptor
- para su trabajo el cual podía importar a mi proyecto y hacer uso del mismo,
- puesto que la funcionalidad que buscaba implementar es identica.
+ Esta tarea fue ampliamente simplificada gracias al trabajo de Juan Pares
+ Guillen[link de su github] y Santiago Tapia, quienes desarrollaron un subscript
+or para su trabajo el cual podía importar a mi proyecto y hacer uso del
+ mismo puesto que la funcionalidad que buscaba implementar es idéntica.
  Este subscriptor cuenta con 3 funciones, start(), update() y end().
- Cada una de estas funciones tiene un proposito y son las que más adelante
+ Cada una de estas funciones tiene un propósito y son las que más adelante
  importaremos en el peón de UE5:
 \end_layout
 
 \begin_layout Itemize
 start(): Esta función se encarga de inicializar el subscriptor y subscribirse
  al topic creado por el publicador.
- Asimismo inicializa la funcion de callback, update(), encargada de recibir
- los mensajes.
+ Asimismo configurará como su función de callback a update(), encargada
+ de recibir los mensajes.
 \end_layout
 
 \begin_layout Itemize
@@ -995,22 +999,20 @@ ación en la función de start().
 \end_layout
 
 \begin_layout Itemize
-end(): Se encarga de destruir el subscritor y liberar la memoria ocupada.
+end(): Se encarga de destruir el subscriptor y liberar la memoria ocupada.
 \end_layout
 
 \begin_layout Standard
 Esta clase hace uso del tipo de mensaje Vector3, tipo propio de ROS2 el
- cual necestia que se incluya en la clase y posteriormente ha de indicarse
+ cual necesita que se incluya en la clase y posteriormente ha de indicarse
  en el CMAKE para su correcta compilación.
 \end_layout
 
 \begin_layout Standard
-A continuación, voy a comentar el desarrollo del publicador de ROS2.
- Para este utilicé como base el publicador de ejemplo que ROS2 tiene en
- sus tutoriales[ros2 tutoriales].
+A continuación, en lo relacionado al publicador de ROS2 tomé como base el
+ publicador de ejemplo que ROS2 propone en sus tutoriales[ros2 tutoriales].
  La base es la misma, solo que se hace uso de un tipo de mensaje diferente,
- el vector3_msgs igual que el subscriptor, para el cual es necesario importar
- la clase.
+ el Vector3 igual que en el subscriptor.
  Una vez hecho esto, el otro cambio importante a realizar es la lectura
  de los datos, para lo cual hago uso de la lectura por entrada estandar.
  Este método es simple solo que hemos de tener en cuenta que hay que pasarle
@@ -1033,14 +1035,44 @@ Con esto tenemos creados los ficheros fuente tanto del publicador como del
 \end_layout
 
 \begin_layout Standard
-(Introducir código fuente de los ficheros)
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/ros2_package/droneCom/src/subscriber_member_function.h"
+lstparams "caption={Header de subscriptor ueSub},label={Img.9}"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Ahora necesitamos poder compilarlos, para lo cual seguimos las idicaciones
- de la guía oficial de ROS2[guia de ROS2], configurando correctamente el
- CMAKE, puesto que nuestros programas son diferentesa los creados en el
- tutorial.
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/ros2_package/droneCom/src/subscriber_member_function.cpp"
+lstparams "caption={Código fuente del subscriptor ueSub},label={Img.10}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/ros2_package/droneCom/src/CoordinatesPublisher.cpp"
+lstparams "caption={Código fuente del publicador CoordinatesPublisher},label={Img.11}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora necesitamos poder compilarlos, para lo cual seguimos las indicaciones
+ de la guía oficial de ROS2[guía de ROS2].
+ Puesto que nuestros programas son diferentes a los creados en el tutorial
+ hemos de realizar modificaciones en el CMAKE para conseguir compilar con
+ éxito.
  Dado que usamos un tipo de mensajes diferente al indicado en la guía, tenemos
  que indicar que se busque el paquete donde se encuentra el tipo de mensaje
  Vector3, el paquete geometry_msgs, además de tener que usarlo también en
@@ -1051,7 +1083,14 @@ Ahora necesitamos poder compilarlos, para lo cual seguimos las idicaciones
 \end_layout
 
 \begin_layout Standard
-(Introducir CMAKE)
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/ros2_package/droneCom/CMakeLists.txt"
+lstparams "caption={CMAKE del proyecto},label={Img.12}"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1061,16 +1100,330 @@ Tras estos cambios al CMAKE, podemos compilar el proyecto con la herramienta
 \end_layout
 
 \begin_layout Standard
-Ahora necesitamos gestionar la librería dentro de un peón en Unreal.
+Ahora necesitamos gestionar el uso de la librería dentro de un peón en Unreal.
  
 \end_layout
 
 \begin_layout Subsection
-Mover un peón en UE5:
+Desarollo del peón en UE5:
+\end_layout
+
+\begin_layout Standard
+Para este desarrollo final, decidimos hacer uso de un peón, por las razones
+ mencionadas en la parte de prototipado.
+ Este peón cumplirá dos funciones clave para este visualizador, la primera
+ y más obvia gestionará la recepción de coordenadas mediante el uso de la
+ librería de ROS2 previamente creada, la segunda función será mover el dron
+ en el entorno de Unreal a corde con las coordenadas recibidas desde el
+ publicador.
+\end_layout
+
+\begin_layout Standard
+Para conformar este peón haremos uso de una variedad de funciones, algunas
+ previamente mencionadas pues son las generadas automáticamente por Unreal,
+ otras auxiliares creadas por nosotros y otras importadas desde la librería
+ del subscriptor.
+ Como en la fase de prototipado nos encontramos una vez más con las funciones
+ BeginPlay(), Tick(), el constructor del propio peón, en este caso ADronePawnCom
+() y además aparecerá una función propia de Unreal no mencionada previamente,
+ el EndPlay() solo que esta ha de ser sobreescrita y normalmente no se genera
+ de forma automática en el fichero del peón.
+ En cada una de estas podremos encontrar otras 3 funciones auxiliares las
+ cuales implementan las funcionalidades deseadas.
+ Al mismo tiempo se hará uso de las funciones importadas en 3 de las 4 funciones
+ mencionadas anteriormente.
+ 
+\end_layout
+
+\begin_layout Standard
+En la función BeginPlay(), veremos la función dlImport(), la cual se encarga
+ de gestionar la apertura de la librería dinámica que contiene las funciones
+ necesarias para hacer uso del subscriptor.
+ Dentro de esta función veremos un dlopen con su respectivo control de fallos
+ y la importación de las funciones de la librería a este fichero mediante
+ el uso de las funciones dlsym.
+ Como se puede observar[insertar referencia] estamos importando estas funciones
+ como punteros a función puesto que esta es la única manera de poder hacer
+ uso de estas funciones.
+ Para poder hacer funcionar este método es necesario definir en el header
+ del archivo[insertar referencia] estas funciones mediante un typedef y
+ crear aquí las variables en las que almacenaremos posteriormente estos
+ punteros.
+ 
+\end_layout
+
+\begin_layout Standard
+En el constructor podremos encontrar el método setComponents() que como
+ indica su nombre genera los componentes que irán colgados de este peón
+ y podremos ver más adelante en la jerarquía dentro de su blueprint.
+ Los componentes aquí generados son una cámara para poder ver la malla del
+ dron, un SpringArmComponent, el cual nos ayuda a configurar la posición
+ relativa de la cámara respecto del dron y finalmente un RootComponent,
+ del que colgar el resto de los componentes, y un MeshComponent para poder
+ darle un cuerpo al dron.
+\end_layout
+
+\begin_layout Standard
+A continuación, en la función de Tick(), veremos que se realiza una llamada
+ a la función move(FVector pos1), la cual precisa de un argumento de tipo
+ vector para funcionar.
+ Esta realizará la función de mover el dron en el entorno seleccionado siguiendo
+ el modelo de movimiento que vimos en la fase de prototipado
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "Img.2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, solo que simplificado.
+\end_layout
+
+\begin_layout Standard
+Finalmente, la función EndPlay(), esta función es propia de todo actor de
+ Unreal, y por herencia lo es de las clases peón y character.
+ Esta se ejecuta al quitar, en nuestro caso, el peón del nivel caso que
+ se da también al terminar el nivel o juego.
+ De normal esta función unicamente hace un log en la consola indicando que
+ el peón ha sido eliminado del nivel y la razón.
+ Sin embargo, esta función es 
+\begin_inset Quotes erd
+\end_inset
+
+overridable
+\begin_inset Quotes erd
+\end_inset
+
+, lo que quiere decir que comno BeginPlay() podemos crear una personalizada
+ y será la que se ejecute.
+ En nuestro caso la reescribimos y hacemos que ejecute una función de la
+ librería y finalmente libere la memoria ocupada por la misma.
+ Esto es necesario puesto que si no liberasemos la memoria cerrando la librería
+ esto provocaría que el programa chrasheara si se trataba de ejecutar 2
+ veces seguidas.
+\end_layout
+
+\begin_layout Standard
+Esto concluye la estructura general del dron.
+ Ahora es importante mencionar el uso de la biblioteca dinámica.
+ Las 3 funciones de las que se compone y las cuales utilizamos en este peón
+ son: start(), update(vector3_transfer) y end().
+ La funcionalidad de cada una se puede ver en 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "Img.10"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Sin embargo aquí vemos que la función update lleva un argumento, este es
+ un argumento de retorno en el cual se almacenará el mensaje recibido para
+ luego poder utilizar el vector en el movimiento del peón.
+ Las llamadas a estas funciones se encuentran en lugares específicos dada
+ la naturaleza de la ejecución en unreal.
+ 
+\end_layout
+
+\begin_layout Standard
+Vimos previamente en la fase de prototipado que las funciones se ejecutan
+ de formas específicas.
+ El constructor y BeginPlay() se ejecutan un única vez al comenzar la ejecución
+ general del nivel que contenga el peón, es por esto que aquí se realizan
+ las llamadas a las funciones setComponents() y dlImport() para realizar
+ la configuración inicial del dron.
+ Pues además de esas dos funciones aquí ya realizamos la primera llamada
+ a una de las funciones de la librería, la función start() para inicializar
+ el subscriptor.
+ Prestando atención a la función de Tick(), esta se ejecuta a cada frame
+ procesado por Unreal, por lo que en esta realizamos la segunda llamada
+ funciones de librería, en este caso a update(), para recibir los mensajes
+ con los vectores de posición a donde deseamos mover el dron.
+ Es por este comportamiento de 
+\begin_inset Quotes erd
+\end_inset
+
+bucle
+\begin_inset Quotes erd
+\end_inset
+
+ por lo que en es aquí donde también llamamos a move().
+ Finalmente la función EndPlay(), esta se ejecuta una sola vez al terminar
+ la ejecución y aquí realizamos pa tercera y última llamada a la librería
+ con la función end(), esta se encarga de cerrar el subscriptor.
+\end_layout
+
+\begin_layout Standard
+Una vez descrito el desarrollo y funcionamiento interno del código desarrollado,
+ obtenemos este código fuente del peón DronePawnCom
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/DronePawnCom.h"
+lstparams "caption={Header de DronePawnCom.h},label={Img.13}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/DronePawnCom.cpp"
+lstparams "caption={Código fuente de DronePawnCom},label={Img.14}"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Importación de escenarios tridimensionales a UE5:
+Importación de escenarios a UE5:
+\end_layout
+
+\begin_layout Standard
+Uno de los objetivos de este trabajo es mantener una modularidad entre el
+ entorno y el dron en si.
+ Esto es bastante sencillo en unreal Engine dado que para poder hacer uso
+ de escenarios, ya sean creados personalmente o importados de internet es
+ muy simple.
+ El proceso solo requiere de ficheros en formato .fbx y normalmente basta
+ con arrastrar dicho fichero al cajón de contenidos del editor de unreal
+ y esto provocará que aparezca una ventana de configuración.
+ Esta ventana permite modificar varios campos de las mallas a importar.
+ De normal no es necesario modificar nada y basta con importar el .fbx, guardar
+ los contenidos importados, seleccionarlos y arrastrarlos al nivel en el
+ que estemos trabajando.
+\end_layout
+
+\begin_layout Standard
+Este método sirve cuando tenemos escenarios con pocas o ningna textura o
+ no requieran de cambios, es decir sean mallas simples.
+ Para este trabajo he decidido hacer uso de un mapa de Londres[referencia
+ a la página del modelo].
+ Este modelo cuenta con dos versiones, una texturizada y otra no.
+\end_layout
+
+\begin_layout Standard
+La no texturizada sigue el método de importación descrito al principio,
+ selecciono el fichero, lo arrastro, no modifico nada, guardo las mallas
+ y ya está listo para añadirse a mi nivel, dando un resultado tal que así
+\end_layout
+
+\begin_layout Standard
+(fotografías del entorno)
+\end_layout
+
+\begin_layout Standard
+Sin embargo, la texturizada necesita realizar algunas modificaciones.
+ En el caso de este modelo 3D, seguí la video guía proporcionada por su
+ creador[referencia a la guía].
+ En esta se hablan de los pasos a seguir para la correcta importación del
+ mapa con sus texturas.
+\end_layout
+
+\begin_layout Standard
+Lo primero es crear un material base en unreal, para poder realizar configuracio
+nes específicas de algunas de las mallas que vamos a importar, como puede
+ ser ejemplo el agua, pues le daremos reflejos más adelante.
+ Este material no tiene ningún requerimiento específico.
+ Ahora, hemos de modificar este material y en su gráfico creando un 
+\begin_inset Quotes erd
+\end_inset
+
+Texture Sample
+\begin_inset Quotes erd
+\end_inset
+
+ dandole un nombre propio y convirtiendolo en un parámetro y configurando
+ su textura base a cualquier textura que tengamos en nuestro proyecto.
+ 
+\end_layout
+
+\begin_layout Standard
+(insertar foto de la configuración del material)
+\end_layout
+
+\begin_layout Standard
+Lo siguiente es obtener las 4 carpetas que contienen las casi más de 900
+ mallas que vamos a importar e ir carpeta a carpeta.
+ Estas 4 representan cada una una zona de Londres, noreste, noroeste, sureste,
+ suroeste.
+ Las modificaciones que hemos de realizar en la ventana de importación se
+ centran en su posición, pues hemos de modificar la x a x = –53199840 y
+ la y a y = 18100590.
+ Al mismo tiempo hemos de hacer uso del material creado previamente, en
+ la zona de MATERIAL hemos de seleccionar en el campo 
+\begin_inset Quotes erd
+\end_inset
+
+Material Import...
+\begin_inset Quotes erd
+\end_inset
+
+ la opción de 
+\begin_inset Quotes erd
+\end_inset
+
+crear nuevos materiales instanciados
+\begin_inset Quotes erd
+\end_inset
+
+ y seleccionar nuestro material con su textura base la que creamos en su
+ grafico (en mi caso BaseColor).
+ Puesto que esta configuración es la misma para todos los ficheros basta
+ con configurarlo una vez y esta se mantiene entre importaciones.
+ Tras esto podemos importar todos los .fbx.
+ Una vez tenemos todo en nuestro editor podemos seleccionarlos y arrastrarlos
+ a la ventana del nivel para ver la ciudad de londres a escala.
+\end_layout
+
+\begin_layout Standard
+Una vez tenemos todas las mallas puestas en el mapa podemos añadir detalles
+ al agua del rio tamesis.
+ Para esto hemos de modificar ese material base que creamos al principio.
+ Hemos de añadirle un parámetro a su campo de 
+\begin_inset Quotes erd
+\end_inset
+
+Roughness
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(foto del grafico)
+\end_layout
+
+\begin_layout Standard
+Una vez añadido y compilado, podemos entrar en las mallas del agua y cambiar
+ este valor para darle reflejos al agua y tener una textura más detallada.
+\end_layout
+
+\begin_layout Standard
+(foto del agua antes y después)
+\end_layout
+
+\begin_layout Standard
+El proceso de importado de escenarios puede variar según el creador del
+ escenario y como se configuren los ficheros a importar.
+ En este caso para este mapa específico el proceso ha sido el descrito en
+ esta sección.
+ Asimismo, el nivel de detalle de las mallas y texturas puede mejorar mucho
+ dependiendo del creador de las mismas y de la potencia de la máquína que
+ las use.
+ En este campo Unreal Engine 5 tiene un gran potencial pudiendo llegar a
+ tener una caliad fotorrealistica como puede ser ejemplo el juego UNRECORD
+ que se encuentra en desarrollo por el estudio 
 \end_layout
 
 \begin_layout Standard
