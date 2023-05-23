@@ -392,18 +392,9 @@ DefaultPawnClass = nombreDeSuBlueprint.Class;
 
 \begin_layout Standard
 Tras esto, si también tiene configurado el paquete de ROS2 con el publicador
- y la librería del subscriptor (como se mencionaba en la página 
-\begin_inset CommandInset ref
-LatexCommand vpageref
-reference "Img.9"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-), solo tiene que modificar en la clase del peón el path donde se encuentre
- la librería en la función dlopen() para configurar correctamente la apertura
+ y la librería del subscriptor (como se mencionaba en la página ), solo
+ tiene que modificar en la clase del peón el path donde se encuentre la
+ librería en la función dlopen() para configurar correctamente la apertura
  de la biblioteca dinámica.
  Una vez hechos 
 \end_layout

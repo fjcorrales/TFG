@@ -377,35 +377,7 @@ mundo
  o nivel de Unreal que va a ejecutar.
  Aquí ha de establecer como peón predeterminado el blueprint que ha creado
  previamente, para ello ha de crear un constructor en el header y dentro
- del fichero fuente (el .cpp) habrá de crear la función y añadir la siguiente
- línea de código 
-\begin_inset Quotes eld
-\end_inset
-
-DefaultPawnClass = nombreDeSuBlueprint.Class;
-\begin_inset Quotes erd
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-Tras esto, si también tiene configurado el paquete de ROS2 con el publicador
- y la librería del subscriptor (como se mencionaba en la página 
-\begin_inset CommandInset ref
-LatexCommand vpageref
-reference "Img.9"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-), solo tiene que modificar en la clase del peón el path donde se encuentre
- la librería en la función dlopen() para configurar correctamente la apertura
- de la biblioteca dinámica.
- Una vez hechos 
+ del fichero fuente ()
 \end_layout
 
 \begin_layout Standard
