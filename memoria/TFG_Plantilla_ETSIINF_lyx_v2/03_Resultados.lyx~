@@ -66,9 +66,9 @@
 customHeadersFooters
 \end_modules
 \maintain_unincluded_children false
-\language english
+\language spanish
 \language_package default
-\inputencoding auto
+\inputencoding cp1250
 \fontencoding global
 \font_roman "lmodern" "default"
 \font_sans "lmss" "default"
@@ -141,7 +141,7 @@ customHeadersFooters
 \is_math_indent 1
 \math_indentation default
 \math_numbering_side default
-\quotes_style english
+\quotes_style french
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 2
@@ -305,11 +305,7 @@ Resultados
 \end_layout
 
 \begin_layout Section
-
-\lang spanish
-Descripción
-\lang english
- general
+Descripción general
 \end_layout
 
 \begin_layout Standard
