@@ -156,6 +156,8 @@ customHeadersFooters
 \begin_body
 
 \begin_layout Left Header
+
+\lang spanish
 \begin_inset Argument 1
 status open
 
@@ -221,6 +223,8 @@ Enable page headers and add the chapter to the header line.
 \end_layout
 
 \begin_layout Right Header
+
+\lang spanish
 \begin_inset Argument 1
 status open
 
@@ -246,6 +250,8 @@ leftmark
 \end_layout
 
 \begin_layout Left Footer
+
+\lang spanish
 \begin_inset Argument 1
 status open
 
@@ -275,6 +281,8 @@ thepage
 \end_layout
 
 \begin_layout Right Footer
+
+\lang spanish
 \begin_inset Argument 1
 status open
 
@@ -301,14 +309,20 @@ thepage
 \end_layout
 
 \begin_layout Chapter
+
+\lang spanish
 Resultados
 \end_layout
 
 \begin_layout Section
+
+\lang spanish
 Descripción general
 \end_layout
 
 \begin_layout Standard
+
+\lang spanish
 En este apartado se hablará sobre los resultados del proyecto, más concretamente
  de que elementos se han obtenido a lo largo del desarrollo final que resultarán
  útiles para futuras iteraciones de este mismo proyecto y la manera de utilizarl
@@ -316,10 +330,14 @@ os.
 \end_layout
 
 \begin_layout Section
+
+\lang spanish
 Resultados del desarrollo
 \end_layout
 
 \begin_layout Standard
+
+\lang spanish
 Como resultado del desarrollo final de este trabajo se ha obtenido una considera
 ble cantidad de código: el código fuente de un peón de Unreal Engine y un
  publicador y subscriptor de ROS2 así como una librería del subscriptor.
@@ -335,6 +353,8 @@ ble cantidad de código: el código fuente de un peón de Unreal Engine y un
 \end_layout
 
 \begin_layout Standard
+
+\lang spanish
 La forma en la que habríamos de configurar el entorno para ejecutar el visualiza
 dor es la siguiente: lo primero es crear una clase de C++ de tipo peón en
  el proyecto de Unreal y darle el nombre que se desee (el nombre de la clase
@@ -390,10 +410,14 @@ DefaultPawnClass = nombreDeSuBlueprint.Class;
 \end_layout
 
 \begin_layout Standard
+
+\lang spanish
 (foto de la línea del gamemodeBase)
 \end_layout
 
 \begin_layout Standard
+
+\lang spanish
 Tras esto, si también tiene configurado el paquete de ROS2 con el publicador
  y la librería del subscriptor (como se mencionaba en la página 
 \begin_inset CommandInset ref
@@ -412,10 +436,14 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
+
+\lang spanish
 (foto de la línea del dlopen)
 \end_layout
 
 \begin_layout Standard
+
+\lang spanish
 Una vez configurado todo solo falta establecer la malla del dron.
  Para esto basta con entrar en el editor del blueprint creado previamente,
  seleccionar el componente de mesh en la jerarquía y seleccionar la malla
@@ -424,10 +452,14 @@ Una vez configurado todo solo falta establecer la malla del dron.
 \end_layout
 
 \begin_layout Standard
+
+\lang spanish
 (foto de la configuración de la malla)
 \end_layout
 
 \begin_layout Standard
+
+\lang spanish
 Si todo esto se realizó correctamente, solo falta compilar y ya estaría
  listo para ejecutarse.
  La ejecución es muy simple, nada más tener todo compilado, basta con iniciar
@@ -449,6 +481,8 @@ coordinates.txt
 \end_layout
 
 \begin_layout Standard
+
+\lang spanish
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "D:/TFG/software/Final pawn/ros2_package/coordinates.txt"
@@ -460,12 +494,16 @@ lstparams "caption={Fichero de coordenadas de ejemplo},label={Img.15}"
 \end_layout
 
 \begin_layout Standard
+
+\lang spanish
 Con esto podemos ver ya esa modularidad de la que se hablaba anteriormente,
  pues el dron y el escenaraio no comparten nada, siendo totalmente independiente
 s uno del otro.
 \end_layout
 
 \begin_layout Standard
+
+\lang spanish
 \begin_inset Branch NoChildDocument
 inverted 0
 status collapsed

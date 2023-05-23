@@ -305,7 +305,11 @@ Resultados
 \end_layout
 
 \begin_layout Section
-Descripción general
+
+\lang spanish
+Descripción
+\lang english
+ general
 \end_layout
 
 \begin_layout Standard
@@ -417,7 +421,52 @@ noprefix "false"
 
 \begin_layout Standard
 Una vez configurado todo solo falta establecer la malla del dron.
- Para esto basta con entrar en el editor del blueprint creado previamente
+ Para esto basta con entrar en el editor del blueprint creado previamente,
+ seleccionar el componente de mesh en la jerarquía y seleccionar la malla
+ que hayamos importado al proyecto que deseemos utilizar.
+ 
+\end_layout
+
+\begin_layout Standard
+(foto de la configuración de la malla)
+\end_layout
+
+\begin_layout Standard
+Si todo esto se realizó correctamente, solo falta compilar y ya estaría
+ listo para ejecutarse.
+ La ejecución es muy simple, nada más tener todo compilado, basta con iniciar
+ el nivel, y de primeras el dron no se moverá, pues está esperando a recibir
+ mensajes del publicador.
+ Para ya poder movelo, necesitamos ejecutar el publicador pasandole por
+ la entrada estándar los contenidos de un fichero que contenga coordenadas.
+ El formato de estas ha de ser de 3 enteros separados por espacios y un
+ salto de línea entre cada set de coordenadas.
+ Como ejemplo está el fichero 
+\begin_inset Quotes eld
+\end_inset
+
+coordinates.txt
+\begin_inset Quotes erd
+\end_inset
+
+ que hace un recorrido simple.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/ros2_package/coordinates.txt"
+lstparams "caption={Fichero de coordenadas de ejemplo},label={Img.15}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con esto podemos ver ya esa modularidad de la que se hablaba anteriormente,
+ pues el dron y el escenaraio no comparten nada, siendo totalmente independiente
+s uno del otro.
 \end_layout
 
 \begin_layout Standard
