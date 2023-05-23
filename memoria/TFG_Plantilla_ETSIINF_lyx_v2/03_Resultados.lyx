@@ -304,42 +304,48 @@ thepage
 Resultados
 \end_layout
 
-\begin_layout Section
-Descripción general
+\begin_layout Standard
+Con este desarrollo hemos conseguido crear un sistema que permite visualizar
+ el movimiento de un dron en un entorno tridimensional de acuerdo a las
+ coordenadas proporcionadas.
 \end_layout
 
 \begin_layout Standard
-En este apartado se hablará sobre los resultados del proyecto, más concretamente
- de que elementos se han obtenido a lo largo del desarrollo final que resultarán
- útiles para futuras iteraciones de este mismo proyecto y la manera de utilizarl
-os.
-\end_layout
-
-\begin_layout Section
-Resultados del desarrollo
+En este caso la modularidad es completa, lo que tiene la ventaja de que
+ todos los elementos se pueden configurar de manera independiente, ajustandose
+ de manera flexible a los diseños del usuario.
 \end_layout
 
 \begin_layout Standard
-Como resultado del desarrollo final de este trabajo se ha obtenido una considera
-ble cantidad de código: el código fuente de un peón de Unreal Engine y un
- publicador y subscriptor de ROS2 así como una librería del subscriptor.
+Para ilustrar la operatividad de la herramienta desarrollada se describe
+ un caso de uso de los elementos creados.
+\end_layout
+
+\begin_layout Section
+Caso de uso
+\end_layout
+
+\begin_layout Standard
+Como resultado del desarrollo final de este trabajo se ha producido una
+ considerable cantidad de código: el código fuente de un peón de Unreal
+ Engine y un publicador y subscriptor de ROS2 así como una librería del
+ subscriptor.
  Dado que uno de los objetivos de este proyecto era conseguir una modularidad
- entre lo que es el objeto del dron (con su gestión del paso de mensajes
- y movimiento en el entorno) y el entorno, el dron se proporciona mediante
- su código fuente y requiere de unos pasos para poder hacer uso del mismo
- en un escenario.
- Esto nos permite poder mover el dron de proyecto en proyecto sin preocuparnos
- de nada, por lo que nos permite tener libertad a la hora de elegir que
- escenario utilizaremos.
+ entre el objeto del dron (con su gestión del paso de mensajes y movimiento
+ en el entorno) y el entorno, el dron se proporciona mediante su código
+ fuente y requiere de una configuración específica de los ficheros fuente
+ para poder hacer uso del mismo en un escenario.
+ Esto nos permite poder mover el dron de proyecto en proyecto sin limitaciones,
+ proporcionando total libertad para elegir el escenario.
  
 \end_layout
 
 \begin_layout Standard
-La forma en la que habríamos de configurar el entorno para ejecutar el visualiza
-dor es la siguiente: lo primero es crear una clase de C++ de tipo peón en
- el proyecto de Unreal y darle el nombre que se desee (el nombre de la clase
- proporcionada es DronePawnCom, por lo que si elije uno distinto habrá de
- cambiarlo en su clase).
+La forma en la que un usuario debería de configurar el entorno para ejecutar
+ el visualizador es la siguiente: lo primero es crear una clase de C++ de
+ tipo peón en el proyecto de Unreal y darle el nombre que se desee (el nombre
+ de la clase proporcionada es DronePawnCom, por lo que si el usuario elije
+ uno distinto habrá de cambiarlo en su clase).
  Una vez esté creado ha de copiar el código que contienen los ficheros del
  dron (DronePawnCom.cpp y DronePawnCom.h) en sus respectivos ficheros dentro
  de su proyecto.
@@ -428,13 +434,13 @@ Una vez configurado todo solo falta establecer la malla del dron.
 \end_layout
 
 \begin_layout Standard
-Si todo esto se realizó correctamente, solo falta compilar y ya estaría
- listo para ejecutarse.
+Si todo esto se realizó correctamente, solo falta compilar y el proyecto
+ ya estaría listo para ejecutarse.
  La ejecución es muy simple, nada más tener todo compilado, basta con iniciar
- el nivel, y de primeras el dron no se moverá, pues está esperando a recibir
+ el nivel; inicialmente el dron no se moverá, pues está esperando a recibir
  mensajes del publicador.
- Para ya poder movelo, necesitamos ejecutar el publicador pasandole por
- la entrada estándar los contenidos de un fichero que contenga coordenadas.
+ Para poder movelo, es necesario ejecutar el publicador transfiriendole
+ por la entrada estándar los contenidos de un fichero que contenga coordenadas.
  El formato de estas ha de ser de 3 enteros separados por espacios y un
  salto de línea entre cada set de coordenadas.
  Como ejemplo está el fichero 
@@ -460,9 +466,9 @@ lstparams "caption={Fichero de coordenadas de ejemplo},label={Img.15}"
 \end_layout
 
 \begin_layout Standard
-Con esto podemos ver ya esa modularidad de la que se hablaba anteriormente,
- pues el dron y el escenaraio no comparten nada, siendo totalmente independiente
-s uno del otro.
+Con esto se obtiene modularidad de la que se hablaba anteriormente, pues
+ el dron y el escenaraio no comparten nada, siendo totalmente independientes
+ uno del otro.
 \end_layout
 
 \begin_layout Standard

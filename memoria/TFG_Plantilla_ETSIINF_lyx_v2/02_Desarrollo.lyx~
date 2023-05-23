@@ -923,25 +923,20 @@ Desarrollo final
 \end_layout
 
 \begin_layout Standard
-Tras la realización de las pruebas anteriormente descritas, fue posible
- visualizar con mayor precisión el resultado final deseado para este proyecto.
- Teniendo en cuenta el tiempo restante para la entrega final de la memoria,
- se decidió reajustar el scope del proyecto.
- Finalmente, el objetivo de este trabajo consistirá en la realización de
- un visualizador de vuelo de un dron en un entorno tridimensional.
+Tras la realización de las pruebas anteriormente descritas, se realizo un
+ reajuste de los objetivos planteados inicialmente.
+ Finalmente, este trabajo consistirá en la realización de un visualizador
+ de vuelo de un dron en un entorno tridimensional.
  Esto sentará las bases para futuros trabajos en los cuales se itere sobre
- los programas aquí desarrollados para alcanzar la meta descrita al principio
- de este escrito.
+ los programas aquí desarrollados y completar así el simulador completo.
 \end_layout
 
 \begin_layout Standard
-Una vez explicado esto, procederé a explicar la fase de desarrollo del visualiza
-dor de vuelo.
- Este también consistirá de tres partes: el desarrollo de un sistema publicador
- subscriptor de ROS2 para poder comunicar el dron dentro del entorno de
- UE5, el desarrollo del movimiento de un dron en base a las coordenadas
- publicadas en el publicador y la importación de escenarios tridimensionales
- en UE5 y sus capacidades.
+El desarrollo del visualizador de vuelo consistirá de tres partes: el desarrollo
+ de un sistema publicador subscriptor de ROS2 para poder comunicar el dron
+ dentro del entorno de UE5, el desarrollo del movimiento de un dron en base
+ a las coordenadas publicadas en el publicador y la importación de escenarios
+ tridimensionales en UE5 y sus capacidades.
 \end_layout
 
 \begin_layout Subsection
@@ -964,12 +959,12 @@ En la realidad, el control remoto de un dron es posible gracias a la biblioteca
 
 \begin_layout Standard
 Este último detalle mencionado es muy importante puesto que, para conseguirlo,
- habremos de hacer del subscriptor una librería la cual poder abrir en Unreal
- y poder usar sus funciones para recibir los mensajes del publicador.
+ habremos de hacer del subscriptor una librería que se pueda abrir en Unreal
+ y permita usar sus funciones para recibir los mensajes del publicador.
  Esta tarea fue ampliamente simplificada gracias al trabajo de Juan Pares
  Guillen[link de su github] y Santiago Tapia, quienes desarrollaron un subscript
-or para su trabajo el cual podía importar a mi proyecto y hacer uso del
- mismo puesto que la funcionalidad que buscaba implementar es idéntica.
+or para su trabajo el cual he podido importar a mi proyecto y hacer uso
+ del mismo puesto que la funcionalidad que buscaba implementar es similar.
  Este subscriptor cuenta con 3 funciones, start(), update() y end().
  Cada una de estas funciones tiene un propósito y son las que más adelante
  importaremos en el peón de UE5:
@@ -977,16 +972,26 @@ or para su trabajo el cual podía importar a mi proyecto y hacer uso del
 
 \begin_layout Itemize
 start(): Esta función se encarga de inicializar el subscriptor y subscribirse
- al topic creado por el publicador.
- Asimismo configurará como su función de callback a update(), encargada
- de recibir los mensajes.
+ al canal (
+\shape slanted
+topic
+\shape default
+) creado por el publicador.
+ Asimismo configurará su función de 
+\shape italic
+callback
+\shape default
+ a update(), encargada de recibir los mensajes.
 \end_layout
 
 \begin_layout Itemize
-update(): Esta es la función de callback, la cual recibirá los mensajes
- que se vayan publicando.
+update(): Esta es la función de 
+\shape italic
+callback
+\shape default
+, la cual recibirá los mensajes que se vayan publicando.
  Esta función será ejecutada según el intervalo de tiempo puesto en su inicializ
-ación en la función de start().
+ación dentro de la función start().
  
 \end_layout
 
@@ -1001,16 +1006,24 @@ Esta clase hace uso del tipo de mensaje Vector3, tipo propio de ROS2 el
 \end_layout
 
 \begin_layout Standard
-A continuación, en lo relacionado al publicador de ROS2 tomé como base el
- publicador de ejemplo que ROS2 propone en sus tutoriales[ros2 tutoriales].
+A continuación, en lo relacionado al publicador de ROS2 se toma como base
+ el publicador de ejemplo que ROS2 propone en sus tutoriales[ros2 tutoriales].
  La base es la misma, solo que se hace uso de un tipo de mensaje diferente,
- el Vector3 igual que en el subscriptor.
+ el Vector3, igual que en el subscriptor.
  Una vez hecho esto, el otro cambio importante a realizar es la lectura
- de los datos, para lo cual hago uso de la lectura por entrada estandar.
- Este método es simple solo que hemos de tener en cuenta que hay que pasarle
- los datos en la línea de ejecución.
- En este caso se hace mediante el comando cat y el uso de una tubería para
- pasar las coordenadas redactadas en un fichero 
+ de los datos, para lo cual se hace uso de la lectura por entrada estandar.
+ Este método es simple, solo que hemos de tener en cuenta que hay que transferir
+le los datos en la línea de ejecución.
+ En este caso se hace mediante el comando 
+\begin_inset Quotes eld
+\end_inset
+
+cat
+\begin_inset Quotes erd
+\end_inset
+
+ y el uso de una tubería para pasar las coordenadas redactadas en un fichero
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1067,10 +1080,32 @@ Ahora necesitamos poder compilarlos, para lo cual seguimos las indicaciones
  éxito.
  Dado que usamos un tipo de mensajes diferente al indicado en la guía, tenemos
  que indicar que se busque el paquete donde se encuentra el tipo de mensaje
- Vector3, el paquete geometry_msgs, además de tener que usarlo también en
- los add_executable del publicador y del subscriptor.
- Finalmente es necesario añadir también un add_library para crear así la
- librería del subscriptor que queremos utilizar en Unreal.
+ Vector3, el paquete 
+\begin_inset Quotes eld
+\end_inset
+
+geometry_msgs
+\begin_inset Quotes erd
+\end_inset
+
+, además de tener que usarlo también en los 
+\begin_inset Quotes eld
+\end_inset
+
+add_executable
+\begin_inset Quotes erd
+\end_inset
+
+ del publicador y del subscriptor.
+ Finalmente es necesario añadir también un 
+\begin_inset Quotes eld
+\end_inset
+
+add_library
+\begin_inset Quotes erd
+\end_inset
+
+ para crear así la librería del subscriptor que queremos utilizar en Unreal.
  
 \end_layout
 
@@ -1087,12 +1122,17 @@ lstparams "caption={CMAKE del proyecto},label={Img.12}"
 
 \begin_layout Standard
 Tras estos cambios al CMAKE, podemos compilar el proyecto con la herramienta
- colcon de ROS2 creando así la librería del subscriptor y consecuentemente
- un ejecutable del publicador.
+ 
+\shape italic
+colcon
+\shape default
+ de ROS2 creando así la librería del subscriptor y consecuentemente un ejecutabl
+e del publicador.
 \end_layout
 
 \begin_layout Standard
-Ahora necesitamos gestionar el uso de la librería dentro de un peón en Unreal.
+El siguiente paso es gestionar el uso de la librería dentro de un peón en
+ Unreal.
  
 \end_layout
 
@@ -1115,7 +1155,7 @@ Para conformar este peón haremos uso de una variedad de funciones, algunas
  previamente mencionadas pues son las generadas automáticamente por Unreal,
  otras auxiliares creadas por nosotros y otras importadas desde la librería
  del subscriptor.
- Como en la fase de prototipado nos encontramos una vez más con las funciones
+ Como en la fase de prototipado, nos encontramos una vez más con las funciones
  BeginPlay(), Tick(), el constructor del propio peón, en este caso ADronePawnCom
 () y además aparecerá una función propia de Unreal no mencionada previamente,
  el EndPlay() solo que esta ha de ser sobrescrita y normalmente no se genera
@@ -1131,16 +1171,30 @@ Para conformar este peón haremos uso de una variedad de funciones, algunas
 En la función BeginPlay(), veremos la función dlImport(), la cual se encarga
  de gestionar la apertura de la librería dinámica que contiene las funciones
  necesarias para hacer uso del subscriptor.
- Dentro de esta función veremos un dlopen con su respectivo control de fallos
- y la importación de las funciones de la librería a este fichero mediante
- el uso de las funciones dlsym.
+ Dentro de esta función veremos un 
+\begin_inset Quotes eld
+\end_inset
+
+dlopen
+\begin_inset Quotes erd
+\end_inset
+
+ con su respectivo control de fallos y la importación de las funciones de
+ la librería a este fichero mediante el uso de las funciones 
+\begin_inset Quotes eld
+\end_inset
+
+dlsym
+\begin_inset Quotes erd
+\end_inset
+
+.
  Como se puede observar[insertar referencia] estamos importando estas funciones
  como punteros a función puesto que esta es la única manera de poder hacer
- uso de estas funciones.
- Para poder hacer funcionar este método es necesario definir en el header
- del archivo[insertar referencia] estas funciones mediante un typedef y
- crear aquí las variables en las que almacenaremos posteriormente estos
- punteros.
+ uso de las mismas.
+ Para que este método sea operativo es necesario definir en el header del
+ archivo[insertar referencia] estas funciones mediante un typedef y crear
+ aquí las variables en las que almacenaremos posteriormente estos punteros.
  
 \end_layout
 
@@ -1149,7 +1203,7 @@ En el constructor podremos encontrar el método setComponents() que como
  indica su nombre genera los componentes que irán colgados de este peón
  y podremos ver más adelante en la jerarquía dentro de su blueprint.
  Los componentes aquí generados son una cámara para poder ver la malla del
- dron, un SpringArmComponent, el cual nos ayuda a configurar la posición
+ dron, un SpringArmComponent, el cual nos ayudará a configurar la posición
  relativa de la cámara respecto del dron y finalmente un RootComponent,
  del que colgar el resto de los componentes, y un MeshComponent para poder
  darle un cuerpo al dron.
@@ -1174,27 +1228,21 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Finalmente, la función EndPlay(), esta función es propia de todo actor de
- Unreal, y por herencia lo es de las clases peón y character.
- Esta se ejecuta al quitar, en nuestro caso, el peón del nivel caso que
- se da también al terminar el nivel o juego.
+Finalmente, la función EndPlay().
+ Esta función es propia de todo actor de Unreal, y por herencia lo es de
+ las clases peón y character.
+ Esta se ejecuta al quitar, el peón del nivel caso que se da también al
+ terminar el nivel o juego.
  De normal esta función unicamente hace un log en la consola indicando que
  el peón ha sido eliminado del nivel y la razón.
- Sin embargo, esta función es 
-\begin_inset Quotes erd
-\end_inset
-
-overridable
-\begin_inset Quotes erd
-\end_inset
-
-, lo que quiere decir que como BeginPlay() podemos crear una personalizada
- y será la que se ejecute.
+ Sin embargo, esta función se puede sobrescribir, lo que quiere decir que
+ como BeginPlay(), podemos crear una versión personalizada que será la que
+ se ejecute.
  En nuestro caso la reescribimos y hacemos que ejecute una función de la
  librería y finalmente libere la memoria ocupada por la misma.
  Esto es necesario puesto que si no liberásemos la memoria cerrando la librería
- esto provocaría que el programa chrasheara si se trataba de ejecutar 2
- veces seguidas.
+ esto provocaría que el programa fallase si se trata de ejecutar 2 veces
+ seguidas.
 \end_layout
 
 \begin_layout Standard
@@ -1223,15 +1271,15 @@ noprefix "false"
 
 \begin_layout Standard
 Vimos previamente en la fase de prototipado que las funciones se ejecutan
- de formas específicas.
+ de forma específica.
  El constructor y BeginPlay() se ejecutan un única vez al comenzar la ejecución
  general del nivel que contenga el peón, es por esto que aquí se realizan
  las llamadas a las funciones setComponents() y dlImport() para realizar
  la configuración inicial del dron.
- Pues además de esas dos funciones aquí ya realizamos la primera llamada
- a una de las funciones de la librería, la función start() para inicializar
- el subscriptor.
- Prestando atención a la función de Tick(), esta se ejecuta a cada frame
+ Además de esas dos funciones aquí ya realizamos la primera llamada a una
+ de las funciones de la librería, la función start() para inicializar el
+ subscriptor.
+ Prestando atención a la función de Tick(), esta se ejecuta en cada fotograma
  procesado por Unreal, por lo que en esta realizamos la segunda llamada
  funciones de librería, en este caso a update(), para recibir los mensajes
  con los vectores de posición a donde deseamos mover el dron.
@@ -1243,15 +1291,22 @@ bucle
 \begin_inset Quotes erd
 \end_inset
 
- por lo que en es aquí donde también llamamos a move().
- Finalmente la función EndPlay(), esta se ejecuta una sola vez al terminar
- la ejecución y aquí realizamos la tercera y última llamada a la librería
- con la función end(), esta se encarga de cerrar el subscriptor.
+ por lo que aquí también llamamos a la función move().
+ Finalmente la función EndPlay() se ejecuta una sola vez al terminar la
+ ejecución y aquí realizamos la tercera y última llamada a la librería con
+ la función end() que se encarga de cerrar el subscriptor.
 \end_layout
 
 \begin_layout Standard
-Una vez descrito el desarrollo y funcionamiento interno del código desarrollado,
- obtenemos este código fuente del peón DronePawnCom
+Con este desarrollo obtenemos el código fuente del peón 
+\begin_inset Quotes eld
+\end_inset
+
+DronePawnCom
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1283,9 +1338,8 @@ Importación de escenarios a UE5:
 \begin_layout Standard
 Uno de los objetivos de este trabajo es mantener una modularidad entre el
  entorno y el dron en si.
- Esto es bastante sencillo en Unreal Engine dado que para poder hacer uso
- de escenarios, ya sean creados personalmente o importados de internet es
- muy simple.
+ Esto es bastante sencillo en Unreal Engine tanto para escenarios importados
+ de internet como para los creados específicamente.
  El proceso solo requiere de ficheros en formato .fbx y normalmente basta
  con arrastrar dicho fichero al cajón de contenidos del editor de Unreal
  y esto provocará que aparezca una ventana de configuración.
@@ -1305,8 +1359,8 @@ Este método sirve cuando tenemos escenarios con pocas o ninguna textura
 
 \begin_layout Standard
 La no texturizada sigue el método de importación descrito al principio,
- selecciono el fichero, lo arrastro, no modifico nada, guardo las mallas
- y ya está listo para añadirse a mi nivel, dando un resultado tal que así
+ se selecciona el fichero, se arrastra, se guardan las mallas y ya está
+ listo para ser añadido al nivel, generando el siguiente resultado
 \end_layout
 
 \begin_layout Standard
@@ -1315,7 +1369,7 @@ La no texturizada sigue el método de importación descrito al principio,
 
 \begin_layout Standard
 Sin embargo, la texturizada necesita realizar algunas modificaciones.
- En el caso de este modelo 3D, seguí la video guía proporcionada por su
+ En el caso de este modelo 3D, de acuerdo a la guía proporcionada por su
  creador[referencia a la guía].
  En esta se hablan de los pasos a seguir para la correcta importación del
  mapa con sus texturas.
@@ -1323,19 +1377,19 @@ Sin embargo, la texturizada necesita realizar algunas modificaciones.
 
 \begin_layout Standard
 Lo primero es crear un material base en Unreal, para poder realizar configuracio
-nes específicas de algunas de las mallas que vamos a importar, como puede
- ser ejemplo el agua, pues le daremos reflejos más adelante.
+nes específicas de algunas de las mallas que vamos a importar, como por
+ ejemplo el agua, a la que le daremos reflejos más adelante.
  Este material no tiene ningún requerimiento específico.
- Ahora, hemos de modificar este material y en su gráfico creando un 
-\begin_inset Quotes erd
+ Ahora, hemos de modificar este material y en su gráfico crear un 
+\begin_inset Quotes eld
 \end_inset
 
 Texture Sample
 \begin_inset Quotes erd
 \end_inset
 
- dándole un nombre propio y convirtiéndolo en un parámetro y configurando
- su textura base a cualquier textura que tengamos en nuestro proyecto.
+ dándole un nombre propio, convertirlo en un parámetro y configurar su textura
+ base a cualquier textura.
  
 \end_layout
 
@@ -1344,23 +1398,15 @@ Texture Sample
 \end_layout
 
 \begin_layout Standard
-Lo siguiente es obtener las 4 carpetas que contienen las casi más de 900
- mallas que vamos a importar e ir carpeta a carpeta.
+Esta versión texturizada del mapa de Londres, ha sido distribuida en 4 carpetas
+ dado su gran tamaño.
  Estas 4 representan cada una una zona de Londres, noreste, noroeste, sureste,
- suroeste.
+ suroeste, contando en su totalidad con casi 900 mallas.
  Las modificaciones que hemos de realizar en la ventana de importación se
  centran en su posición, pues hemos de modificar la x a x = –53199840 y
  la y a y = 18100590.
- Al mismo tiempo hemos de hacer uso del material creado previamente, en
- la zona de MATERIAL hemos de seleccionar en el campo 
-\begin_inset Quotes erd
-\end_inset
-
-Material Import...
-\begin_inset Quotes erd
-\end_inset
-
- la opción de 
+ Al mismo tiempo, hemos de hacer uso del material creado previamente; en
+ la zona de MATERIAL hemos de seleccionar la opción de 
 \begin_inset Quotes erd
 \end_inset
 
@@ -1368,7 +1414,15 @@ crear nuevos materiales instanciados
 \begin_inset Quotes erd
 \end_inset
 
- y seleccionar nuestro material con su textura base la que creamos en su
+ en el campo 
+\begin_inset Quotes erd
+\end_inset
+
+Material Import...
+\begin_inset Quotes erd
+\end_inset
+
+ y seleccionar nuestro material con su textura base, la que creamos en su
  grafico (en mi caso BaseColor).
  Puesto que esta configuración es la misma para todos los ficheros basta
  con configurarlo una vez y esta se mantiene entre importaciones.
@@ -1379,7 +1433,7 @@ crear nuevos materiales instanciados
 
 \begin_layout Standard
 Una vez tenemos todas las mallas puestas en el mapa podemos añadir detalles
- al agua del rio Tamesis.
+ al agua del rio Támesis.
  Para esto hemos de modificar ese material base que creamos al principio.
  Hemos de añadirle un parámetro a su campo de 
 \begin_inset Quotes erd
@@ -1407,21 +1461,19 @@ Una vez añadido y compilado, podemos entrar en las mallas del agua y cambiar
 
 \begin_layout Standard
 El proceso de importado de escenarios puede variar según el creador del
- escenario y como se configuren los ficheros a importar.
- En este caso para este mapa específico el proceso ha sido el descrito en
- esta sección.
+ escenario y cómo se configuren los ficheros a importar.
  Asimismo, el nivel de detalle de las mallas y texturas puede mejorar mucho
- dependiendo del creador de las mismas y de la potencia de la máquína que
+ dependiendo del creador de las mismas y de la potencia de la maquina que
  las use.
  En este campo Unreal Engine 5 tiene un gran potencial pudiendo llegar a
- tener una caliad fotorrealistica como puede ser ejemplo el juego UNRECORD[refer
-encia al juego] que se encuentra en desarrollo por el estudio de videojuegos
+ tener una calidad fotorrealistica como puede ser ejemplo el juego UNRECORD[refe
+rencia al juego] que se encuentra en desarrollo por el estudio de videojuegos
  
 \shape slanted
 Drama
 \shape default
-[Referencia al estudio], el cual cuenta con visuales que impresionan dado
- su realismo, pareciendo ser una grabación real.
+[Referencia al estudio], que cuenta con visuales hiperrealistas, pareciendo
+ ser una grabación real.
 \end_layout
 
 \begin_layout Standard
