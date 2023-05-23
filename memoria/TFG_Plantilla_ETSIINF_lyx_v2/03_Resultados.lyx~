@@ -387,16 +387,37 @@ DefaultPawnClass = nombreDeSuBlueprint.Class;
 \end_inset
 
 .
- 
+\end_layout
+
+\begin_layout Standard
+(foto de la línea del gamemodeBase)
 \end_layout
 
 \begin_layout Standard
 Tras esto, si también tiene configurado el paquete de ROS2 con el publicador
- y la librería del subscriptor (como se mencionaba en la página ), solo
- tiene que modificar en la clase del peón el path donde se encuentre la
- librería en la función dlopen() para configurar correctamente la apertura
+ y la librería del subscriptor (como se mencionaba en la página 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "Img.9"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), solo tiene que modificar en la clase del peón el path donde se encuentre
+ la librería en la función dlopen() para configurar correctamente la apertura
  de la biblioteca dinámica.
- Una vez hechos 
+ 
+\end_layout
+
+\begin_layout Standard
+(foto de la línea del dlopen)
+\end_layout
+
+\begin_layout Standard
+Una vez configurado todo solo falta establecer la malla del dron.
+ Para esto basta con entrar en el editor del blueprint creado previamente
 \end_layout
 
 \begin_layout Standard
