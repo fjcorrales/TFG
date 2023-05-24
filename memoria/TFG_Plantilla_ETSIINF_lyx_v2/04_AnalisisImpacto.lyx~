@@ -66,9 +66,9 @@
 customHeadersFooters
 \end_modules
 \maintain_unincluded_children false
-\language spanish
+\language english
 \language_package default
-\inputencoding utf8
+\inputencoding auto
 \fontencoding global
 \font_roman "lmodern" "default"
 \font_sans "lmss" "default"
@@ -141,7 +141,7 @@ customHeadersFooters
 \is_math_indent 1
 \math_indentation default
 \math_numbering_side default
-\quotes_style french
+\quotes_style english
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 2
@@ -301,7 +301,11 @@ thepage
 \end_layout
 
 \begin_layout Chapter
-Análisis de impacto
+
+\lang spanish
+Análisis
+\lang english
+ de impacto
 \end_layout
 
 \begin_layout Section

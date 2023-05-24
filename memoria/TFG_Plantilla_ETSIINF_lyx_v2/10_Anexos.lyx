@@ -66,9 +66,9 @@
 customHeadersFooters
 \end_modules
 \maintain_unincluded_children false
-\language english
+\language spanish
 \language_package default
-\inputencoding auto
+\inputencoding utf8
 \fontencoding global
 \font_roman "lmodern" "default"
 \font_sans "lmss" "default"
@@ -141,7 +141,7 @@ customHeadersFooters
 \is_math_indent 1
 \math_indentation default
 \math_numbering_side default
-\quotes_style english
+\quotes_style french
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 2
@@ -301,57 +301,11 @@ thepage
 \end_layout
 
 \begin_layout Chapter
-Title of the first appendix chapter 
+Anexos
 \end_layout
 
 \begin_layout Section
 Overview
-\end_layout
-
-\begin_layout Standard
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla b la bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla roughness parameter 
-\begin_inset Formula $R_{a}$
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "$R_a$"
-description "arithmetic average roughness"
-literal "true"
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-For nomenclature entries with indices one need to enclose the expression
- with $-signs.
- (This creates a formula.)
-\end_layout
-
-\end_inset
-
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla bla, see 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "ISO10780"
-literal "true"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Section
-The next section
 \end_layout
 
 \begin_layout Standard

@@ -301,7 +301,7 @@ thepage
 \end_layout
 
 \begin_layout Chapter
-Análisis de impacto
+Anexos
 \end_layout
 
 \begin_layout Section
@@ -320,8 +320,8 @@ status collapsed
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-bibfiles "thesisExample"
-options "alpha"
+bibfiles "biblio/Plasma"
+options "biblio/alpha"
 
 \end_inset
 
