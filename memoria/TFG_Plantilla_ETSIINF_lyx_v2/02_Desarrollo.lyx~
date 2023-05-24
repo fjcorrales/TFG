@@ -912,6 +912,13 @@ Ya configurado y testado el correcto funcionamiento de las funciones previamente
  correctamente el movimiento y poder realizar una integración con ROS 2
  ya que pretendemos que el movimiento se rija mediante la velocidad que
  se enviará mediante los servicios de mensajería ofrecidos por ese framework.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
 
@@ -1472,8 +1479,8 @@ rencia al juego] que se encuentra en desarrollo por el estudio de videojuegos
 \shape slanted
 Drama
 \shape default
-[Referencia al estudio], que cuenta con visuales hiperrealistas, pareciendo
- ser una grabación real.
+[Referencia al estudio], que cuenta con visuales hiperrealistas, que asemejan
+ a una grabación real.
 \end_layout
 
 \begin_layout Standard

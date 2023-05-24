@@ -66,9 +66,9 @@
 customHeadersFooters
 \end_modules
 \maintain_unincluded_children false
-\language english
+\language spanish
 \language_package default
-\inputencoding auto
+\inputencoding utf8
 \fontencoding global
 \font_roman "lmodern" "default"
 \font_sans "lmss" "default"
@@ -141,7 +141,7 @@ customHeadersFooters
 \is_math_indent 1
 \math_indentation default
 \math_numbering_side default
-\quotes_style english
+\quotes_style french
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 2
@@ -301,19 +301,62 @@ thepage
 \end_layout
 
 \begin_layout Chapter
-
-\lang spanish
-Análisis
-\lang english
- de impacto
+Análisis de impacto
 \end_layout
 
-\begin_layout Section
-Overview
+\begin_layout Standard
+El impacto que el trabajo aquí realizado puede llegar a tener se enfoca
+ en las posibilidades de este tipo de software a futuro.
+ Con el avance de la técnologia y, sobre todo, avances en el campo de los
+ drones, los cuales van a tomar un rol muy importante en la sociedad; desde
+ cumplir tareas de mantenimiento en falicidades industriales, su uso en
+ cartografía, hasta servicio postal y reparto a domilicio, incluso pudiendo
+ usarlos con fines recreativos.
+ Estos son solo un pequeño grupo de ejemplo de las capacidades de estas
+ máquinas no tripuladas.
+ 
 \end_layout
 
-\begin_layout Section
-The next section
+\begin_layout Standard
+Es por esta gran presencia que van a tomar en nuestras vidas, tanto laborales
+ como personales que va a ser necesario tener sitios en los que poder realizar
+ experimentos con drones de forma segura y que no involucren el uso de máquinas
+ reales arriesgando su integridad.
+ Aquí es donde entran los simuladores.
+ Estos entornos virtuales tridimensionales son capaces de simular casi a
+ la perfección el comportamiento de un dron real dentro de un entorno generado
+ por ordenador, permitiendo así hacer tantas pruebas como se desee de manera
+ rápida, eficaz y segura.
+ El hecho de no necesitar hacer uso de máquinas reales generará una producción
+ y consumo responsables gracias a evitar tener que renovar partes o piezas
+ de las máquinas con tanta fercuencia.
+ 
+\end_layout
+
+\begin_layout Standard
+Los elementos desarrollados a lo largo de este trabajo fundamentan una base
+ sobre la que futuros desarrolladores podrán iterar para crear programas
+ más avanzados que permitan simular al cien por ciento la realidad.
+ Esta simulación está cada vez más cerca de nuestro alcance viendo los últimos
+ avances en simulación de físicas, colisiones y capacidades gráficas de
+ los entornos de desarrollo como Unreal Engine 5.
+ 
+\end_layout
+
+\begin_layout Standard
+Las capacidades de estos robots y de este tipo de software solo están límitadas
+ por nuestra imaginación, pudiendo llegar a entrenar drones en entornos
+ virtuales gracias a programas de inteligencia artificial que luego podamos
+ transpasar a máquinas reales.
+ Esto por ejemplo se podría utilizar en vigilancia de bosques, para facilitar
+ las tareas de los guardabosques y ayudar con sus tareas forestales, ayudando
+ así al mantenimiento de la vida de ecosistemas terrestres.
+\end_layout
+
+\begin_layout Standard
+En conclusión, las herramientas presentadas, son una prueba de que es posible
+ alcanzar estos objetivos y crear un sistema informático que nos ayude a
+ mejorar la técnologia y el mundo que nos rodea.
 \end_layout
 
 \begin_layout Standard
