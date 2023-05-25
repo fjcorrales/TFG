@@ -442,7 +442,7 @@ La versión de este framework con la que estamos trabajando es la versión
  Entrando a describir más específicamente en que consiste este software,
  ROS se compone de 2 partes básicas, el sistema operativo ros, y ros-pkg,
  un conjunto de paquetes creados por la comunidad que implementan diversas
- funcionalidades como puede ser; localización, mapeo simultáneo, planificación,
+ funcionalidades como puede ser: localización, mapeo simultáneo, planificación,
  percepción y simulación...etc.
  Sin embargo, el uso principal de este conjunto de librerías es el paso
  de mensajes entre un controlador y la máquina en cuestión.
@@ -451,8 +451,8 @@ La versión de este framework con la que estamos trabajando es la versión
 
 \begin_layout Standard
 En este trabajo, el objetivo, además de poder tener un dron cuyo movimiento
- sea lo más fiel a la realidad posible, implementar ROS 2 para poder realizar
- el control del dron de forma 
+ sea lo más fiel a la realidad posible, es implementar ROS 2 para poder
+ realizar el control del dron de forma 
 \begin_inset Quotes eld
 \end_inset
 

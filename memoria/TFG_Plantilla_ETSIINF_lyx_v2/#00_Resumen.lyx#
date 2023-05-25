@@ -105,7 +105,7 @@ Resumen
 \end_layout
 
 \begin_layout Standard
-Los drones son vehículos aéreos no tripulados que se crearon en un inicio
+Los drones son vehiculos aéreos no tripulados que se crearon en un inicio
  con fines militares, sin embargo, han sido capaces de adaptarse para cumplir
  una amplia variedad de funciones.
 \end_layout
@@ -116,7 +116,7 @@ La simulación de drones es un campo relativamente nuevo, sin embargo, es
  En los recientes años se han realizado grandes avances e investigaciones
  con diversos fines, desde el estudio de la física del movimiento de los
  drones para su posterior simulación en entornos virtuales, hasta estudios
- para descubrir las posibles aplicaciones de estas versátiles máquinas.
+ para descubrir las posibles aplciaciones de estas versátiles máquinas.
 \end_layout
 
 \begin_layout Standard
@@ -127,7 +127,7 @@ Como objetivo principal este trabajo pretende establecer una base para la
  Así pues, se ha desarrollado un visualizador de vuelo, un concepto similar
  al simulador, solo que en este, el dron realizará un recorrido preestablecido
  y mostrará el movimiento en un entorno tridimensional.
- Otro de los objetivos marcados en este trabajo es dividir en dos módulos
+ Otro de los objetivos marcados en este trabajo es dividir en dos modulos
  principales los objetos más importantes dentro del simulador: el dron y
  el escenario.
 \end_layout
@@ -136,7 +136,7 @@ Como objetivo principal este trabajo pretende establecer una base para la
 Para cumplir este segundo objetivo se ha realizado un desarrollo dividido
  en dos partes principales, la primera siendo una fase de prototipado en
  la que investigar formas en las que poder estructurar el programa deseado
- acorde con los requisitos establecidos, y la segunda en la que se desarrolla
+ a corde con los requisitos establecidos, y la segunda en la que se desarrolla
  el visualizador de vuelo.
 \end_layout
 
@@ -158,19 +158,12 @@ La fase de desarrollo del visualizador también se divide en 3 partes.
  de este desarrollo se habla de la creación de un sistema publicador/suscriptor
  que gestionará el envio de coordenadas entre un ordenador base y el ordenador
  de a bordo del dron, en este caso, el dron ejecutará las funciones del
- subscriptor dentro de Unreal, mientras que se ejecutará el publicador en
- un términal externo.
- La segunda fase de este desarrollo consiste en hacer que el dron se mueva
- a corde a las coordenadas recibidas siguiendo el esquema probado en la
- fase de prototipado.
- Esta fase de desarrollo concluye con un ejemplo explicados del proceso
- de importación de un escenario tridimensional de la ciudad de Londres.
+ subscriptor dentro de Unreal, mientras que se ejecutará el p
 \end_layout
 
 \begin_layout Standard
-Todo el código fuente aquí descrito y explicado lo puede encontrar en la
- página de github[referencia al git] además de encontrarse también en el
- propio escrito.
+Aquí va el resumen del TFG.
+ Extensión máxima 2 páginas.
 \end_layout
 
 \begin_layout Standard
