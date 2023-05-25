@@ -316,8 +316,7 @@ Como se mencionó en la introducción, el desarrollo de esta aplicación será
  Una primera de puesta a punto, o de prototipado, donde se ha experimentado
  con el motor de juego para descubrir la mejor forma de implementar los
  requisitos pedidos.
- Y una segunda fase en la que, ya , en esta primera versión se desarrolla
- la aplicación al completo.
+ Y una segunda fase en la que se desarrolla un visualizador de vuelo.
 \end_layout
 
 \begin_layout Section
@@ -325,8 +324,8 @@ Fase de prototipado
 \end_layout
 
 \begin_layout Standard
-Esta ha sido la primera fase del desarrollo del simulador, en la cual he
- realizado algunas pruebas para encontrar la mejor forma de implementar
+Esta ha sido la primera fase del desarrollo del simulador, en la cual se
+ han realizado algunas pruebas para definir la forma más eficaz de implementar
  un dron y su movimiento en el 
 \shape slanted
 sandbox
@@ -372,7 +371,7 @@ Para comenzar, se analizaron las posibilidades de movimiento de actores
 
 \begin_layout Standard
 En cuanto a los componentes que se pueden añadir a estos actores, son elementos
- que añaden funcionalidad a los mismos.
+ que suman funcionalidad a los mismos.
  Podemos encontrar 2 tipos de componentes: componentes de actor y componentes
  de escena.
  El componente de actor no hace nada esencialmente, sin embargo es imprescindibl
@@ -432,10 +431,10 @@ mesh
 \shape default
  (malla).
  Es decir, crear un componente de escena que fuera el raíz de la jerarquía
- que moviera un modelo 3.
+ que moviera un modelo 3D.
  En este caso, un cubo cuyo movimiento se basa en un vector de posición
- al cual se le podían ajustar las componentes tanto desde el editor como
- desde un 
+ al que se le pueden ajustar las componentes tanto desde el editor, desde
+ un 
 \shape slanted
 blueprint
 \shape default
@@ -450,12 +449,12 @@ A continuación abordamos la cuestión de las colisiones, añadiendo la propieda
 Hitbox 
 \shape default
 (caja de colisiones).
- Para esto simplemente añadí un componente de escena de tipo hitbox, lo
- ajusté al tamaño de la mesh elegida y configuré un gráfico de eventos para
- que cuando el jugador entrara en contacto con el objeto este empezara a
- moverse.
- Asimismo incluí otra Hitbox para delimitar un área amplia alrededor de
- la malla para que en el caso de que detectara que el jugador abandonaba
+ Para esto simplemente se añade un componente de escena de tipo hitbox,
+ se ajusta al tamaño de la mesh elegida y se configura un gráfico de eventos
+ para que cuando el jugador entre en contacto con el objeto este empiece
+ a moverse.
+ Asimismo se incluye otra Hitbox para delimitar un área amplia alrededor
+ de la malla para que en el caso de que detectara que el jugador abandona
  el área el objeto volviera a su posición original.
  
 \end_layout
@@ -500,7 +499,7 @@ lstparams "caption={Código fuente del componente de escena move},label={Img.2}"
 \end_layout
 
 \begin_layout Standard
-Adjunto también el gráfico de eventos creado para completar su funcionalidad:
+Se adjunta también el gráfico de eventos creado para completar su funcionalidad:
 \end_layout
 
 \begin_layout Standard
@@ -568,11 +567,11 @@ Esta prueba es muy similar a la anterior dado que también se basa en un
  También se implementaron dos funciones, una para comenzar el vuelo y otra
  para resetearlo y cabe mencionar que esta vez no se ha implementado ningún
  grafico de eventos dado que la interacción de esta prueba se basa en mandar
- la señal de activación del hover o de reset.
+ la señal de activación o de reset.
 \end_layout
 
 \begin_layout Standard
-Adjunto tanto el header como el código del componente en cuestión 
+Se adjunta tanto el header como el código del componente en cuestión 
 \begin_inset Quotes eld
 \end_inset
 
@@ -606,23 +605,12 @@ lstparams "caption={Código fuente del componente de escena HoverComponent},labe
 
 \end_layout
 
-\begin_layout Standard
-Tras desarrollar estos módulos de prueba basados en componentes de escena
- y observar su funcionamiento nuestro siguiente paso sería crear objetos
- basados en la unión de componentes independientes, lo que nos interesa
- en gran medida para proporcionarle cierta modularidad.
- La idea sería gestionar la comunicación entre los componentes desde un
- actor propio.
- Con este fin proponemos la creación de un peón e implementar en el mismo
- un control diferencial de la velocidad, prueba que describiremos más adelante.
-\end_layout
-
 \begin_layout Subsection
 Prueba de importación de mallas:
 \end_layout
 
 \begin_layout Standard
-Durante el desarrollo de la prueba anteriormente descrita, busqué formas
+Durante el desarrollo de la prueba anteriormente descrita, se buscaron formas
  de poder integrar un modelo 3D, conocido como 
 \shape slanted
 mesh
@@ -639,9 +627,9 @@ ncia a la página del modelo 3D del dron].
  Engine para su uso.
  Cabe mencionar que estos modelos 3D han de ser exportados de sus respectivas
  aplicaciones en formato .fbx ya que este es el que reconoce Unreal.
- El proceso de importación es muy simple pudiendo simplemente arrastrar
- el archivo al editor y tras una simple ventana de configuración tener ya
- disponible el modelo para su uso.
+ El proceso de importación es muy simple, consiste en arrastrar el archivo
+ al editor y tras una simple ventana de configuración ya estaría disponible
+ el modelo para su uso.
  El modelo seleccionado fue el siguiente:
 \end_layout
 
@@ -677,16 +665,17 @@ Mesh del dron en el entorno de Unreal
 \end_layout
 
 \begin_layout Standard
-Si se desea Epic Games también cuenta con una plataforma en la que los usuarios
- pueden subir sus modelos 3D ya sea de niveles u objetos a una tienda on-line.
+Si se desea, Epic Games también cuenta con una plataforma en la que los
+ usuarios pueden subir sus modelos 3D ya sea de niveles u objetos a una
+ tienda on-line.
  La desventaja es que la mayoría del contenido es de pago.
  
 \end_layout
 
 \begin_layout Standard
-Con esto quedaba solventado el problema de poder tener un modelo tridimensional
- de un dron.
- LA siguiente cuestión será determinar si Unreal genera las colisiones automátic
+Con esto quedaba solventado el problema de poder disponer de un modelo tridimens
+ional de un dron.
+ Un objetivo de futuro será determinar si Unreal genera las colisiones automátic
 amente al proporcionarle una 
 \shape slanted
 hitbox
@@ -715,8 +704,8 @@ Es relevante considerar que Unreal proporciona una función
 \shape slanted
 tick
 \shape default
- dentro de todas sus clases, la cual se ejecuta a cada frame generado por
- el motor y ejecuta las instrucciones descritas en la misma.
+ dentro de todas sus clases, la cual se ejecuta a cada fotograma generado
+ por el motor y ejecuta las instrucciones descritas en la misma.
  Al mismo tiempo, esta función nos proporciona una variable 
 \shape slanted
 DeltaTime
@@ -735,8 +724,8 @@ BeginPlay
 \shape default
 , esta se ejecuta en el primer instante en que se entra al nivel creado
  y solo esa vez.
- Esta resulta útil para establecer variables iniciales o si por ejemplo
- se desea almacenar la posición inicial de algún objeto.
+ Resulta útil para establecer variables iniciales o si se desea almacenar
+ la posición inicial de algún objeto.
 \end_layout
 
 \begin_layout Standard
@@ -744,7 +733,7 @@ Una vez explicados los conceptos anteriores pasamos a la implementación
  del control en cuestión, una implementación simple y que nos permite configurar
  una velocidad máxima, una mínima y una constante para ajustar la velocidad
  en el calculo del delta de la velocidad.
- La implementación queda tal que así:
+ La implementación quedaría así:
 \end_layout
 
 \begin_layout Standard
@@ -771,7 +760,7 @@ lstparams "caption={Código fuente del peón DronePawn},label={Img.6}"
 
 \begin_layout Standard
 Asimismo, gracias a utilizar un peón tenemos acceso a entradas de teclado
- mediante la función SetupPlayerInputComponent, la cual nos permite aumentar
+ mediante la función SetupPlayerInputComponent(), la cual nos permite aumentar
  y disminuir los valores de las componentes del vector de la velocidad objetivo
  mediante teclas durante la ejecución del nivel.
  Muy relevante tener en cuenta que estos 
@@ -834,8 +823,8 @@ peón por defecto
  Este cambio solamente lo podemos realizar desde el código del modo de juego
  que se generó automáticamente al crear el proyecto en Unreal.
  Dentro del archivo NombreProyectoGameModeBase.h y NombreProyectoGameModeBase.cpp
- hemos de añadir las 2 siguientes líneas (En mi caso el nombre de los archivos
- es droneSimGameModeBase.h y droneSimGameModeBase.cpp):
+ hemos de añadir las 2 siguientes líneas (En este caso el nombre de los
+ archivos es droneSimGameModeBase.h y droneSimGameModeBase.cpp):
 \end_layout
 
 \begin_layout Standard
@@ -861,8 +850,8 @@ lstparams "caption={Código fuente del modo de juego droneSimGameModeBase},label
 \end_layout
 
 \begin_layout Standard
-Una vez realizados todos estos cambios veremos que aparece esto en el editor
- al ejecutar y seleccionar el peón:
+Una vez realizados todos estos cambios veremos que aparece la siguiente
+ información en el editor al ejecutar y seleccionar el peón:
 \end_layout
 
 \begin_layout Standard
@@ -911,7 +900,7 @@ Ya configurado y testado el correcto funcionamiento de las funciones previamente
  del dron basado en este control diferencial es lo necesario para simular
  correctamente el movimiento y poder realizar una integración con ROS 2
  ya que pretendemos que el movimiento se rija mediante la velocidad que
- se enviará mediante los servicios de mensajería ofrecidos por ese framework.
+ se enviará mediante los servicios de mensajería ofrecidos por este framework.
 \end_layout
 
 \begin_layout Standard
@@ -926,12 +915,12 @@ Desarrollo final
 \end_layout
 
 \begin_layout Standard
-Tras la realización de las pruebas anteriormente descritas, se realizo un
- reajuste de los objetivos planteados inicialmente.
- Finalmente, este trabajo consistirá en la realización de un visualizador
+A la vista de los resultados de las pruebas anteriormente descritas, se
+ realizo un reajuste de los objetivos planteados en un principio.
+ Finalmente, este trabajo ha consistido en la realización de un visualizador
  de vuelo de un dron en un entorno tridimensional.
  Esto sentará las bases para futuros trabajos en los cuales se itere sobre
- los programas aquí desarrollados y completar así el simulador completo.
+ los programas aquí desarrollados y completar así el simulador.
 \end_layout
 
 \begin_layout Standard

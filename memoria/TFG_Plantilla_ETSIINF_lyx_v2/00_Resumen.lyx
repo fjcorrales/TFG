@@ -106,17 +106,17 @@ Resumen
 
 \begin_layout Standard
 Los drones son vehículos aéreos no tripulados que se crearon en un inicio
- con fines militares, sin embargo, han sido capaces de adaptarse para cumplir
- una amplia variedad de funciones.
+ con fines militares, sin embargo, hemos sido capaces de adaptarlos a una
+ amplia variedad de funciones tanto en el ámbito militar como civil.
 \end_layout
 
 \begin_layout Standard
-La simulación de drones es un campo relativamente nuevo, sin embargo, es
- un área en el que se han realizado numerosos desarrollos.
- En los recientes años se han realizado grandes avances e investigaciones
- con diversos fines, desde el estudio de la física del movimiento de los
- drones para su posterior simulación en entornos virtuales, hasta estudios
- para descubrir las posibles aplicaciones de estas versátiles máquinas.
+La simulación de drones es un campo relativamente nuevo que, sin embargo,
+ ha experimentado un desarrollo exponencial en los últimos años.
+ Durante este tiempo se han realizado significativos avances en el estudio
+ de la física del movimiento de los drones, un aspecto esencial para su
+ posterior simulación en entornos virtuales, que permiten explorar las posibles
+ aplicaciones de estas versátiles máquinas.
 \end_layout
 
 \begin_layout Standard
@@ -125,8 +125,8 @@ Como objetivo principal este trabajo pretende establecer una base para la
  Engine 5 haciendo uso de la librería de comunicación de robots popularmente
  conocida como ROS2.
  Así pues, se ha desarrollado un visualizador de vuelo, un concepto similar
- al simulador, solo que en este, el dron realizará un recorrido preestablecido
- y mostrará el movimiento en un entorno tridimensional.
+ al simulador, solo que en este caso, el dron realizará un recorrido preestablec
+ido y mostrará el movimiento en un entorno tridimensional.
  Otro de los objetivos marcados en este trabajo es dividir en dos módulos
  principales los objetos más importantes dentro del simulador: el dron y
  el escenario.
@@ -134,10 +134,10 @@ Como objetivo principal este trabajo pretende establecer una base para la
 
 \begin_layout Standard
 Para cumplir este segundo objetivo se ha realizado un desarrollo dividido
- en dos partes principales, la primera siendo una fase de prototipado en
- la que investigar formas en las que poder estructurar el programa deseado
- acorde con los requisitos establecidos, y la segunda en la que se desarrolla
- el visualizador de vuelo.
+ en dos partes principales, la primera consiste una fase de prototipado
+ en la que se investigan formas en las que poder estructurar el programa
+ deseado acorde con los requisitos establecidos, y la segunda en la que
+ se desarrolla el visualizador de vuelo.
 \end_layout
 
 \begin_layout Standard
@@ -154,23 +154,20 @@ En la fase de desarrollo mencionada, se realizan 3 pruebas de concepto.
 
 \begin_layout Standard
 La fase de desarrollo del visualizador también se divide en 3 partes.
- Dado el deseo de hacer uso de la librería de ROS2, en la primera parte
- de este desarrollo se habla de la creación de un sistema publicador/suscriptor
+ En la primera se habla de la creación de un sistema publicador/suscriptor
  que gestionará el envió de coordenadas entre un ordenador base y el ordenador
- de a bordo del dron, en este caso, el dron ejecutará las funciones del
+ de a bordo del dron; en este caso, el dron ejecutará las funciones del
  subscriptor dentro de Unreal, mientras que se ejecutará el publicador en
  un terminal externo.
- La segunda fase de este desarrollo consiste en hacer que el dron se mueva
- acorde a las coordenadas recibidas siguiendo el esquema probado en la fase
- de prototipado.
- Esta fase de desarrollo concluye con un ejemplo explicados del proceso
- de importación de un escenario tridimensional de la ciudad de Londres.
+ La segunda fase consiste en hacer que el dron se mueva de acuerdo a las
+ coordenadas recibidas siguiendo el esquema probado en la fase de prototipado.
+ Esta fase de desarrollo concluye con un ejemplo explicado del proceso de
+ importación de un escenario tridimensional de la ciudad de Londres.
 \end_layout
 
 \begin_layout Standard
-Todo el código fuente aquí descrito y explicado lo puede encontrar en la
- página de github[referencia al git] además de encontrarse también en el
- propio escrito.
+Todo el código fuente aquí descrito y explicado se puede encontrar en la
+ página de github[referencia al git] además de en la propia memoria.
 \end_layout
 
 \begin_layout Standard

@@ -305,9 +305,7 @@ Análisis de impacto
 \end_layout
 
 \begin_layout Standard
-El impacto de este trabajo se deriva en su potencial en el desarrollo de
- software aplicado a simuladores a futuro.
- Las aplicaciones basadas en el avance de la tecnología y, sobre todo, los
+Las aplicaciones basadas en el avance de la tecnología y, sobre todo, los
  avances en el campo de los drones van a tener un impacto muy importante
  en la sociedad entre otras, facilitar el mantenimiento en plantas industriales,
  como las energéticas, su uso en cartografía, servicio postal y reparto
@@ -319,17 +317,18 @@ El impacto de este trabajo se deriva en su potencial en el desarrollo de
 Es por este amplio espectro de aplicaciones que los desarrollos como el
  realizado en este trabajo va a tener una gran presencia en la vida cotidiana,
  tanto en aspectos laborales como personales.
- Asociado a este desarrollo tecnólogico será necesario disponer de entornos
+ Asociado a este desarrollo tecnológico será necesario disponer de entornos
  en los que realizar experimentos con drones de forma segura y que no involucren
  el uso de máquinas reales arriesgando su integridad.
  Es en este ámbito donde son necesarios los simuladores.
  Los entornos virtuales tridimensionales son capaces de simular casi a la
  perfección el comportamiento de un dron real dentro de un entorno generado
  por ordenador, permitiendo así hacer tantas pruebas como se desee de manera
- rápida, eficaz y segura.
- Desde el punto de vista medioambiental y de desarrollo sostenible los simulador
-es permitirán optimizar los procesos de desarrollo minimizando la necesidad
- de fabricaciones de prototipos y piezas de repuesto.
+ rápida, eficaz y segura optimizando así el proceso de producción.
+ Desde el punto de vista medioambiental y de sostenibilidad los simuladores
+ permitirán optimizar los procesos de desarrollo minimizando la necesidad
+ de fabricaciones de prototipos y piezas de repuesto con la consiguiente
+ reducción de material potencialmente contaminante.
  
 \end_layout
 
