@@ -396,7 +396,14 @@ DefaultPawnClass = nombreDeSuBlueprint.Class;
 \end_layout
 
 \begin_layout Standard
-(foto de la línea del gamemodeBase)
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/droneSim/droneSimGameModeBase.cpp"
+lstparams "caption={Fichero droneSimGameModeBase.cpp},label={Img.16}"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -422,6 +429,42 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../imagenes/código1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Path a la librería de ROS2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Una vez configurado todo solo falta establecer la malla del dron.
  Para esto basta con entrar en el editor del blueprint creado previamente,
  seleccionar el componente de mesh en la jerarquía y seleccionar la malla
@@ -430,7 +473,41 @@ Una vez configurado todo solo falta establecer la malla del dron.
 \end_layout
 
 \begin_layout Standard
-(foto de la configuración de la malla)
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-05-26 11-58-14.png
+	lyxscale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Configuración de la malla
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
