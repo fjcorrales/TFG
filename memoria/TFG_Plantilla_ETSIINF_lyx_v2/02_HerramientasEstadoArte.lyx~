@@ -1,0 +1,758 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrbook
+\begin_preamble
+% increases link area for cross-references and autoname them
+% if you change the document language to e.g. French
+% you must change "extrasenglish" to "extrasfrench"
+\AtBeginDocument{%
+ \renewcommand{\ref}[1]{\mbox{\autoref{#1}}}
+}
+\def\refnamechanges{%
+ \renewcommand*{\equationautorefname}[1]{}
+ \renewcommand{\sectionautorefname}{sec.\negthinspace}
+ \renewcommand{\subsectionautorefname}{sec.\negthinspace}
+ \renewcommand{\subsubsectionautorefname}{sec.\negthinspace}
+ \renewcommand{\figureautorefname}{Fig.\negthinspace}
+ \renewcommand{\tableautorefname}{Tab.\negthinspace}
+}
+\@ifpackageloaded{babel}{\addto\extrasenglish{\refnamechanges}}{\refnamechanges}
+
+% in case somebody want to have the label "Equation"
+%\renewcommand{\eqref}[1]{Equation~(\negthinspace\autoref{#1})}
+
+% that links to image floats jumps to the beginning
+% of the float and not to its caption
+\usepackage[figure]{hypcap}
+
+% the pages of the TOC is numbered roman
+% and a pdf-bookmark for the TOC is added
+\let\myTOC\tableofcontents
+\renewcommand\tableofcontents{%
+  \frontmatter
+  \pdfbookmark[1]{\contentsname}{}
+  \myTOC
+  \mainmatter }
+
+% makes caption labels bold
+% for more info about these settings, see
+% http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguien.pdf
+\setkomafont{captionlabel}{\bfseries}
+\setcapindent{1em}
+
+% enables calculations
+\usepackage{calc}
+
+% fancy page header/footer settings
+% for more information see section 9 of
+% ftp://www.ctan.org/pub/tex-archive/macros/latex2e/contrib/fancyhdr/fancyhdr.pdf
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+% increases the bottom float placement fraction
+\renewcommand{\bottomfraction}{0.5}
+
+% avoids that floats are placed above its sections
+\let\mySection\section\renewcommand{\section}{\suppressfloats[t]\mySection}
+\end_preamble
+\options intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage
+\use_default_options true
+\master TFG.lyx
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "lmodern" "default"
+\font_sans "lmss" "default"
+\font_typewriter "lmtt" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_title "Your title"
+\pdf_author "Your name"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false"
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\branch NoChildDocument
+\selected 0
+\filename_suffix 0
+\color #ff0000
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 1
+\math_indentation default
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+chaptername
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thechapter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+rightmark
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Enable page headers and add the chapter to the header line.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Footer
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Right Footer
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Herramientas y estado del arte
+\end_layout
+
+\begin_layout Section
+Herramientas
+\end_layout
+
+\begin_layout Standard
+Las herramientas utilizadas para el desarrollo de este trabajo han sido:
+ Unreal Engine 4.27 y 5, Gitkraken, GitHub, Teams, ROS2 yAerostack2.
+ Estas serán descritas a continuación, tanto para describir su función y
+ utilidad como para explicar lo necesario para enteder los contenidos recogidos
+ en esta memoria.
+\end_layout
+
+\begin_layout Subsection
+Unreal Engine 4.27 y 5:
+\end_layout
+
+\begin_layout Standard
+Como se ha mencionado previamente, el simulador se va a desarrollar para
+ el motor de juego Unreal Engine 5 (UE5) de la compañía Epic Games.
+ Esta es una herramienta de última generación que cuenta con los últimos
+ avances gráficos, puediendo llegar a generar entornos casi idénticos a
+ la realidad, simulando a la perfección grabaciones del entorno natural
+ y no generadas por ordenador.
+ Asimismo, cuenta con un sistema de físicas y colisiones integrado, lo que
+ fácilitará las tareas de implementación más adelante.
+ Como añadido, este entorno también cuenta con herramientas de Inteligencia
+ Artifical, que se pueden usar para controlar los actores, refiriendonos
+ a los drones, que podamos llegar a tener en la escena.
+\end_layout
+
+\begin_layout Standard
+El principal motivo para realizar el desarrollo en este motor, es su gran
+ proyección de futuro, gracias a la capacidad gráfica que proporciona y
+ la oportunidad de hacer uso de IA para entrenar drones in silico para luego
+ poder aplicarlo en máquinas reales.
+\end_layout
+
+\begin_layout Standard
+El motivo principal por el que se han utilizado dos versiones distintas
+ de este software ha sido la limitación técnica de los equipos.
+ El trabajo se ha repartido entre 2 máquinas distintas con capacidades dispares.
+ Sin embargo, esto no supone un problema ya que la única diferencia entre
+ ambas versiones se centra en el apartado gráfico siendo la infraestructura
+ idéntica en ambas.
+ Es decir, el código desarrollado en la versión 4.27 es válido en la versión
+ 5.
+ 
+\end_layout
+
+\begin_layout Standard
+Habiendo justificado esto, en vista de que los contenidos del trabajo son
+ técnicos, es necesario explicar algunos conceptos de Unreal Engine.
+\end_layout
+
+\begin_layout Enumerate
+En el editor de Unreal Engine, no importa cual de las dos versiones esté
+ usandose, podremos encontrar varios elementos.
+ El primero y más llamativo una ventana la cual nos muestra el nivel en
+ el que se está trabajando actualmente.
+ En este podremos ver las mallas y elementos que el usuario vaya añadiendo.
+ Al mismo tiempo veremos varias pestañas que nos muestran mucha información,
+ de las cuales nos interesan la pestaña de detalles del mundo y el cajon
+ de contenido o 
+\begin_inset Quotes eld
+\end_inset
+
+Content Browser
+\begin_inset Quotes erd
+\end_inset
+
+.
+ En la primera podremos ver en detalle la información que viene asociada
+ a cada elemento presente en el nivel y en la segunda podremos encontrar
+ todos los elementos de los que disponemos en nuestro proyecto.
+ Este cajon de contenido es el sistema de ficheros del proyecto y podremos
+ añadir y eliminar tantos objetos como queramos.
+ Aquí también se crearan las clases C++ de los diferentes objetos, mallas
+ que importemos al proyecto y los blueprints que creemos.
+\end_layout
+
+\begin_layout Enumerate
+Unreal ofrece una amplia variedad de objetos y clases creados por sus desarrolla
+dores para facilitar las tareas de desarrollo de otras personas que deseen
+ utilizar este motor de juego.
+ Las más importantes a las que se da uso en este trabajo son: 
+\family typewriter
+componentes de escena
+\family default
+, 
+\family typewriter
+actor
+\family default
+ y 
+\family typewriter
+peón
+\family default
+.
+\end_layout
+
+\begin_layout Enumerate
+La clase 
+\family typewriter
+actor
+\family default
+ predefinida por Unreal permite crear un objeto dentro del juego.
+ Este es el objeto más básico al cual se le pueden programar los comportamientos
+ que se deseen, sin embargo, es al mismo tiempo el más límitado dado que
+ no tiene acceso a utilidades más avanzadas de Unreal como entradas de teclado,
+ simulación de físicas o manejo por inteligencia artificial.
+ A pesar de ser tan límitado esta es la clase más importante al ser la clase
+ padre de la que heredarán los objetos más complicados, 
+\family typewriter
+peón
+\family default
+ y 
+\family typewriter
+personaje
+\family default
+ (
+\begin_inset Quotes eld
+\end_inset
+
+
+\family typewriter
+character
+\family default
+
+\begin_inset Quotes erd
+\end_inset
+
+).
+ Esta cuenta con las funciones 
+\family typewriter
+BeginPlay()
+\family default
+, 
+\family typewriter
+EndPlay()
+\family default
+ y 
+\family typewriter
+Tick() 
+\family default
+que son las funciones básicas para hacer funcionar a un objeto de este tipo.
+ La función 
+\family typewriter
+BeginPlay()
+\family default
+ es una función que se ejecuta una única vez al comenzar el nivel, esta
+ resulta muy util para realizar configuraciones iniciales que requiera el
+ actor, como inicializar variables.
+ La función 
+\family typewriter
+EndPlay()
+\family default
+ es otra función que se ejecuta una única vez, solo que esta se ejecuta
+ al terminar el nivel, esta normalmente solo imprime mensajes en la consola
+ para indicar que el actor se a retirado de la escena o nivel.
+ Estas dos funciones permiten ser sobrescritas (
+\begin_inset Quotes eld
+\end_inset
+
+
+\family typewriter
+overridable
+\family default
+
+\begin_inset Quotes erd
+\end_inset
+
+) por lo que se pueden hacer a medida de la necesidad de cada desarrollador
+ tanto en la clase 
+\family typewriter
+actor
+\family default
+ como en las que hereden de la misma.
+ La función de 
+\family typewriter
+Tick()
+\family default
+ es una función que se comporta como un buucle, ejecutandose a cada fotograma
+ generado por Unreal durante la ejecución del nivel.
+\end_layout
+
+\begin_layout Enumerate
+Los 
+\family typewriter
+componentes de escena
+\family default
+ son componentes que podemos usar como apoyo para incluir funcionalidades
+ a los 
+\family typewriter
+actores
+\family default
+.
+ Además podemos encontrar otro tipo de componentes, los 
+\family typewriter
+componentes de actor
+\family default
+, estos no hacen nada esencialmente, sin embargo es imprescindible dado
+ que es la base de la jerarquía del resto de componentes.
+\end_layout
+
+\begin_layout Enumerate
+Finalmente tenemos la clase 
+\family typewriter
+peón
+\family default
+, esta como se ha mencionado previamente hereda de la clase 
+\family typewriter
+actor
+\family default
+, teniendo acceso a las 3 funciones principales que esta contiene.
+ Sin embargo, un peón es más avanzado que un actor, pues estos tienen acceso
+ al control por inteligencia artifical y a las entradas de teclado.
+ En cuanto a las físicas que soporta, estas son las básicas ofrecidas por
+ el editor sin ser las físicas avanzadas que pertenecen a la clase de personaj,
+ la cual se centra en simular a un ser humano.
+ A pesar de esto, esta clase es la que mejor encaja con los objetivos del
+ trabajo puesto que las físicas se pueden modificar, además de ser el 
+\family typewriter
+peón
+\family default
+ la clase que cuenta con la función 
+\family typewriter
+SetupPlayerInputComponent()
+\family default
+ la cual nos permite acceder a la mencionada entrada del teclado.
+\end_layout
+
+\begin_layout Subsection
+Gitkraken:
+\end_layout
+
+\begin_layout Standard
+Esta es una herramienta multiplataforma, es decir, se encuentra disponible
+ para múltiples sitemas operativos la cual simplifica el uso de Git con
+ el fin de mejorar la productividad.
+ Este software nos permite crear repositorios, modificarlos y organizarlos
+ de manera simple y visual.
+ Este programa cuenta con una interfaz gráfica intuitiva y proporciona herramien
+tas de resolución de conflictos de fusion de ramas, integración de plataformas
+ de alojamiento y más funciones avanzadas de Git.
+ 
+\end_layout
+
+\begin_layout Standard
+El principal uso que se le ha dado es la organización del proyecto en GitHub,
+ dado que por límitaciones técnicas el trabajo se ha repartido en varias
+ máquinas y era necesario migrar los avances entre las mismas.
+ 
+\end_layout
+
+\begin_layout Subsection
+Github:
+\end_layout
+
+\begin_layout Standard
+Plataforma de control de versiones y colaboración que permite a programadores
+ y desarrolladores de cualquier entorno almacenar su código y llevar un
+ control del versionado del mismo.
+ También facilita la participación de otros individuos en código público.
+ 
+\end_layout
+
+\begin_layout Standard
+El uso de esta plataforma ha sido crucial para la organización y control
+ de versiones de este proyecto por el hecho de tener que usar más de una
+ máquina para completar ciertas tareas.
+ Al mismo tiempo, ha facilitado la tarea de compartir código con el tutor.
+\end_layout
+
+\begin_layout Subsection
+ROS2:
+\end_layout
+
+\begin_layout Standard
+ROS 2, también conocido como
+\shape italic
+ Robot Operating System 2
+\shape default
+, es un SDK (
+\shape slanted
+System Development Kit
+\shape default
+) open source, el cuál ofrece una plataforma estándar para desarrollar software
+ de cualquier rama de la industria que implique el uso de robots.
+ Este framework se desarrolló en 2007 por el Laboratorio de Inteligencia
+ Artificial de Standford y su desarrollo ha continuado desde entonces facilitand
+o el desarrollo de software para multitud de sistemas robóticos..
+ 
+\end_layout
+
+\begin_layout Standard
+La versión de este framework con la que estamos trabajando es la versión
+ Humble, la ultima versión publicada a la fecha de realización de este trabajo.
+ Entrando a describir más específicamente en que consiste este software,
+ ROS se compone de 2 partes básicas, el sistema operativo ros, y ros-pkg,
+ un conjunto de paquetes creados por la comunidad que implementan diversas
+ funcionalidades como puede ser: localización, mapeo simultáneo, planificación,
+ percepción y simulación...etc.
+ Sin embargo, el uso principal de este conjunto de librerías es la transmisión
+ de mensajes entre un controlador y la máquina en cuestión.
+ 
+\end_layout
+
+\begin_layout Standard
+En este trabajo, nos planteamos hacer uso de ROS 2 para realizar el control
+ del dron de forma 
+\begin_inset Quotes eld
+\end_inset
+
+externa
+\begin_inset Quotes erd
+\end_inset
+
+ y así simular un vuelo real.
+ Siendo más explícitos comunicando un controlador que envíe instrucciones
+ de forma externa al entorno de Unreal que muevan el dron en el escenario.
+\end_layout
+
+\begin_layout Subsection
+Aerostack2:
+\end_layout
+
+\begin_layout Standard
+Este es un framework multiplataforma open source el cual se utiliza para
+ el desarrollo de sistemas autónomos en entornos aeroespaciales, proporcionando
+ una plataforma para diseñar, implementar y controlar drones así como otro
+ tipo de sistemas autónomos aéreos.
+ Este tiene como objetivo ayudar en el desarrollo de aplicaciones robóticas
+ proporcionando una arquitectura modular y escalable, permitiendo la implementac
+ión de sistemas de navegación, percepción, control y comunicación.
+\end_layout
+
+\begin_layout Standard
+Asimismo, cuenta con una API bien definida y componentes predefinidos que
+ facilitan el desarrollo de diversos tipos de módulos.
+ Algunas de sus características incluyen el uso de aprendizaje automático
+ para la mejora de los sistemas autónomos así como ofrecer soporte a la
+ planificación y coordinación de misiones complejas con varios vehículos.
+ 
+\end_layout
+
+\begin_layout Standard
+En este trabajo se usará como complemento para el visualizador de vuelo
+ desarrollado.
+\end_layout
+
+\begin_layout Section
+Estado del arte de los simuladores de drones
+\end_layout
+
+\begin_layout Standard
+La simulación de drones es un campo relativamente nuevo que, sin embargo,
+ ha experimentado un desarrollo exponencial en los últimos años.
+ Durante este tiempo se han realizado significativos avances en el estudio
+ de la física del movimiento de los drones, un aspecto esencial para su
+ posterior simulación en entornos virtuales, que permiten explorar las posibles
+ aplicaciones de estas versátiles máquinas.
+ Como por ejemplo, cabe destacar su uso en seguridad[2], mantenimiento de
+ campos de placas solares[3] e incluso entretenimiento con enjambres de
+ cientos de estos pequeños robots[1] .
+ 
+\end_layout
+
+\begin_layout Standard
+Los drones son vehiculos aéreos no tripulados que se crearon en un inicio
+ con fines militares.
+ Sin embargo, con el paso del tiempo se han encontrado una amplia variedad
+ de usos.
+ Por ello, simular el comportamiento de una máquina de este tipo se ha vuelto
+ esencial, tanto para preveer que movimientos será capaz de realizar según
+ en que condiciones se encuentre como para poder hacer pruebas sin el equipamien
+to real, evitando así posibles daños y costes.
+ Con esto en mente, se crean los simuladores, que son entornos virtuales
+ tridimensionales los cuales pueden recrear una gran variedad de situaciones.
+ 
+\end_layout
+
+\begin_layout Standard
+En referencia a los simuladores, los ultimoa avances tecnológicos han potenciado
+ su gran diversificación en multitud de aplicaciones como, aprender a controlar
+ un dron, videojuegos de simulación de carreras de drones[4], etc, básicamente
+ orientadas a fines lúdicos.
+ A nivel más profesional podemos encontrar algunos como AirSim[5], simulador
+ de vuelo creado por Microsoft en el motor de juego de Unreal Engine (UE),
+ o Flightmare[6], un simulador desarrollado para el motor de juego de Unity,
+ más enfocados en aplicaciones industriales.
+ Sin embargo, este tipo de simuladores basan sus físicas en el sistema Gazebo,qu
+e presenta ciertas limítaciones operativas en referencia al sistema de colisione
+s, lo que hace necesario nuevos desarrollos que mejoren estos aspectos.
+\end_layout
+
+\begin_layout Standard
+La mayoría de los simuladores previamente descritos hacen uso de 2 SDK (Software
+ Development Kit) externos, Gazebo y ROS/ROS2.
+ El primero es un motor de físicas que gestiona todo lo relacionado con
+ la física que interacciona con el dron, ya sea su movimiento, velocidad...etc.
+ El segundo, ROS, es un software que se centra en el intercambio de mensajes,
+ más concretamente, se encarga de enviarle las instrucciones al controlador
+ del dron para manejar al mismo.
+ Le envía datos como por ejemplo el modo de vuelo, velocidad y demás.
+ Estos modos de vuelo y datos pueden variar dependiendo de que tipo de dron
+ y sobre que tipo de software este construido.
+\end_layout
+
+\begin_layout Standard
+Así pues, este trabajo tiene como objetivo crear un prototipo de un simulador
+ de vuelo de drones en el entorno gráfico de Unreal Engine 5 realizando
+ una integración con la librería de comunicación de C, ROS2, para así crear
+ un sistema de manejo automático de la trayectoría del dron.
+ La implementación de la gran mayoría del proyecto se realizará en C++.
+ Al mismo tiempo, al crear este simulador en UE5, se pretende resolver algunas
+ de las límitaciones asociadas al uso de Gazebo como motor de físicas, aprovecha
+ndo la infraestructura proporcionada por UE5.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch NoChildDocument
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "thesisExample"
+options "alpha"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "custom"
+width "2.5cm"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

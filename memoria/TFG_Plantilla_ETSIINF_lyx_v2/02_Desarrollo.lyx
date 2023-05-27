@@ -707,9 +707,9 @@ tick
  dentro de todas sus clases, la cual se ejecuta a cada fotograma generado
  por el motor y ejecuta las instrucciones descritas en la misma.
  Al mismo tiempo, esta función nos proporciona una variable 
-\shape slanted
+\family typewriter
 DeltaTime
-\shape default
+\family default
  la cual lleva la cuenta del tiempo que pasa dentro del editor durante la
  ejecución del programa.
  Esta función será la que más carga computacional tenga al final, dado que
@@ -719,9 +719,9 @@ DeltaTime
 \begin_layout Standard
 Otra función generada automáticamente y que merece la pena considerar es
  
-\shape slanted
+\family typewriter
 BeginPlay
-\shape default
+\family default
 , esta se ejecuta en el primer instante en que se entra al nivel creado
  y solo esa vez.
  Resulta útil para establecer variables iniciales o si se desea almacenar
@@ -954,9 +954,9 @@ Este último detalle mencionado es muy importante puesto que, para conseguirlo,
  habremos de hacer del subscriptor una librería que se pueda abrir en Unreal
  y permita usar sus funciones para recibir los mensajes del publicador.
  Esta tarea fue ampliamente simplificada gracias al trabajo de Juan Pares
- Guillen[link de su github] y Santiago Tapia, quienes desarrollaron un subscript
-or para su trabajo el cual he podido importar a mi proyecto y hacer uso
- del mismo puesto que la funcionalidad que buscaba implementar es similar.
+ Guillen[link de su github] y Santiago Tapia, quienes adaptaron un subscriptor
+ para su trabajo el cual he podido importar a mi proyecto y hacer uso del
+ mismo puesto que la funcionalidad que buscaba implementar es similar.
  Este subscriptor cuenta con 3 funciones, start(), update() y end().
  Cada una de estas funciones tiene un propósito y son las que más adelante
  importaremos en el peón de UE5:
@@ -1148,10 +1148,10 @@ Para conformar este peón haremos uso de una variedad de funciones, algunas
  otras auxiliares creadas por nosotros y otras importadas desde la librería
  del subscriptor.
  Como en la fase de prototipado, nos encontramos una vez más con las funciones
- BeginPlay(), Tick(), el constructor del propio peón, en este caso ADronePawnCom
-() y además aparecerá una función propia de Unreal no mencionada previamente,
- el EndPlay() solo que esta ha de ser sobrescrita y normalmente no se genera
- de forma automática en el fichero del peón.
+ BeginPlay(), Tick(), el constructor del propio peón, y además aparecerá
+ una función propia de Unreal no mencionada previamente, el EndPlay() solo
+ que esta ha de ser sobrescrita y normalmente no se genera de forma automática
+ en el fichero del peón.
  En cada una de estas podremos encontrar otras 3 funciones auxiliares las
  cuales implementan las funcionalidades deseadas.
  Al mismo tiempo se hará uso de las funciones importadas en 3 de las 4 funciones

@@ -305,159 +305,67 @@ Introducción
 \end_layout
 
 \begin_layout Section
-Descripción General
+Antecedentes
 \end_layout
 
 \begin_layout Standard
-La simulación de drones es un campo relativamente nuevo que, sin embargo,
- ha experimentado un desarrollo exponencial en los últimos años.
- Durante este tiempo se han realizado significativos avances en el estudio
- de la física del movimiento de los drones, un aspecto esencial para su
- posterior simulación en entornos virtuales, que permiten explorar las posibles
- aplicaciones de estas versátiles máquinas.
- Como por ejemplo, cabe destacar su uso en seguridad[2], mantenimiento de
- campos de placas solares[3] e incluso entretenimiento con enjambres de
- cientos de estos pequeños robots[1] .
+La simulación es un recurso que está adquiriendo una creciente importancia
+ en el marco tecnológico actual, por lo que está experimentado un crecimiento
+ en los últimos años.
  
 \end_layout
 
 \begin_layout Standard
-Los drones son vehiculos aéreos no tripulados que se crearon en un inicio
- con fines militares.
- Sin embargo, con el paso del tiempo se han encontrado una amplia variedad
- de usos.
- Por ello, simular el comportamiento de una máquina de este tipo se ha vuelto
- esencial, tanto para preveer que movimientos será capaz de realizar según
- en que condiciones se encuentre como para poder hacer pruebas sin el equipamien
-to real, evitando así posibles daños y costes.
- Con esto en mente, se crean los simuladores, que son entornos virtuales
- tridimensionales los cuales pueden recrear una gran variedad de situaciones.
- 
+Paralelamente, el desarrollo de videojuegos es otro de los ámbitos de mayor
+ auge en los últimos años, que ha requerido importantes mejoras en el software
+ y hardware.
+ Estos avances se han visto impulsados por la competencia entre las grandes
+ empresas de desarrollo tecnológico.
 \end_layout
 
 \begin_layout Standard
-En referencia a los simuladores, los ultimoa avances tecnológicos han potenciado
- su gran diversificación en multitud de aplicaciones como, aprender a controlar
- un dron, videojuegos de simulación de carreras de drones[4], etc, básicamente
- orientadas a fines lúdicos.
- A nivel más profesional podemos encontrar algunos como AirSim[5], simulador
- de vuelo creado por Microsoft en el motor de juego de Unreal Engine (UE),
- o Flightmare[6], un simulador desarrollado para el motor de juego de Unity,
- más enfocados en aplicaciones industriales.
- Sin embargo, este tipo de simuladores basan sus físicas en el sistema Gazebo,qu
-e presenta ciertas limítaciones operativas en referencia al sistema de colisione
-s, lo que hace necesario nuevos desarrollos que mejoren estos aspectos.
-\end_layout
-
-\begin_layout Standard
-La mayoría de los simuladores previamente descritos hacen uso de 2 SDK (Software
- Development Kit) externos, Gazebo y ROS/ROS2.
- El primero es un motor de físicas que gestiona todo lo relacionado con
- la física que interacciona con el dron, ya sea su movimiento, velocidad...etc.
- El segundo, ROS, es un software que se centra en el intercambio de mensajes,
- más concretamente, se encarga de enviarle las instrucciones al controlador
- del dron para manejar al mismo.
- Le envía datos como por ejemplo el modo de vuelo, velocidad y demás.
- Estos modos de vuelo y datos pueden variar dependiendo de que tipo de dron
- y sobre que tipo de software este construido.
-\end_layout
-
-\begin_layout Standard
-Así pues, este trabajo tiene como objetivo crear un prototipo de un simulador
- de vuelo de drones en el entorno gráfico de Unreal Engine 5 realizando
- una integración con la librería de comunicación de C, ROS2, para así crear
- un sistema de manejo automático de la trayectoría del dron.
- La implementación de la gran mayoría del proyecto se realizará en C++.
- Al mismo tiempo, al crear este simulador en UE5, se pretende resolver algunas
- de las límitaciones asociadas al uso de Gazebo como motor de físicas, aprovecha
-ndo la infraestructura proporcionada por UE5.
+Mi interés en estos campos se basa en dos puntos, por una parte los simuladores
+ representan un recurso con amplias aplicaciones y oportunidades tecnológicas.
+ Y por otra, los videojuegos siempre han sido un aspecto de interés para
+ mí tanto por su parte lúdica como por su complejidad a nivel de programación.
+ En mi opinión el trabajo escogido combina los dos temas, los simuladores
+ y los videojuegos y me proporciona la oportunidad de aprender cómo funciona
+ un entorno de desarrollo de videojuegos actual como es Unreal Engine 5
+ y cómo es el proceso de desarrollo detrás de un simulador, además de ampliar
+ mis conocimientos en programación con C++.
 \end_layout
 
 \begin_layout Section
-Unreal Engine 5
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Unreal Engine 5"
-
-\end_inset
-
-
+Objetivos
 \end_layout
 
 \begin_layout Standard
-Como se ha mencionado previamente, el simulador se va a desarrollar para
- el motor de juego Unreal Engine 5 (UE5) desarrollado por la compañía Epic
- Games.
- Esta herramienta es muy reciente y cuenta con unos avances gráficos enormes,
- puediendo llegar a generar entornos que parecen casi idénticos a la realidad
- dando la impresión de ser grabaciones del entorno natural y no simulaciones
- generadas por ordenador.
- Asimismo cuenta con un sistema de físicas y colisiones integrado, lo que
- fácilitará las tareas de implementación más adelante.
- Como añadido, este entorno también cuenta con herramientas de Inteligencia
- Artifical, que se pueden usar para controlar los actores, refiriendonos
- a los drones, que podamos llegar a tener en la escena.
+Los objetivos propuestos para este trabajo son los siguientes:
 \end_layout
 
-\begin_layout Standard
-El principal motivo para realizar el desarrollo en este motor, es su gran
- proyección de futuro, gracias a la capacidad gráfica que proporciona y
- la oportunidad de hacer uso de IA para entrenar drones in silico para luego
- poder aplicarlo en máquinas reales.
-\end_layout
-
-\begin_layout Section
-ROS 2
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:ROS2"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-ROS 2, también conocido como
-\shape italic
- Robot Operating System 2
-\shape default
-, es un SDK (
-\shape slanted
-System Development Kit
-\shape default
-) open source, el cuál ofrece una plataforma estándar para desarrollar software
- de cualquier rama de la industria que implique el uso de robots.
- Este framework se desarrolló en 2007 por el Laboratorio de Inteligencia
- Artificial de Standford y su desarrollo ha continuado desde entonces.
+\begin_layout Enumerate
+Analizar los requisitos y especificaciones de dicho simulador.
  
 \end_layout
 
-\begin_layout Standard
-La versión de este framework con la que estamos trabajando es la versión
- Humble, la ultima versión publicada a la fecha de realización de este trabajo.
- Entrando a describir más específicamente en que consiste este software,
- ROS se compone de 2 partes básicas, el sistema operativo ros, y ros-pkg,
- un conjunto de paquetes creados por la comunidad que implementan diversas
- funcionalidades como puede ser: localización, mapeo simultáneo, planificación,
- percepción y simulación...etc.
- Sin embargo, el uso principal de este conjunto de librerías es la transmisión
- de mensajes entre un controlador y la máquina en cuestión.
+\begin_layout Enumerate
+Diseñar la arquitectura software del mismo.
  
 \end_layout
 
-\begin_layout Standard
-En este trabajo, el objetivo, además de poder tener un dron cuyo movimiento
- sea lo más fiel a la realidad posible, es implementar ROS 2 para poder
- realizar el control del dron de forma 
-\begin_inset Quotes eld
-\end_inset
+\begin_layout Enumerate
+Especificar y documentar la API del simulador en ROS2.
+ 
+\end_layout
 
-externa
-\begin_inset Quotes erd
-\end_inset
+\begin_layout Enumerate
+Implementar el simulador como un nodo de ROS2 de acuerdo a la API y usando
+ Unreal 5.
+ 
+\end_layout
 
-, y así simular un vuelo real.
+\begin_layout Enumerate
+Especificar y desarrollar la API del simulador con Gazebo.
 \end_layout
 
 \begin_layout Standard

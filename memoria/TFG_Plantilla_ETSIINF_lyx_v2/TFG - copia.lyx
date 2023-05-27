@@ -324,6 +324,11 @@ customHeadersFooters
 \filename_suffix 0
 \color #faf0e6
 \end_branch
+\branch chapter-5
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
 \index Index
 \shortcut idx
 \color #008000
@@ -906,7 +911,7 @@ status open
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "02_Desarrollo.lyx"
+filename "02_HerramientasEstadoArte.lyx"
 
 \end_inset
 
@@ -926,7 +931,7 @@ status open
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "03_Resultados.lyx"
+filename "03_Desarrollo2.0.lyx"
 
 \end_inset
 
@@ -947,6 +952,26 @@ status open
 \begin_inset CommandInset include
 LatexCommand include
 filename "04_AnalisisImpacto.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch chapter-5
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "05_Conclusiones.lyx"
 
 \end_inset
 

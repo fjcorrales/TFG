@@ -19,9 +19,6 @@ void ADronePawn::Tick(float DeltaTime)
 	realVelocity = GetActorLocation() * DeltaTime;
 	CalculateDelta();
 	CalculateVelocity(); //CalculateVelocity
-	FVector pos = GetActorLocation();
-	pos += DeltaTime*realVelocity;
-	SetActorLocation(pos);
 }
 
 // Called when the game starts or when spawned
