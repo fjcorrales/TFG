@@ -702,7 +702,10 @@ Si miramos a su arquitectura, cabe resaltar que esta es una estructura modular
  específico para robor aéreos.
  Esta modularidad la facilita el hecho de contar con ROS2, ya que nos da
  la capacidad de crear plugins que se conecten a esta infraestructura.
- O como los propios desarrolladores lo describen; 
+ O como los propios desarrolladores lo describen:
+\end_layout
+
+\begin_layout Quotation
 \begin_inset Quotes eld
 \end_inset
 

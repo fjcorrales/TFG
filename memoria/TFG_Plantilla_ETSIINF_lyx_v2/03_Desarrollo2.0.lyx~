@@ -778,7 +778,7 @@ Como resultado de este hito podemos encontrar los ficheros adjuntados en
  el anexo 
 \begin_inset CommandInset ref
 LatexCommand labelonly
-reference "DUPLICADO: H1Anexo.1"
+reference " H1Anexo.1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1288,7 +1288,7 @@ Como resultado de este hito podemos encontrar los ficheros adjuntados en
  el anexo 
 \begin_inset CommandInset ref
 LatexCommand labelonly
-reference "DUPLICADO: H2Anexo.1"
+reference " H2Anexo.1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1609,7 +1609,7 @@ Los resultados de este hito se incluyen en los archivos adjuntos en el anexo
  
 \begin_inset CommandInset ref
 LatexCommand labelonly
-reference "DUPLICADO: H4Anexo.1"
+reference "H4Anexo.1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1878,7 +1878,7 @@ Como resultado de este hito podemos encontrar los ficheros adjuntados en
  el anexo 
 \begin_inset CommandInset ref
 LatexCommand labelonly
-reference "DUPLICADO: H5Anexo.1"
+reference " H5Anexo.1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1976,7 +1976,7 @@ status open
 \begin_inset Graphics
 	filename D:/TFG/memoria/imagenes/HighresScreenshot00005.png
 	lyxscale 30
-	scale 20
+	scale 15
 
 \end_inset
 
@@ -2039,7 +2039,7 @@ status open
 \begin_inset Graphics
 	filename D:/TFG/memoria/imagenes/Screenshot from 2023-05-26 11-52-15.png
 	lyxscale 30
-	scale 25
+	scale 20
 
 \end_inset
 
@@ -2141,7 +2141,7 @@ status open
 \begin_inset Graphics
 	filename D:/TFG/memoria/imagenes/Screenshot from 2023-05-26 11-54-23.png
 	lyxscale 30
-	scale 25
+	scale 20
 
 \end_inset
 
@@ -2180,7 +2180,7 @@ status open
 \begin_inset Graphics
 	filename D:/TFG/memoria/imagenes/HighresScreenshot00001.png
 	lyxscale 20
-	scale 20
+	scale 15
 
 \end_inset
 
@@ -2247,7 +2247,7 @@ status open
 \begin_inset Graphics
 	filename D:/TFG/memoria/imagenes/HighresScreenshot00002.png
 	lyxscale 20
-	scale 20
+	scale 15
 
 \end_inset
 
