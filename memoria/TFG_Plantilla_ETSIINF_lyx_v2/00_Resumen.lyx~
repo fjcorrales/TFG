@@ -134,41 +134,28 @@ ido y mostrará el movimiento en un entorno tridimensional.
 
 \begin_layout Standard
 Para cumplir este segundo objetivo se ha realizado un desarrollo dividido
- en dos partes principales, la primera consiste una fase de prototipado
- en la que se investigan formas en las que poder estructurar el programa
- deseado acorde con los requisitos establecidos, y la segunda en la que
- se desarrolla el visualizador de vuelo.
+ en hitos siguiendo una métodología de desarrollo ágil informal.
+ En total se podrán encontrar 7 hitos, 6 de ellos completos y un último
+ que se encuentra en desarrollo.
+ 
 \end_layout
 
 \begin_layout Standard
-En la fase de desarrollo mencionada, se realizan 3 pruebas de concepto.
- En la primera se explora una forma de impartir movimiento a objetos creados
- dentro del entorno de Unreal.
- En la segunda se realiza una importación de un modelo tridimensional de
- un dron con el fin de comprender el funcionamiento de este proceso.
- Y finalmente una tercera en la que se realiza la implementación de una
- prueba de concepto de un control diferencial de la velocidad, con el fin
- de realizar el código necesario para realizar los cálculos característicos
- de este tipo de controladores.
+En estos primeros 6 hitos se realizan progresos en vista a un desarollo
+ iterativo de este proyecto.
+ En el primero se exploran formas de mover objetos dentro de Unreal, en
+ el segundo se estudia cómo es el proceso de importación de mallas, en el
+ tercero se implementa un control diferencial de la velocidad, en el cuarto
+ se desarrolla un sistema publicador-suscriptor de ROS2, en el quinto se
+ desarrolla un peón dentro de Unreal que haga uso de ese sistema publicador-susc
+riptor y finalmente en el sexto se documenta la importación de un escenario
+ completo y sus texturas dentro del editor de Unreal.
 \end_layout
 
 \begin_layout Standard
-La fase de desarrollo del visualizador también se divide en 3 partes.
- En la primera se habla de la creación de un sistema publicador/suscriptor
- que gestionará el envió de coordenadas entre un ordenador base y el ordenador
- de a bordo del dron; en este caso, el dron ejecutará las funciones del
- subscriptor dentro de Unreal, mientras que se ejecutará el publicador en
- un terminal externo.
- La segunda fase consiste en hacer que el dron se mueva de acuerdo a las
- coordenadas recibidas siguiendo el esquema probado en la fase de prototipado.
- Esta fase de desarrollo concluye con un ejemplo explicados del proceso
- de importación de un escenario tridimensional de la ciudad de Londres.
-\end_layout
-
-\begin_layout Standard
-Todo el código fuente aquí descrito y explicado lo puede encontrar en la
- página de github[referencia al git] además de encontrarse también en el
- propio escrito.
+Todo el código fuente aquí descrito y explicado se puede encontrar en la
+ página de github[Tap23a] además de recogerse en los anexos de la propia
+ memoria.
 \end_layout
 
 \begin_layout Standard

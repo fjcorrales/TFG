@@ -664,9 +664,9 @@ La simulación de drones es un campo relativamente nuevo que, sin embargo,
  de la física del movimiento de los drones, un aspecto esencial para su
  posterior simulación en entornos virtuales, que permiten explorar las posibles
  aplicaciones de estas versátiles máquinas.
- Como por ejemplo, cabe destacar su uso en seguridad[2], mantenimiento de
- campos de placas solares[3] e incluso entretenimiento con enjambres de
- cientos de estos pequeños robots[1] .
+ Como por ejemplo, cabe destacar su uso en seguridad[ano22b], mantenimiento
+ de campos de placas solares[Mol19] e incluso entretenimiento con enjambres
+ de cientos de estos pequeños robots[Rus21] .
  
 \end_layout
 
@@ -687,12 +687,12 @@ to real, evitando así posibles daños y costes.
 \begin_layout Standard
 En referencia a los simuladores, los ultimo avances tecnológicos han potenciado
  su gran diversificación en multitud de aplicaciones como, aprender a controlar
- un dron, videojuegos de simulación de carreras de drones[4], etc, básicamente
- orientadas a fines lúdicos.
- A nivel más profesional podemos encontrar algunos como AirSim[5], simulador
+ un dron, videojuegos de simulación de carreras de drones[ano22a], etc,
+ básicamente orientadas a fines lúdicos.
+ A nivel más profesional podemos encontrar algunos como AirSim[Mic17], simulador
  de vuelo creado por Microsoft en el motor de juego de Unreal Engine (UE),
- o Flightmare[6], un simulador desarrollado para el motor de juego de Unity,
- más enfocados en aplicaciones industriales.
+ o Flightmare[yl21], un simulador desarrollado para el motor de juego de
+ Unity, más enfocados en aplicaciones industriales.
  Sin embargo, este tipo de simuladores basan sus físicas en el sistema Gazebo,qu
 e presenta ciertas limitaciones operativas en referencia al sistema de colisione
 s, lo que hace necesario nuevos desarrollos que mejoren estos aspectos.

@@ -312,8 +312,8 @@ Herramientas
 Las herramientas utilizadas para el desarrollo de este trabajo han sido:
  Unreal Engine 4.27 y 5, Gitkraken, GitHub, Teams, ROS2 yAerostack2.
  Estas serán descritas a continuación, tanto para describir su función y
- utilidad como para explicar lo necesario a saber para enteder los contenidos
- recogidos en este escrito.
+ utilidad como para explicar lo necesario para enteder los contenidos recogidos
+ en esta memoria.
 \end_layout
 
 \begin_layout Subsection
@@ -322,13 +322,12 @@ Unreal Engine 4.27 y 5:
 
 \begin_layout Standard
 Como se ha mencionado previamente, el simulador se va a desarrollar para
- el motor de juego Unreal Engine 5 (UE5) desarrollado por la compañía Epic
- Games.
- Esta herramienta es muy reciente y cuenta con unos avances gráficos enormes,
- puediendo llegar a generar entornos que parecen casi idénticos a la realidad
- dando la impresión de ser grabaciones del entorno natural y no simulaciones
- generadas por ordenador.
- Asimismo cuenta con un sistema de físicas y colisiones integrado, lo que
+ el motor de juego Unreal Engine 5 (UE5) de la compañía Epic Games.
+ Esta es una herramienta de última generación que cuenta con los últimos
+ avances gráficos, puediendo llegar a generar entornos casi idénticos a
+ la realidad, simulando a la perfección grabaciones del entorno natural
+ y no generadas por ordenador.
+ Asimismo, cuenta con un sistema de físicas y colisiones integrado, lo que
  fácilitará las tareas de implementación más adelante.
  Como añadido, este entorno también cuenta con herramientas de Inteligencia
  Artifical, que se pueden usar para controlar los actores, refiriendonos
@@ -355,13 +354,13 @@ El motivo principal por el que se han utilizado dos versiones distintas
 \end_layout
 
 \begin_layout Standard
-Habiendo justificado esto en vista de que los contenidos del trabajo son
+Habiendo justificado esto, en vista de que los contenidos del trabajo son
  técnicos, es necesario explicar algunos conceptos de Unreal Engine.
 \end_layout
 
 \begin_layout Enumerate
-En el editor de Unreal Engine, no importa cual de las 2 versiones esté usandose,
- podremos encontrar varios elementos.
+En el editor de Unreal Engine, no importa cual de las dos versiones esté
+ usandose, podremos encontrar varios elementos.
  El primero y más llamativo una ventana la cual nos muestra el nivel en
  el que se está trabajando actualmente.
  En este podremos ver las mallas y elementos que el usuario vaya añadiendo.
@@ -379,17 +378,17 @@ Content Browser
  En la primera podremos ver en detalle la información que viene asociada
  a cada elemento presente en el nivel y en la segunda podremos encontrar
  todos los elementos de los que disponemos en nuestro proyecto.
- En este cajon de contenido es el sistema de ficheros del proyecto y podremos
+ Este cajon de contenido es el sistema de ficheros del proyecto y podremos
  añadir y eliminar tantos objetos como queramos.
- Aquí también se crearan las clases C++ de los diferentes objetos que queramos
- crear, mallas que importemos al proyecto y los blueprints que creemos.
+ Aquí también se crearan las clases C++ de los diferentes objetos, mallas
+ que importemos al proyecto y los blueprints que creemos.
 \end_layout
 
 \begin_layout Enumerate
 Unreal ofrece una amplia variedad de objetos y clases creados por sus desarrolla
 dores para facilitar las tareas de desarrollo de otras personas que deseen
  utilizar este motor de juego.
- Lás más importantes que a las cuales se da uso en este trabajo son: 
+ Las más importantes a las que se da uso en este trabajo son: 
 \family typewriter
 componentes de escena
 \family default
@@ -545,12 +544,16 @@ Esta es una herramienta multiplataforma, es decir, se encuentra disponible
  el fin de mejorar la productividad.
  Este software nos permite crear repositorios, modificarlos y organizarlos
  de manera simple y visual.
+ Este programa cuenta con una interfaz gráfica intuitiva y proporciona herramien
+tas de resolución de conflictos de fusion de ramas, integración de plataformas
+ de alojamiento y más funciones avanzadas de Git.
+ 
 \end_layout
 
 \begin_layout Standard
-El principal uso que ha tenido ha consistido en la organización del proyecto
- en GitHub dado que por límitaciones técnicas el trabajo se ha repartido
- en varias máquinas y era necesario migrar los avances entre las mismas.
+El principal uso que se le ha dado es la organización del proyecto en GitHub,
+ dado que por limitaciones técnicas el trabajo se ha repartido en varias
+ máquinas y era necesario migrar los avances entre las mismas.
  
 \end_layout
 
@@ -574,17 +577,6 @@ El uso de esta plataforma ha sido crucial para la organización y control
 \end_layout
 
 \begin_layout Subsection
-Microsoft Teams:
-\end_layout
-
-\begin_layout Standard
-Esta conocida plataforma de comunicación y colaboración ha permitido la
- interacción entre el tutor y el alumno para las reuniones semanales y actualiza
-ciones de las iteraciones y avances realizados en el trabajo.
- 
-\end_layout
-
-\begin_layout Subsection
 ROS2:
 \end_layout
 
@@ -600,7 +592,8 @@ System Development Kit
 ) open source, el cuál ofrece una plataforma estándar para desarrollar software
  de cualquier rama de la industria que implique el uso de robots.
  Este framework se desarrolló en 2007 por el Laboratorio de Inteligencia
- Artificial de Standford y su desarrollo ha continuado desde entonces.
+ Artificial de Standford y su desarrollo ha continuado desde entonces facilitand
+o el desarrollo de software para multitud de sistemas robóticos..
  
 \end_layout
 
@@ -628,6 +621,8 @@ externa
 \end_inset
 
  y así simular un vuelo real.
+ Siendo más explícitos comunicando un controlador que envíe instrucciones
+ de forma externa al entorno de Unreal que muevan el dron en el escenario.
 \end_layout
 
 \begin_layout Subsection
@@ -636,7 +631,7 @@ Aerostack2:
 
 \begin_layout Standard
 Este es un framework multiplataforma open source el cual se utiliza para
- el desarorllo de sistemas autónomos en entornos aeroespaciales, proporcionando
+ el desarrollo de sistemas autónomos en entornos aeroespaciales, proporcionando
  una plataforma para diseñar, implementar y controlar drones así como otro
  tipo de sistemas autónomos aéreos.
  Este tiene como objetivo ayudar en el desarrollo de aplicaciones robóticas
@@ -649,7 +644,13 @@ Asimismo, cuenta con una API bien definida y componentes predefinidos que
  facilitan el desarrollo de diversos tipos de módulos.
  Algunas de sus características incluyen el uso de aprendizaje automático
  para la mejora de los sistemas autónomos así como ofrecer soporte a la
- planificación y coordinación de misiones complejas con
+ planificación y coordinación de misiones complejas con varios vehículos.
+ 
+\end_layout
+
+\begin_layout Standard
+En este trabajo se usará como complemento para el visualizador de vuelo
+ desarrollado.
 \end_layout
 
 \begin_layout Section
@@ -663,19 +664,19 @@ La simulación de drones es un campo relativamente nuevo que, sin embargo,
  de la física del movimiento de los drones, un aspecto esencial para su
  posterior simulación en entornos virtuales, que permiten explorar las posibles
  aplicaciones de estas versátiles máquinas.
- Como por ejemplo, cabe destacar su uso en seguridad[2], mantenimiento de
- campos de placas solares[3] e incluso entretenimiento con enjambres de
- cientos de estos pequeños robots[1] .
+ Como por ejemplo, cabe destacar su uso en seguridad[ano22b], mantenimiento
+ de campos de placas solares[Mol19]  e incluso entretenimiento con enjambres
+ de cientos de estos pequeños robots[1] .
  
 \end_layout
 
 \begin_layout Standard
-Los drones son vehiculos aéreos no tripulados que se crearon en un inicio
+Los drones son vehículos aéreos no tripulados que se crearon en un inicio
  con fines militares.
  Sin embargo, con el paso del tiempo se han encontrado una amplia variedad
  de usos.
  Por ello, simular el comportamiento de una máquina de este tipo se ha vuelto
- esencial, tanto para preveer que movimientos será capaz de realizar según
+ esencial, tanto para prever que movimientos será capaz de realizar según
  en que condiciones se encuentre como para poder hacer pruebas sin el equipamien
 to real, evitando así posibles daños y costes.
  Con esto en mente, se crean los simuladores, que son entornos virtuales
@@ -684,7 +685,7 @@ to real, evitando así posibles daños y costes.
 \end_layout
 
 \begin_layout Standard
-En referencia a los simuladores, los ultimoa avances tecnológicos han potenciado
+En referencia a los simuladores, los ultimo avances tecnológicos han potenciado
  su gran diversificación en multitud de aplicaciones como, aprender a controlar
  un dron, videojuegos de simulación de carreras de drones[4], etc, básicamente
  orientadas a fines lúdicos.
@@ -693,7 +694,7 @@ En referencia a los simuladores, los ultimoa avances tecnológicos han potenciad
  o Flightmare[6], un simulador desarrollado para el motor de juego de Unity,
  más enfocados en aplicaciones industriales.
  Sin embargo, este tipo de simuladores basan sus físicas en el sistema Gazebo,qu
-e presenta ciertas limítaciones operativas en referencia al sistema de colisione
+e presenta ciertas limitaciones operativas en referencia al sistema de colisione
 s, lo que hace necesario nuevos desarrollos que mejoren estos aspectos.
 \end_layout
 
@@ -714,10 +715,10 @@ La mayoría de los simuladores previamente descritos hacen uso de 2 SDK (Softwar
 Así pues, este trabajo tiene como objetivo crear un prototipo de un simulador
  de vuelo de drones en el entorno gráfico de Unreal Engine 5 realizando
  una integración con la librería de comunicación de C, ROS2, para así crear
- un sistema de manejo automático de la trayectoría del dron.
+ un sistema de manejo automático de la trayectoria del dron.
  La implementación de la gran mayoría del proyecto se realizará en C++.
  Al mismo tiempo, al crear este simulador en UE5, se pretende resolver algunas
- de las límitaciones asociadas al uso de Gazebo como motor de físicas, aprovecha
+ de las limitaciones asociadas al uso de Gazebo como motor de físicas, aprovecha
 ndo la infraestructura proporcionada por UE5.
 \end_layout
 

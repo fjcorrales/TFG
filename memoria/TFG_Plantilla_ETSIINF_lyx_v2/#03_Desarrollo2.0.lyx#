@@ -1,0 +1,2271 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrbook
+\begin_preamble
+% increases link area for cross-references and autoname them
+% if you change the document language to e.g. French
+% you must change "extrasenglish" to "extrasfrench"
+\AtBeginDocument{%
+ \renewcommand{\ref}[1]{\mbox{\autoref{#1}}}
+}
+\def\refnamechanges{%
+ \renewcommand*{\equationautorefname}[1]{}
+ \renewcommand{\sectionautorefname}{sec.\negthinspace}
+ \renewcommand{\subsectionautorefname}{sec.\negthinspace}
+ \renewcommand{\subsubsectionautorefname}{sec.\negthinspace}
+ \renewcommand{\figureautorefname}{Fig.\negthinspace}
+ \renewcommand{\tableautorefname}{Tab.\negthinspace}
+}
+\@ifpackageloaded{babel}{\addto\extrasenglish{\refnamechanges}}{\refnamechanges}
+
+% in case somebody want to have the label "Equation"
+%\renewcommand{\eqref}[1]{Equation~(\negthinspace\autoref{#1})}
+
+% that links to image floats jumps to the beginning
+% of the float and not to its caption
+\usepackage[figure]{hypcap}
+
+% the pages of the TOC is numbered roman
+% and a pdf-bookmark for the TOC is added
+\let\myTOC\tableofcontents
+\renewcommand\tableofcontents{%
+  \frontmatter
+  \pdfbookmark[1]{\contentsname}{}
+  \myTOC
+  \mainmatter }
+
+% makes caption labels bold
+% for more info about these settings, see
+% http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguien.pdf
+\setkomafont{captionlabel}{\bfseries}
+\setcapindent{1em}
+
+% enables calculations
+\usepackage{calc}
+
+% fancy page header/footer settings
+% for more information see section 9 of
+% ftp://www.ctan.org/pub/tex-archive/macros/latex2e/contrib/fancyhdr/fancyhdr.pdf
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+% increases the bottom float placement fraction
+\renewcommand{\bottomfraction}{0.5}
+
+% avoids that floats are placed above its sections
+\let\mySection\section\renewcommand{\section}{\suppressfloats[t]\mySection}
+\end_preamble
+\options intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage
+\use_default_options true
+\master TFG.lyx
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "lmodern" "default"
+\font_sans "lmss" "default"
+\font_typewriter "lmtt" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_title "Your title"
+\pdf_author "Your name"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false"
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\branch NoChildDocument
+\selected 0
+\filename_suffix 0
+\color #ff0000
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 1
+\math_indentation default
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+chaptername
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thechapter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+rightmark
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Enable page headers and add the chapter to the header line.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Footer
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Right Footer
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Desarrollo
+\end_layout
+
+\begin_layout Section
+Descripción General
+\end_layout
+
+\begin_layout Standard
+Como se mencionó en la introducción, el desarrollo de esta aplicación será
+ principalmente en C++ dado que es el lenguaje en el que se programa en
+ Unreal Engine 5 y ROS2.
+\end_layout
+
+\begin_layout Standard
+La metodología seguida a lo largo del trabajo ha sido una metodología ágil
+ informal dado que este trabajo ha sido realizado por 2 personas, el tutor
+ tomando el rol del cliente y el alumno tomando el rol de desarrollador.
+ Es debido a esta forma de trabajo que el desarrollo se basa en sprints
+ o iteraciones.
+ Estas iteraciones integran los progresos realizados siguiendo los hitos
+ marcados por el tutor.
+ El comienzo de una iteración se encuentra marcado por la definición de
+ un requisito por parte del tutor y su fin lo marca el resultado obtenido
+ por el desarrollo del alumno que ha de satisfacer los objetivos definidos
+ por el tutor.
+ 
+\end_layout
+
+\begin_layout Standard
+A continiuación se detallan los diferentes hitos fijados para este TFG.
+ 
+\end_layout
+
+\begin_layout Section
+Hito 1: Exploración del movimiento de un objeto en Unreal
+\end_layout
+
+\begin_layout Subsection
+Descripción:
+\end_layout
+
+\begin_layout Standard
+Par implementar un dron, el primer paso sería conocer la manera de proporcionar
+ movimiento a objetos dentro del motor de juego.
+ El objetivo de este hito es desarrollar una manera estable con la que poder
+ mover objetos dentro de Unreal.
+\end_layout
+
+\begin_layout Subsection
+Desarrollo:
+\end_layout
+
+\begin_layout Standard
+Con el fin de lograr este hito, se desarrolló un componente de escena que
+ pudiera ser añadido a actores.
+ La idea se basa en poder tener un módulo que implemente el movimiento y
+ se pueda migrar a otros actores para que se comporten de la misma manera.
+\end_layout
+
+\begin_layout Standard
+Haciendo uso de estos componentes diseñamos una primera iteración para estudiar
+ el movimiento en los actores y planificar la futura implementación del
+ movimiento de un dron.
+ Tras investigar y revisar tutoriales de diversas fuentes[Eng23] decidí
+ crear un componente de escena que se encargara de modificar la localización
+ de una 
+\family typewriter
+mesh
+\family default
+ (malla).
+ Es decir, crear un componente de escena que fuera el raíz de la jerarquía
+ que moviera un modelo 3D.
+ En este caso, un cubo cuyo movimiento se basa en un vector de posición
+ al que se le pueden ajustar las componentes tanto desde el editor, desde
+ un 
+\family typewriter
+blueprint
+\family default
+ como desde el propio código fuente.
+ 
+\end_layout
+
+\begin_layout Standard
+A continuación abordamos la cuestión de las colisiones, añadiendo la propiedad
+ comúnmente conocida como 
+\family typewriter
+hitbox
+\family default
+\shape slanted
+ 
+\shape default
+(caja de colisiones).
+ Para esto simplemente se añade un componente de escena de tipo 
+\family typewriter
+hitbox
+\family default
+, se ajusta al tamaño de la mesh elegida y se configura un gráfico de eventos
+ para que cuando el jugador entre en contacto con el objeto este empiece
+ a moverse.
+ Asimismo, se incluye otra 
+\family typewriter
+hitbox
+\family default
+ para delimitar un área amplia alrededor de la malla para que en el caso
+ de que detectara que el jugador abandona el área el objeto volviera a su
+ posición original.
+ 
+\end_layout
+
+\begin_layout Standard
+Atendiendo al código desarrollado para este hito se creó la clase move,
+ clase que genera un componente de escena compuesto por dos ficheros un
+ 
+\family typewriter
+header
+\family default
+ y el 
+\family typewriter
+.cpp
+\family default
+ conteniendo el código fuente.
+ En estos, a parte de las funciones características de Unreal se crearon
+ otras 3 funciones diferentes para configurar el movimiento del actor en
+ el que se situase este componente.
+ Las funciones son 
+\family typewriter
+EnableMovement()
+\family default
+, 
+\family typewriter
+ResetMovement()
+\family default
+ y 
+\family typewriter
+SetMoveDirection().
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Pruebas/moveTest/moveTest/move.h"
+lstparams "firstline=18,lastline=29,caption={Definicion de funciones en el header de move},label={Img.1-1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estas 3 funciones se encargan de configurar el movimiento, siendo este realizado
+ en la función 
+\family typewriter
+TickComponent()
+\family default
+.
+ Entrando en más detalle, la función 
+\family typewriter
+EnableMovement()
+\family default
+ se encarga de activar el movimiento en base a un 
+\family typewriter
+boolean
+\family default
+ que se vuelve verdadero cuando el jugador colisiona con la 
+\family typewriter
+hitbox
+\family default
+ del actor.
+ La función 
+\family typewriter
+ResetMovement()
+\family default
+ reinicia el movimiento del actor, esta función es declarada como 
+\shape slanted
+blueprint callable
+\shape default
+, por lo que solo haremos uso de la misma desde el editor del blueprint.
+ Finalmente la función 
+\family typewriter
+SetMoveDirection()
+\family default
+ como indica su nombre, cambiará la dirección del movimiento ajustando un
+ entero que se usará en la función que realice el movimiento.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Pruebas/moveTest/moveTest/move.cpp"
+lstparams "firstline=18,lastline=35,caption={Funciones EnableMovement(), ResetMovement() y SetMoveDirection() },label={Img.2-1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Al mismo tiempo es importante comentar el código implementado en las funciones
+ de 
+\family typewriter
+BeginPlay()
+\family default
+ y 
+\family typewriter
+TickComponent()
+\family default
+.
+ En la primera configuramos valores de inicio para algunas de las variables
+ que necesitaremos para componer el movimiento del actor.
+ Se configura la posición inicial del actor almacenando el vector en la
+ variable 
+\family typewriter
+StartRelativeLocation
+\family default
+, a continuación, se inicializa el vector llamado 
+\family typewriter
+MoveOffsetNorm
+\family default
+ al valor de las coordenadas a las que se desea mover el actor e inmediatamente
+ se normaliza para obtener un movimiento fluido más adelante.
+ Al mismo tiempo se configura la distancia máxima a la que se puede mover
+ el actor y finalmente se llama a la función de Unreal 
+\family typewriter
+SetComponentTickEnabled()
+\family default
+ para confirmar que se pueda usar la función de 
+\family typewriter
+TickComponent()
+\family default
+ en este actor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Pruebas/moveTest/moveTest/move.cpp"
+lstparams "firstline=38,lastline=53,caption={Función BeginPlay()},label={Img.2-1-1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para terminar, la función 
+\family typewriter
+TickComponent()
+\family default
+, es donde se realiza el movimiento.
+ Nada más entrar a la función se comprueba si la colisión que inicia el
+ movimiento ha ocurrido mediante la variable 
+\family typewriter
+MoveEnable
+\family default
+, en caso afirmativo se realiza un calculo para obtener la distancia actual
+ recorrida y se comprueba si ha alcanzado el máximo o un mínimo (siendo
+ este el que desee el programador, aquí esta configurado a 0 para que no
+ atraviese el suelo).
+ En caso de que no halla alcanzado ninguno de los dos, se pasa a ajustar
+ la posición teniendo en cuenta su posición inicial, el vector normalizado
+ y la distancia recorrida.
+ En caso de haber alcanzado alguno de los límites, se siguen los siguientes
+ pasos: se cambia la dirección de movimiento, se lanza el evento 
+\family typewriter
+OnEndpointReached
+\family default
+ el cual definimos como 
+\family typewriter
+BlueprintAssignable
+\family default
+ en el fichero de cabecera, ajustamos la distancia actual mediante la función
+ de librería 
+\family typewriter
+FMath
+\family default
+, 
+\family typewriter
+Clamp()
+\family default
+, finalmente se ajusta la posición nueva del actor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Pruebas/moveTest/moveTest/move.cpp"
+lstparams "firstline=57,lastline=80,caption={Función TickComponent()},label={Img.2-1-2}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sin embargo, no todo el comportamiento de este actor se rige por el código.
+ Para este hito también se hace uso de la programación en blueprint basada
+ en gráficos de eventos.
+ Es aquí donde una vez creado el actor en Unreal y añadirle el componente
+ de escena creado previamente, se ha de configurar el siguiente gráfico
+ de eventos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/TFG/software/Pruebas/moveTest/eventGraph.jpeg
+	lyxscale 30
+	scale 30
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Gráfico de eventos de activación de movimiento por colisión de hitbox
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este podemos ver que es donde se configuran las colisiones y qué funciones
+ son llamadas en base a los eventos que ocurren en la escena de Unreal.
+ En el evento de 
+\family typewriter
+Begin Overlap
+\family default
+ es donde se detecta la colisión inicial y comienza el movimiento llamando
+ a 
+\family typewriter
+EnableMovement()
+\family default
+.
+ En la misma línea podemos ver que se llama también a 
+\family typewriter
+SetMoveDirection()
+\family default
+ donde en base al evento que se halla detectado el valor dado a la dirección
+ varia, si estamos en la línea de 
+\family typewriter
+Begin Overlap
+\family default
+ el valor es 1 y si estamos en la línea de 
+\family typewriter
+End Overlap
+\family default
+ es -1 para realizar el movimiento a la inversa volviendo al punto de origen.
+ Finalmente podemos ver como al final de la línea de 
+\family typewriter
+On Endpoint Reached
+\family default
+ se llama a 
+\family typewriter
+ResetMovement()
+\family default
+ para que en caso de que se llegue al final del movimiento, se reinicie
+ la posición del actor.
+\end_layout
+
+\begin_layout Standard
+El código y el gráfico de eventos fue obtenido de la guía creada por Lötwig
+ Fusel [Fus22a][Fus22b]
+\end_layout
+
+\begin_layout Standard
+Posteriormente, tras este primer acercamiento a los actores y componentes,
+ decidí realizar pruebas para intentar implementar un modo de vuelo típico
+ de los drones, el modo 
+\shape slanted
+Hover.
+ 
+\shape default
+Este es un modo simple en el que el dron se eleva hasta una altura pre estableci
+da y la mantiene hasta que se le envíe una señal para moverse o volver a
+ su posición original.
+\end_layout
+
+\begin_layout Standard
+Esta prueba es muy similar a la anterior dado que también se basa en un
+ componente de escena, sin embargo, hay algún cambio respecto al funcionamiento.
+ El código para modificar la posición sigue siendo el mismo, solo que en
+ este caso, podemos modificar únicamente la altura máxima que queremos que
+ alcance el dron y la velocidad del mismo.
+ Esto es observable en la definición de las variables, donde solo permitimos
+ una entrada variable que es la coordenada en el eje Z que luego se incluye
+ en un vector para realizar el movimiento como en el componente 
+\family typewriter
+move.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Pruebas/hoverTest/HoverComponent.h"
+lstparams "firstline=40,lastline=64,caption={Definición de variables del componente HoverComponent},label={Img.3-1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+También se implementaron dos funciones, 
+\family typewriter
+Hover()
+\family default
+ para comenzar el vuelo y 
+\family typewriter
+ResetPosition()
+\family default
+ para volver a la posición original.
+ Cabe mencionar que esta vez no se ha implementado ningún grafico de eventos
+ dado que la interacción de esta prueba se basa en el envío de la señal
+ de activación o de reset.
+ Estas señales se mandan desde el editor, pudiendo encontrar dos botones
+ en el mismo una vez se compila este componente.
+ Si se selecciona la opción de hover en el editor, comenzará el movimiento.
+ Si se selecciona la de reset se volverá al punto de origen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Pruebas/hoverTest/HoverComponent.cpp"
+lstparams "firstline=28,lastline=45,caption={Funciones Hover() y ResetPosition()},label={Img.4-1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Resultados:
+\end_layout
+
+\begin_layout Standard
+Como resultado de este hito podemos encontrar los ficheros adjuntados en
+ el anexo 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "H1Anexo.1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Estos ficheros configuran los componentes de escena 
+\family typewriter
+move
+\family default
+ y 
+\family typewriter
+HoverComponent
+\family default
+ los cuales cumplen el propósito de este hito, movimiento de objetos dentro
+ de Unreal.
+ 
+\end_layout
+
+\begin_layout Standard
+Esta forma de mover los elementos nos será útil para futuras iteraciones
+ pues es una forma simple y eficaz de cambiar la posición de objetos dentro
+ de este editor.
+ Sin embargo, hacerlo mediante componentes pensamos que no es suficientemente
+ eficaz dado que al ser un elemento que se ha de añadir a un actor, ofrece
+ limitaciones a la hora de configurar inputs por parte del usuario además
+ de ofrecer limitadas interacciones con el propio actor y otros posibles
+ componentes.
+ Así pues, en futuras iteraciones haremos uso de peones, más concretamente
+ el objetivo será construir un peón propio desde cero.
+\end_layout
+
+\begin_layout Section
+Hito 2: Importación de mallas
+\end_layout
+
+\begin_layout Subsection
+Descripción:
+\end_layout
+
+\begin_layout Standard
+Además de movimiento, para poder realizar un simulador también es importante
+ el apartado estético.
+ Por ello el objetivo de este hito es investigar el funcionamiento de la
+ importación de mallas para conseguir un modelo tridimensional de un cuadricópte
+ro dentro del propio entorno de Unreal.
+\end_layout
+
+\begin_layout Subsection
+Desarrollo:
+\end_layout
+
+\begin_layout Standard
+Este tipo de modelos tridimensionales, también conocidos como mallas o 
+\shape slanted
+mesh
+\shape default
+ son muy importantes dentro de Unreal ya que es gracias a estos que el editor
+ es capaz de simular físicas y colisiones basándose en hitboxes ajustadas
+ a estas mallas.
+\end_layout
+
+\begin_layout Standard
+Para empezar busqué en internet un modelo 3D gratuito de un cuadricópteroreferen
+cia a la página del modelo 3D del dron].
+ Una vez descargado faltaba importarlo a la carpeta de contenidos de Unreal
+ Engine para su uso.
+ Cabe mencionar que estos modelos 3D han de ser exportados de sus respectivas
+ aplicaciones en formato .fbx ya que este es el que reconoce Unreal.
+ El proceso de importación es muy simple, consiste en arrastrar el archivo
+ al editor y tras una simple ventana de configuración ya estaría disponible
+ el modelo para su uso.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/ImortSettings.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ventana de configuración de importaciones UE5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez importada la malla, para utilizarla basta con arrastrarla del cajón
+ de contenidos a la escena.
+\end_layout
+
+\begin_layout Standard
+Si se desea, Epic Games también cuenta con una plataforma en la que los
+ usuarios pueden subir a una tienda on-line sus modelos 3D ya sean escenarios
+ u objetos.
+ Una posible limitación es que la mayoría del contenido es de pago.
+ 
+\end_layout
+
+\begin_layout Standard
+Es importante mencionar que una vez se importa una malla es posible modificarla
+ dentro del editor de blueprints para reajustar sus valores, materiales,
+ texturas...etc.
+\end_layout
+
+\begin_layout Subsection
+Resultados:
+\end_layout
+
+\begin_layout Standard
+Como resultado de la malla elegida obtenemos el siguiente modelo 3D en nuestra
+ escena de Unreal
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 18-58-01.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mesh del dron en el entorno de Unreal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con esto quedaba solventado el problema de poder disponer de un modelo tridimens
+ional de un dron.
+ Un objetivo de futuro será determinar si Unreal genera las colisiones automátic
+amente al proporcionarle una 
+\family typewriter
+hitbox
+\family default
+ al modelo o si estas han de ser programadas desde 0.
+\end_layout
+
+\begin_layout Section
+Hito 3: Implementación de un control diferencial de la velocidad
+\end_layout
+
+\begin_layout Subsection
+Descripción:
+\end_layout
+
+\begin_layout Standard
+El objetivo de este hito es codificar las funciones necesarias para implementar
+ un control diferencial de la velocidad en un peón de Unreal y controlar
+ la velocidad con teclas para estudiar el funcionamiento de la entrada por
+ teclado.
+ Este tipo de controlador es muy útil ya que es una muy buena aproximación
+ de como se implementa realmente el movimiento de los drones.
+\end_layout
+
+\begin_layout Subsection
+Desarrollo:
+\end_layout
+
+\begin_layout Standard
+Como se menciona en la descripción de este hito, se va a crear un peón.
+ Para la creación de un control diferencial de la velocidad es necesario
+ contar con 3 vectores, uno para establecer la velocidad deseada, otro para
+ definir la velocidad real del dron y un tercero que se encarga de calcular
+ un delta con la velocidad real actual del dron, la velocidad objetivo y
+ el tiempo transcurrido.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/droneSim/DronePawn.h"
+lstparams "firstline=43,lastline=50,caption={Vectores utilizados},label={Img.5}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para realizar los cálculos necesarios utilizaremos la función 
+\family typewriter
+Tick()
+\family default
+ dada por Unreal dentro del esqueleto de la clase peón.
+ En esta función se hará uso de la variable 
+\family typewriter
+DeltaTime
+\family default
+ para calcular la velocidad real y en un futuro también se utilizará para
+ mover el dron y calcular su posición.
+ Asimismo, dada la naturaleza de 
+\family typewriter
+Tick()
+\family default
+ esta será la función con más carga computacional ya que se encargará de
+ realizar todos los cálculos o realizar llamadas a las funciones que los
+ hagan, en este caso a 
+\family typewriter
+CalculateDelta()
+\family default
+ y 
+\family typewriter
+CalculateVelocity()
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/droneSim/DronePawn.cpp"
+lstparams "firstline=15,lastline=22,caption={Función Tick()},label={Img.6-1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las funciones 
+\family typewriter
+CalculateDelta()
+\family default
+ y 
+\family typewriter
+CalculateVelocity()
+\family default
+ realizan las funciones que sus nombres describen, 
+\family typewriter
+CalculateDelta()
+\family default
+ calcula el delta de la velocidad siguiendo la ecuación de un movimiento
+ rectilíneo uniformemente acelerado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/droneSim/DronePawn.cpp"
+lstparams "firstline=82,lastline=85,caption={Función CalculateDelta()},label={Img.6-1-1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y la función 
+\family typewriter
+CalculateVelocity()
+\family default
+ realiza una serie de comprobaciones.
+ Estas consisten en comprobar si el delta de la velocidad calculado supera
+ unos límites que se establecen en el fichero de cabecera como medida de
+ seguridad.
+ Si el delta calculado supera los límites entonces se ajusta al máximo o
+ mínimo, en caso contrario ajustamos la velocidad real sumándole ese delta
+ hallado previamente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/droneSim/DronePawn.cpp"
+lstparams "firstline=91,lastline=119,caption={Función CalculateVelocity()},label={Img.6-1-1-1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/droneSim/DronePawn.h"
+lstparams "firstline=55,lastline=59,caption={Límites establecidos para el delta},label={Img.5-1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En 
+\family typewriter
+BeginPlay()
+\family default
+ para este hito no realizamos ninguna función relevante a parte de la inicializa
+ción de un vector.
+\end_layout
+
+\begin_layout Standard
+Especial mención a la función 
+\family typewriter
+SetupPlayerInputComponent()
+\family default
+ ya que en esta función es donde configuraremos los inputs del teclado que
+ tenemos como objetivo.
+ Para configurar los inputs del teclado se han de seguir tres pasos: el
+ primero hace relación a la configuración interna del proyecto, donde hemos
+ de configurar los 
+\shape slanted
+keybinds
+\shape default
+ en la pestaña de inputs dentro de ajustes de proyecto
+\shape slanted
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 18-59-47.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Asociación de teclas en la configuración del proyecto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estos posteriormente se relacionan con el segundo paso, donde habremos de
+ ir al código y dentro de la función 
+\family typewriter
+SetupPlayerInputComponent()
+\family default
+ hacer uso de la función 
+\family typewriter
+BindAction()
+\family default
+ configurando sus parámetros para que coincidan con los puestos en el editor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/droneSim/DronePawn.cpp"
+lstparams "firstline=36,lastline=47,caption={Configuración de la función SetupPlayerInputComponent()},label={Img.6}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Al mismo tiempo a las teclas seleccionadas hay que asignarles funcionalidades
+ que han de definirse en la llamada a 
+\family typewriter
+BindAction()
+\family default
+, en nuestro caso son funciones que modificarán la velocidad objetivo en
+ cada eje.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/droneSim/DronePawn.h"
+lstparams "firstline=20,lastline=27,caption={Funciones asociadas a teclas},label={Img.5-1-1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente para terminar de configurar la entrada por teclado, el tercer
+ paso requiere modificar los ficheros del juego base, los ficheros 
+\family typewriter
+nombreDeProyectoGameModeBase.cpp
+\family default
+ y 
+\family typewriter
+nombreDeProyectoGameModeBase.h
+\family default
+ para que tomen como peón predeterminado el que hemos creado.
+ Para esto basta con crear un constructor en el fichero de cabecera y en
+ el 
+\family typewriter
+.cpp
+\family default
+ dentro de la función hacer uso de la variable 
+\family typewriter
+DefaultPawnClass
+\family default
+ escribiendo la siguiente línea 
+\begin_inset Quotes qld
+\end_inset
+
+
+\family typewriter
+DefaultPawnClass
+\family default
+ = 
+\family typewriter
+nombre_de_su_peón
+\family default
+
+\begin_inset Quotes qrd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Resultados:
+\end_layout
+
+\begin_layout Standard
+Como resultado de este hito podemos encontrar los ficheros adjuntados en
+ el anexo
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "H2Anexo.1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Asimismo al ejecutar el nivel y seleccionar el peón, observaremos en la
+ pestaña de detalles que si pulsamos las teclas, los valores de los vectores
+ varían acorde las ecuaciones y funciones implementadas siguiendo el esquema
+ de un control diferencial de la velocidad.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 19-00-30.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-04-21 19-00-17.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores del editor del modo de juego y los vectores asociados al peón
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ya configurado y testado el correcto funcionamiento del modelo, el siguiente
+ paso es modificar la posición del propio peón con las velocidades calculadas.Tra
+s esta última prueba concluimos que el movimiento del dron basado en este
+ control diferencial es lo necesario para simular correctamente el movimiento
+ y poder realizar una integración con ROS2, ya que pretendemos que el movimiento
+ se gobierne mediante la velocidad que se enviará mediante los servicios
+ de mensajería ofrecidos por este framework.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Hito 4: Desarrollo de un sistema pub/sub de ROS2
+\end_layout
+
+\begin_layout Subsection
+Descripción:
+\end_layout
+
+\begin_layout Standard
+En la realidad, el control remoto de un dron es posible gracias a la biblioteca
+ de C/C++ previamente descrita, ROS2.
+ Es por esto por lo que el objetivo de este hito es crear un sistema publicador-
+suscriptor el cual permita crear una librería del suscriptor para, en un
+ futuro, poder implementar su funcionalidad en un peón de Unreal.
+ 
+\end_layout
+
+\begin_layout Standard
+Como especificaciones del sistema, el publicador ha de poder leer las coordenada
+s de la entrada estandar, convertirlas en un vector y publicarlas para ser
+ recibidas por el suscriptor.
+ Asimismo, ha de poder crearse una librería a partir del suscriptor, teniendo
+ en mente la futura implementación de la librería en Unreal.
+\end_layout
+
+\begin_layout Subsection
+Desarrollo:
+\end_layout
+
+\begin_layout Standard
+La tarea de creación del suscriptor fue ampliamente simplificada gracias
+ al trabajo de Juan Pares Guillen[link de su github] y Santiago Tapia, quienes
+ adaptaron un suscriptor para su trabajo el cual he podido importar a mi
+ proyecto y hacer uso del mismo puesto que la funcionalidad que buscaba
+ implementar es similar.
+ Este suscriptor cuenta con 3 funciones, 
+\family typewriter
+start()
+\family default
+, 
+\family typewriter
+update()
+\family default
+ y
+\family typewriter
+ end()
+\family default
+.
+ Cada una de estas funciones tiene un propósito y son las que más adelante
+ importaremos en el peón de UE5:
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+start()
+\family default
+: Esta función se encarga de inicializar el suscriptor y suscribirse al
+ canal (
+\shape slanted
+topic
+\shape default
+) creado por el publicador.
+ Asimismo, configurará su función de 
+\shape italic
+callback
+\shape default
+ a 
+\family typewriter
+update()
+\family default
+, encargada de recibir los mensajes.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+update()
+\family default
+: Esta es la función de 
+\shape italic
+callback
+\shape default
+, la cual recibirá los mensajes que se vayan publicando.
+ Esta función será ejecutada según el intervalo de tiempo puesto en su inicializ
+ación dentro de la función 
+\family typewriter
+start()
+\family default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+end()
+\family default
+: Se encarga de destruir el suscriptor y liberar la memoria ocupada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/ros2_package/droneCom/src/subscriber_member_function.cpp"
+lstparams "firstline=52,lastline=86,caption={Funciones start(), update() y end()},label={Img.10}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta clase hace uso del tipo de mensaje 
+\family typewriter
+Vector3
+\family default
+ de la librería 
+\family typewriter
+geometry_msgs
+\family default
+, tipo propio de ROS2 que ha de incluirse en la clase y posteriormente ha
+ de indicarse en el CMAKE para su correcta compilación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/ros2_package/droneCom/CMakeLists.txt"
+lstparams "firstline=22,lastline=23,caption={Especificación de compilación del suscriptor},label={CMAKE 1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A continuación, en lo relacionado al publicador de ROS2 se toma como base
+ el publicador de ejemplo que ROS2 propone en sus tutoriales[org23d].
+ La base es la misma, solo que se hace uso de un tipo de mensaje diferente,
+ el 
+\family typewriter
+Vector3
+\family default
+, igual que en el suscriptor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/ros2_package/droneCom/CMakeLists.txt"
+lstparams "firstline=19,lastline=20,caption={Especificación de compilación del publicador},label={CMAKE 1-1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez hecho esto, el otro cambio importante a realizar es la lectura de
+ los datos, para lo cual se hace uso de la lectura por entrada estandar.
+ Este método es simple, solo que hemos de tener en cuenta que hay que transferir
+le los datos en la línea de ejecución.
+ En este caso se hace mediante el comando 
+\family typewriter
+cat
+\family default
+ y el uso de una tubería para pasar las coordenadas redactadas en un fichero
+ 
+\begin_inset Quotes eld
+\end_inset
+
+coordinates.txt
+\begin_inset Quotes erd
+\end_inset
+
+ que se encuentra en la carpeta de ejecución del publicador.
+\end_layout
+
+\begin_layout Standard
+Ahora necesitamos poder compilarlos, para lo cual seguimos las indicaciones
+ de la guía oficial de ROS2[org23b].
+ Puesto que nuestros programas son diferentes a los creados en el tutorial
+ hemos de realizar modificaciones en el CMAKE para conseguir compilar con
+ éxito.
+ Dado que usamos un tipo de mensajes diferente al indicado en la guía, tenemos
+ que especificar que se busque el paquete donde se encuentra el tipo de
+ mensaje Vector3, el paquete 
+\family typewriter
+geometry_msgs 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/ros2_package/droneCom/CMakeLists.txt"
+lstparams "firstline=14,lastline=17,caption={Paquetes necesarios},label={CMAKE 1-2-1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente es necesario añadir también un 
+\family typewriter
+add_library
+\family default
+ para crear así la librería del suscriptor que queremos utilizar en Unreal.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/ros2_package/droneCom/CMakeLists.txt"
+lstparams "firstline=30,lastline=31,caption={Creación de la librería del suscriptor},label={CMAKE 1-2}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tras estos cambios al CMAKE, podemos compilar el proyecto con la herramienta
+ 
+\family typewriter
+colcon
+\family default
+ de ROS2 creando así la librería del suscriptor y consecuentemente un ejecutable
+ del publicador.
+\end_layout
+
+\begin_layout Subsection
+Resultados:
+\end_layout
+
+\begin_layout Standard
+Los resultados de este hito se incluyen en los archivos adjuntos en el anexo
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "H4Anexo.1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Este desarrollo resuelve lo planteado en los objetivos de este hito cuyo
+ fin era obtener un sistema publicador suscriptor, teniendo en cuenta la
+ futura implementación del mismo en Unreal.
+ Tras esto, el siguiente paso a seguir es la gestión de la librería obtenida
+ dentro de un peón en Unreal.
+\end_layout
+
+\begin_layout Section
+Hito 5: Desarrollo del peón en UE5
+\end_layout
+
+\begin_layout Subsection
+Descripción:
+\end_layout
+
+\begin_layout Standard
+Este hito se centra en la creación de un peón desde 0 que implemente el
+ sistema publicador-suscriptor descrito anteriormente y pueda moverse en
+ el entorno de Unreal.
+\end_layout
+
+\begin_layout Standard
+Este peón será la pieza clave de un visualizador de vuelo que sentará la
+ base para futuras iteraciones de este proyecto con el objetivo de construir
+ un simulador.
+\end_layout
+
+\begin_layout Subsection
+Desarrollo:
+\end_layout
+
+\begin_layout Standard
+Para conformar este peón haremos uso de una variedad de funciones, algunas
+ previamente mencionadas pues son las generadas automáticamente por Unreal,
+ otras auxiliares creadas por nosotros y otras importadas desde la librería
+ del suscriptor.
+ Nos encontramos una vez más con las funciones 
+\family typewriter
+BeginPlay()
+\family default
+, 
+\family typewriter
+Tick()
+\family default
+, el constructor del propio peón, y además haremos uso de 
+\family typewriter
+EndPlay()
+\family default
+ solo que esta la sobrescribiremos.
+ En cada una de estas podremos encontrar otras 3 funciones auxiliares las
+ cuales implementan las funcionalidades deseadas.
+ Al mismo tiempo se hará uso de las funciones importadas de la librería
+ en 3 de las 4 funciones mencionadas anteriormente.
+\end_layout
+
+\begin_layout Standard
+Una breve descripción de las funciones es la siguiente:
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+BeginPlay()
+\family default
+: en esta veremos la función 
+\family typewriter
+dlImport()
+\family default
+, función auxiliar la cual se encarga de gestionar la apertura de la librería
+ dinámica que contiene las funciones necesarias para hacer uso del suscriptor.
+ Dentro de esta función veremos un 
+\family typewriter
+dlopen()
+\family default
+ con su respectivo control de fallos y la importación de las funciones de
+ la librería a este fichero mediante el uso de las funciones 
+\family typewriter
+dlsym()
+\family default
+.
+ La importación de estas funciones se consigue gracias a que almacenamos
+ las referencias a estas en punteros a función definidos mediante un 
+\family typewriter
+typedef
+\family default
+ previamente en el fichero de cabecera.
+ Cabe mencionar que en esta función también se realiza la llamada 
+\family typewriter
+start()
+\family default
+ función importada de la librería.
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/DronePawnCom.h"
+lstparams "firstline=47,lastline=64,caption={Definición de los punteros a función en el fichero de cabecera},label={Img.13}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/DronePawnCom.cpp"
+lstparams "firstline=21,lastline=31,caption={Función BeginPlay()},label={Img.14-1}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/DronePawnCom.cpp"
+lstparams "firstline=85,lastline=141,caption={Función dlImport()},label={Img.14}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+El constructor: aquí podremos encontrar el método auxiliar 
+\family typewriter
+setComponents()
+\family default
+ que como indica su nombre genera los componentes que irán colgados de este
+ peón y podremos ver más adelante en la jerarquía dentro de su blueprint.
+ Los componentes aquí generados son: una cámara para poder ver la malla
+ del dron, un 
+\family typewriter
+SpringArmComponent
+\family default
+, el cual nos ayudará a configurar la posición relativa de la cámara respecto
+ del dron, un 
+\family typewriter
+RootComponent
+\family default
+, del que colgar el resto de los componentes, y un 
+\family typewriter
+MeshComponent
+\family default
+ para poder darle un cuerpo al dron.
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/DronePawnCom.cpp"
+lstparams "firstline=12,lastline=18,caption={Constructor de la clase},label={Img.14-1-1}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/DronePawnCom.cpp"
+lstparams "firstline=68,lastline=83,caption={Función SetComponents()},label={Img.14-1-2}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+Tick()
+\family default
+: aquí veremos que se realiza una llamada a la función auxiliar 
+\family typewriter
+move(FVector pos1)
+\family default
+, la cual precisa de un argumento de tipo vector para funcionar.
+ Esta realizará la función de mover el dron en el entorno seleccionado siguiendo
+ el modelo de movimiento que vimos en el hito 1(
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "Img.2-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), solo que simplificado.
+ En esta función también realizamos la llamada a la función de librería
+ 
+\family typewriter
+update(*vector3_transfer)
+\family default
+ que cuenta con un argumento de retorno en el que almacena el vector enviado
+ por el publicador que luego se envía a la función 
+\family typewriter
+move()
+\family default
+.
+ El argumento recogido por update es de un tipo definido previamente en
+ el fichero de cabecera.
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/DronePawnCom.h"
+lstparams "firstline=52,lastline=56,caption={Definición del tipo vector3},label={Img.13-1}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/DronePawnCom.cpp"
+lstparams "firstline=35,lastline=48,caption={Función Tick()},label={Img.14-1-2-1}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/DronePawnCom.cpp"
+lstparams "firstline=143,lastline=150,caption={Función Move()},label={Img.14-1-2-1-1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+EndPlay():
+\family default
+normalmente esta función unicamente hace un registro en la consola indicando
+ que el peón ha sido eliminado del nivel y la razón.
+ Sin embargo, esta función se puede sobrescribir, lo que quiere decir que
+ como 
+\family typewriter
+BeginPlay()
+\family default
+, podemos crear una versión personalizada que será la que se ejecute.
+ En nuestro caso la reescribimos y hacemos que ejecute la función 
+\family typewriter
+end()
+\family default
+ de la librería, para finalmente liberar la memoria ocupada por la misma.
+ Esto es necesario puesto que si no liberásemos la memoria cerrando la librería
+ se provocaría un fallo en el programa si se tratase de ejecutar 2 veces
+ seguidas.
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/DronePawnCom.cpp"
+lstparams "firstline=59,lastline=66,caption={Función EndPlay()},label={Img.14-1-2-1-2}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Resultados: 
+\end_layout
+
+\begin_layout Standard
+Como resultado de este hito podemos encontrar los ficheros adjuntados en
+ el anexo
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "H5Anexo.1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Además, se obtiene un peón el cual tiene la capacidad de moverse en un entorno
+ de Unreal haciendo uso de unas coordenadas proporcionadas por un sistema
+ de comunicación publicador-suscriptor de ROS2.
+ Sin embargo, aunque aquí hemos desarrollado el código fuente, es importante
+ mencionar que para hacer este peón funcional es necesario realizar algunas
+ configuraciones adicionales.
+ Por ejemplo, será necesario crear un blueprint de esta clase de C++ y editarlo
+ para añadir la malla del dron deseada y ajustar los ángulos del 
+\family typewriter
+SpringArmComponent
+\family default
+ para orientar la cámara a donde se desee.
+ Asimismo, al igual que en el hito 1 habremos de configurar el peón por
+ defecto del juego base al blueprint creado mediante la misma línea solo
+ que en este caso hemos de añadir un 
+\family typewriter
+.Class 
+\family default
+al final
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "D:/TFG/software/Final pawn/droneSimGameModeBase.cpp"
+lstparams "firstline=11,lastline=17,caption={Configuracion del fichero GameModeBase.cpp},label={Img.14-1-2-1-2-1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Hito 6: Importación de escenarios a UE5
+\end_layout
+
+\begin_layout Subsection
+Descripción:
+\end_layout
+
+\begin_layout Standard
+Este hito es similar al hito 2, en el que exploramos el funcionamiento de
+ la importación de mallas.
+ Sin embargo, en este caso nos centraremos en escenarios complejos con más
+ de una malla y múltiples texturas.
+ 
+\end_layout
+
+\begin_layout Subsection
+Desarrollo:
+\end_layout
+
+\begin_layout Standard
+Esta tarea es bastante sencilla en Unreal Engine tanto para escenarios importado
+s de internet como para los creados específicamente.
+ El proceso solo requiere de ficheros en formato .fbx y normalmente basta
+ con arrastrar dicho fichero al cajón de contenidos del editor de Unreal,
+ lo que provocará que aparezca una ventana de configuración.
+ Esta ventana permite modificar varios campos de las mallas a importar.
+ Normalmente no es necesario modificar nada y basta con importar el .fbx,
+ guardar los contenidos importados, seleccionarlos y arrastrarlos al nivel
+ en el que estemos trabajando.
+\end_layout
+
+\begin_layout Standard
+Este método sirve cuando tenemos escenarios con pocas o ninguna textura
+ o no requieran de cambios, es decir sean escenarios simples.
+ Para este trabajo he decidido hacer uso de un mapa de Londres[referencia
+ a la página del modelo], que cuenta con dos versiones, una texturizada
+ y otra no.
+\end_layout
+
+\begin_layout Standard
+La no texturizada sigue el método de importación descrito al principio,
+ se selecciona el fichero, se arrastra, se guardan las mallas y ya está
+ listo para ser añadido al nivel, generando el siguiente resultado
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/HighresScreenshot00005.png
+	lyxscale 50
+	scale 10
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Escenario de Londres sin texturas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sin embargo, la texturizada necesita realizar algunas modificaciones.
+ En el caso de este modelo 3D, de acuerdo a la guía proporcionada por su
+ creador[referencia a la guía].
+ 
+\end_layout
+
+\begin_layout Standard
+Lo primero es crear un material base en Unreal, para poder realizar configuracio
+nes específicas de algunas de las mallas que vamos a importar, como por
+ ejemplo el agua, a la que le daremos reflejos más adelante.
+ Este material no tiene ningún requerimiento específico.
+ Ahora, hemos de modificar este material y en su gráfico crear un 
+\begin_inset Quotes eld
+\end_inset
+
+Texture Sample
+\begin_inset Quotes erd
+\end_inset
+
+ dándole un nombre propio (BaseColor en este caso), convertirlo en un parámetro
+ y configurar su textura base a cualquier textura.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-05-26 11-52-15.png
+	lyxscale 50
+	scale 10
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Configuración inicial del material base
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta versión texturizada del mapa de Londres, ha sido distribuida en 4 carpetas
+ dado su gran tamaño.
+ Estas representan cada una de las zonas de Londres, noreste, noroeste,
+ sureste, suroeste, contando en su totalidad con casi 900 mallas.
+ Las modificaciones que hemos de realizar en la ventana de importación se
+ centran en su posición, pues hemos de modificar la x a x = –53199840 y
+ la y a y = 18100590.
+ Al mismo tiempo, hemos de hacer uso del material creado previamente; en
+ la zona de MATERIAL hemos de seleccionar la opción de 
+\begin_inset Quotes erd
+\end_inset
+
+crear nuevos materiales instanciados
+\begin_inset Quotes erd
+\end_inset
+
+ en el campo 
+\begin_inset Quotes erd
+\end_inset
+
+Material Import...
+\begin_inset Quotes erd
+\end_inset
+
+ y seleccionar nuestro material con su textura base, la que creamos en su
+ grafico (en mi caso BaseColor).
+ Puesto que esta configuración es la misma para todos los ficheros basta
+ con configurarlo una vez y esta se mantiene entre importaciones.
+ Tras esto podemos importar todos los .fbx.
+ Una vez tenemos todo en nuestro editor podemos seleccionarlos y arrastrarlos
+ a la ventana del nivel para ver la ciudad de Londres a escala.
+\end_layout
+
+\begin_layout Standard
+Una vez tenemos todas las mallas puestas en el mapa podemos añadir detalles
+ al agua del rio Támesis.
+ Para esto hemos de modificar ese material base que creamos al principio.
+ Hemos de añadirle un parámetro a su campo de 
+\begin_inset Quotes erd
+\end_inset
+
+Roughness
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/Screenshot from 2023-05-26 11-54-23.png
+	lyxscale 50
+	scale 10
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Configuración final del material base
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez añadido y compilado, podemos entrar en las mallas del agua y cambiar
+ este valor para darle reflejos y tener una textura más detallada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/HighresScreenshot00001.png
+	lyxscale 50
+	scale 10
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Escenario de Londres con texturas y reflejos en el agua
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El proceso de importado de escenarios puede variar según el creador del
+ escenario y cómo se configuren los ficheros a importar.
+ Asimismo, el nivel de detalle de las mallas y texturas puede mejorar mucho
+ dependiendo del creador de las mismas y de la potencia de la maquina que
+ las use.
+ En este campo Unreal Engine 5 tiene un gran potencial pudiendo llegar a
+ tener una calidad fotorrealistica como puede ser ejemplo el juego UNRECORD[stu2
+3b] que se encuentra en desarrollo por el estudio de videojuegos 
+\shape slanted
+Drama
+\shape default
+[Referencia al estudio], que cuenta con visuales hiperrealistas, que asemejan
+ a una grabación real.
+\end_layout
+
+\begin_layout Subsection
+Resultados:
+\end_layout
+
+\begin_layout Standard
+Como se puede observar en las anteriores figuras el resultado es impresionante
+ siendo esto un modelo gratuito y contando con un equipamiento que no es
+ capaz de exprimir al máximo las capacidades gráficas de Unreal Engine 5.
+ 
+\end_layout
+
+\begin_layout Standard
+El siguiente paso es añadir el dron al entorno y realizar pruebas de vuelo.
+ Con esto estaría listo el visualizador de vuelo que sienta la base de un
+ prototipo para el simulador.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/TFG/memoria/imagenes/HighresScreenshot00002.png
+	lyxscale 50
+	scale 10
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dron dentro del mapa texturizado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Hito 7: Integración con Aerostack2 (en desarrollo)
+\end_layout
+
+\begin_layout Subsection
+Descripción:
+\end_layout
+
+\begin_layout Standard
+Para realizar un visualizador más completo y que pueda replicar trayectorias
+ reales de drones se busca añadir la herramienta de TF2 que nos permita
+ recibir mensajes generados por Aerostack2.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch NoChildDocument
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "thesisExample"
+options "alpha"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "custom"
+width "2.5cm"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

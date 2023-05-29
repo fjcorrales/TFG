@@ -364,9 +364,9 @@ Con el fin de lograr este hito, se desarrolló un componente de escena que
 Haciendo uso de estos componentes diseñamos una primera iteración para estudiar
  el movimiento en los actores y planificar la futura implementación del
  movimiento de un dron.
- Tras investigar y revisar tutoriales de diversas fuentes[tutorial de youtube
- y página de Unreal] decidí crear un componente de escena que se encargara
- de modificar la localización de una 
+ Tras investigar y revisar tutoriales de diversas fuentes[Eng23] decidí
+ crear un componente de escena que se encargara de modificar la localización
+ de una 
 \family typewriter
 mesh
 \family default
@@ -686,7 +686,7 @@ ResetMovement()
 
 \begin_layout Standard
 El código y el gráfico de eventos fue obtenido de la guía creada por Lötwig
- Fusel [referencia que toque]
+ Fusel [Fus22a][Fus22b]
 \end_layout
 
 \begin_layout Standard
@@ -830,8 +830,8 @@ mesh
 \end_layout
 
 \begin_layout Standard
-Para empezar busqué en internet un modelo 3D gratuito de un cuadricóptero[refere
-ncia a la página del modelo 3D del dron].
+Para empezar busqué en internet un modelo 3D gratuito de un cuadricópteroreferen
+cia a la página del modelo 3D del dron].
  Una vez descargado faltaba importarlo a la carpeta de contenidos de Unreal
  Engine para su uso.
  Cabe mencionar que estos modelos 3D han de ser exportados de sus respectivas
@@ -1370,10 +1370,10 @@ Desarrollo:
 
 \begin_layout Standard
 La tarea de creación del suscriptor fue ampliamente simplificada gracias
- al trabajo de Juan Pares Guillen[link de su github] y Santiago Tapia, quienes
- adaptaron un suscriptor para su trabajo el cual he podido importar a mi
- proyecto y hacer uso del mismo puesto que la funcionalidad que buscaba
- implementar es similar.
+ al trabajo de Juan Pares Guillen[Tap23b]  y Santiago Tapia, quienes adaptaron
+ un suscriptor para su trabajo el cual he podido importar a mi proyecto
+ y hacer uso del mismo puesto que la funcionalidad que buscaba implementar
+ es similar.
  Este suscriptor cuenta con 3 funciones, 
 \family typewriter
 start()
@@ -1477,7 +1477,7 @@ lstparams "firstline=22,lastline=23,caption={Especificación de compilación del
 
 \begin_layout Standard
 A continuación, en lo relacionado al publicador de ROS2 se toma como base
- el publicador de ejemplo que ROS2 propone en sus tutoriales[ros2 tutoriales].
+ el publicador de ejemplo que ROS2 propone en sus tutoriales[org23d].
  La base es la misma, solo que se hace uso de un tipo de mensaje diferente,
  el 
 \family typewriter
@@ -1520,7 +1520,7 @@ coordinates.txt
 
 \begin_layout Standard
 Ahora necesitamos poder compilarlos, para lo cual seguimos las indicaciones
- de la guía oficial de ROS2[guía de ROS2].
+ de la guía oficial de ROS2[org23b].
  Puesto que nuestros programas son diferentes a los creados en el tutorial
  hemos de realizar modificaciones en el CMAKE para conseguir compilar con
  éxito.
@@ -1924,9 +1924,8 @@ s de internet como para los creados específicamente.
 \begin_layout Standard
 Este método sirve cuando tenemos escenarios con pocas o ninguna textura
  o no requieran de cambios, es decir sean escenarios simples.
- Para este trabajo he decidido hacer uso de un mapa de Londres[referencia
- a la página del modelo], que cuenta con dos versiones, una texturizada
- y otra no.
+ Para este trabajo he decidido hacer uso de un mapa de Londres[Acc23], que
+ cuenta con dos versiones, una texturizada y otra no.
 \end_layout
 
 \begin_layout Standard
@@ -1976,7 +1975,7 @@ Escenario de Londres sin texturas
 \begin_layout Standard
 Sin embargo, la texturizada necesita realizar algunas modificaciones.
  En el caso de este modelo 3D, de acuerdo a la guía proporcionada por su
- creador[referencia a la guía].
+ creador[Acc23b].
  
 \end_layout
 
@@ -2161,14 +2160,13 @@ El proceso de importado de escenarios puede variar según el creador del
  dependiendo del creador de las mismas y de la potencia de la maquina que
  las use.
  En este campo Unreal Engine 5 tiene un gran potencial pudiendo llegar a
- tener una calidad fotorrealistica como puede ser ejemplo el juego UNRECORD[refe
-rencia al juego] que se encuentra en desarrollo por el estudio de videojuegos
- 
+ tener una calidad fotorrealistica como puede ser ejemplo el juego UNRECORD[stu2
+3b] que se encuentra en desarrollo por el estudio de videojuegos 
 \shape slanted
 Drama
 \shape default
-[Referencia al estudio], que cuenta con visuales hiperrealistas, que asemejan
- a una grabación real.
+[stu23a], que cuenta con visuales hiperrealistas, que asemejan a una grabación
+ real.
 \end_layout
 
 \begin_layout Subsection

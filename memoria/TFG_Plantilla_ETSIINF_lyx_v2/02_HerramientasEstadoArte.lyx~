@@ -552,7 +552,7 @@ tas de resolución de conflictos de fusion de ramas, integración de plataformas
 
 \begin_layout Standard
 El principal uso que se le ha dado es la organización del proyecto en GitHub,
- dado que por límitaciones técnicas el trabajo se ha repartido en varias
+ dado que por limitaciones técnicas el trabajo se ha repartido en varias
  máquinas y era necesario migrar los avances entre las mismas.
  
 \end_layout
@@ -664,19 +664,19 @@ La simulación de drones es un campo relativamente nuevo que, sin embargo,
  de la física del movimiento de los drones, un aspecto esencial para su
  posterior simulación en entornos virtuales, que permiten explorar las posibles
  aplicaciones de estas versátiles máquinas.
- Como por ejemplo, cabe destacar su uso en seguridad[2], mantenimiento de
- campos de placas solares[3] e incluso entretenimiento con enjambres de
- cientos de estos pequeños robots[1] .
+ Como por ejemplo, cabe destacar su uso en seguridad[ano22b], mantenimiento
+ de campos de placas solares[Mol19] e incluso entretenimiento con enjambres
+ de cientos de estos pequeños robots[Rus21] .
  
 \end_layout
 
 \begin_layout Standard
-Los drones son vehiculos aéreos no tripulados que se crearon en un inicio
+Los drones son vehículos aéreos no tripulados que se crearon en un inicio
  con fines militares.
  Sin embargo, con el paso del tiempo se han encontrado una amplia variedad
  de usos.
  Por ello, simular el comportamiento de una máquina de este tipo se ha vuelto
- esencial, tanto para preveer que movimientos será capaz de realizar según
+ esencial, tanto para prever que movimientos será capaz de realizar según
  en que condiciones se encuentre como para poder hacer pruebas sin el equipamien
 to real, evitando así posibles daños y costes.
  Con esto en mente, se crean los simuladores, que son entornos virtuales
@@ -685,16 +685,16 @@ to real, evitando así posibles daños y costes.
 \end_layout
 
 \begin_layout Standard
-En referencia a los simuladores, los ultimoa avances tecnológicos han potenciado
+En referencia a los simuladores, los ultimo avances tecnológicos han potenciado
  su gran diversificación en multitud de aplicaciones como, aprender a controlar
- un dron, videojuegos de simulación de carreras de drones[4], etc, básicamente
- orientadas a fines lúdicos.
- A nivel más profesional podemos encontrar algunos como AirSim[5], simulador
+ un dron, videojuegos de simulación de carreras de drones[ano22a], etc,
+ básicamente orientadas a fines lúdicos.
+ A nivel más profesional podemos encontrar algunos como AirSim[Mic17], simulador
  de vuelo creado por Microsoft en el motor de juego de Unreal Engine (UE),
- o Flightmare[6], un simulador desarrollado para el motor de juego de Unity,
- más enfocados en aplicaciones industriales.
+ o Flightmare[yl21] , un simulador desarrollado para el motor de juego de
+ Unity, más enfocados en aplicaciones industriales.
  Sin embargo, este tipo de simuladores basan sus físicas en el sistema Gazebo,qu
-e presenta ciertas limítaciones operativas en referencia al sistema de colisione
+e presenta ciertas limitaciones operativas en referencia al sistema de colisione
 s, lo que hace necesario nuevos desarrollos que mejoren estos aspectos.
 \end_layout
 
@@ -715,10 +715,10 @@ La mayoría de los simuladores previamente descritos hacen uso de 2 SDK (Softwar
 Así pues, este trabajo tiene como objetivo crear un prototipo de un simulador
  de vuelo de drones en el entorno gráfico de Unreal Engine 5 realizando
  una integración con la librería de comunicación de C, ROS2, para así crear
- un sistema de manejo automático de la trayectoría del dron.
+ un sistema de manejo automático de la trayectoria del dron.
  La implementación de la gran mayoría del proyecto se realizará en C++.
  Al mismo tiempo, al crear este simulador en UE5, se pretende resolver algunas
- de las límitaciones asociadas al uso de Gazebo como motor de físicas, aprovecha
+ de las limitaciones asociadas al uso de Gazebo como motor de físicas, aprovecha
 ndo la infraestructura proporcionada por UE5.
 \end_layout
 
