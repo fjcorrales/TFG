@@ -312,25 +312,25 @@ Herramientas
 Las herramientas utilizadas para el desarrollo de este trabajo han sido:
  Unreal Engine 4.27 y 5, Gitkraken, GitHub, Teams, ROS2 yAerostack2.
  Estas serán descritas a continuación, tanto para describir su función y
- utilidad como para explicar lo necesario para enteder los contenidos recogidos
+ utilidad como para explicar lo necesario para entender los contenidos recogidos
  en esta memoria.
 \end_layout
 
 \begin_layout Subsection
-Unreal Engine 4.27 y 5:
+Unreal Engine 4.27 y 5
 \end_layout
 
 \begin_layout Standard
 Como se ha mencionado previamente, el simulador se va a desarrollar para
  el motor de juego Unreal Engine 5 (UE5) de la compañía Epic Games.
  Esta es una herramienta de última generación que cuenta con los últimos
- avances gráficos, puediendo llegar a generar entornos casi idénticos a
- la realidad, simulando a la perfección grabaciones del entorno natural
- y no generadas por ordenador.
+ avances gráficos, pudiendo llegar a generar entornos casi idénticos a la
+ realidad, simulando a la perfección grabaciones del entorno natural y no
+ generadas por ordenador.
  Asimismo, cuenta con un sistema de físicas y colisiones integrado, lo que
- fácilitará las tareas de implementación más adelante.
+ facilitará las tareas de implementación más adelante.
  Como añadido, este entorno también cuenta con herramientas de Inteligencia
- Artifical, que se pueden usar para controlar los actores, refiriendonos
+ Artificial, que se pueden usar para controlar los actores, refiriéndonos
  a los drones, que podamos llegar a tener en la escena.
 \end_layout
 
@@ -355,17 +355,19 @@ El motivo principal por el que se han utilizado dos versiones distintas
 
 \begin_layout Standard
 Habiendo justificado esto, en vista de que los contenidos del trabajo son
- técnicos, es necesario explicar algunos conceptos de Unreal Engine.
+ técnicos, es necesario explicar algunos conceptos de Unreal Engine ya que
+ la adaptación a este programa es costosa si no se tienen ciertos conocimientos
+ previos dada la alta sofisticación de este software.
 \end_layout
 
 \begin_layout Enumerate
 En el editor de Unreal Engine, no importa cual de las dos versiones esté
- usandose, podremos encontrar varios elementos.
+ usándose, podremos encontrar varios elementos.
  El primero y más llamativo una ventana la cual nos muestra el nivel en
  el que se está trabajando actualmente.
  En este podremos ver las mallas y elementos que el usuario vaya añadiendo.
  Al mismo tiempo veremos varias pestañas que nos muestran mucha información,
- de las cuales nos interesan la pestaña de detalles del mundo y el cajon
+ de las cuales nos interesan la pestaña de detalles del mundo y el cajón
  de contenido o 
 \begin_inset Quotes eld
 \end_inset
@@ -378,7 +380,7 @@ Content Browser
  En la primera podremos ver en detalle la información que viene asociada
  a cada elemento presente en el nivel y en la segunda podremos encontrar
  todos los elementos de los que disponemos en nuestro proyecto.
- Este cajon de contenido es el sistema de ficheros del proyecto y podremos
+ Este cajón de contenido es el sistema de ficheros del proyecto y podremos
  añadir y eliminar tantos objetos como queramos.
  Aquí también se crearan las clases C++ de los diferentes objetos, mallas
  que importemos al proyecto y los blueprints que creemos.
@@ -410,19 +412,23 @@ actor
 \family default
  predefinida por Unreal permite crear un objeto dentro del juego.
  Este es el objeto más básico al cual se le pueden programar los comportamientos
- que se deseen, sin embargo, es al mismo tiempo el más límitado dado que
+ que se deseen, sin embargo, es al mismo tiempo el más limitado dado que
  no tiene acceso a utilidades más avanzadas de Unreal como entradas de teclado,
  simulación de físicas o manejo por inteligencia artificial.
- A pesar de ser tan límitado esta es la clase más importante al ser la clase
- padre de la que heredarán los objetos más complicados, 
+ A pesar de ser tan limitado esta es la clase más importante al ser la clase
+ padre de la que heredarán los objetos más complicados, peón (
+\begin_inset Quotes eld
+\end_inset
+
+
 \family typewriter
-peón
+pawn
 \family default
- y 
-\family typewriter
-personaje
-\family default
- (
+
+\begin_inset Quotes erd
+\end_inset
+
+) y personaje (
 \begin_inset Quotes eld
 \end_inset
 
@@ -453,7 +459,7 @@ que son las funciones básicas para hacer funcionar a un objeto de este tipo.
 BeginPlay()
 \family default
  es una función que se ejecuta una única vez al comenzar el nivel, esta
- resulta muy util para realizar configuraciones iniciales que requiera el
+ resulta muy útil para realizar configuraciones iniciales que requiera el
  actor, como inicializar variables.
  La función 
 \family typewriter
@@ -484,33 +490,46 @@ actor
 \family typewriter
 Tick()
 \family default
- es una función que se comporta como un buucle, ejecutandose a cada fotograma
+ es una función que se comporta como un bucle, ejecutándose a cada fotograma
  generado por Unreal durante la ejecución del nivel.
 \end_layout
 
 \begin_layout Enumerate
-Los 
+Los componentes de escena (
+\begin_inset Quotes eld
+\end_inset
+
+
 \family typewriter
-componentes de escena
+scene components
 \family default
- son componentes que podemos usar como apoyo para incluir funcionalidades
- a los 
+
+\begin_inset Quotes erd
+\end_inset
+
+) son componentes que podemos usar como apoyo para incluir funcionalidades
+ a los actores.
+ Además podemos encontrar otro tipo de componentes, los componentes de actor
+ (
+\begin_inset Quotes eld
+\end_inset
+
+
 \family typewriter
-actores
+actor components
 \family default
-.
- Además podemos encontrar otro tipo de componentes, los 
-\family typewriter
-componentes de actor
-\family default
-, estos no hacen nada esencialmente, sin embargo es imprescindible dado
+
+\begin_inset Quotes erd
+\end_inset
+
+), estos no hacen nada esencialmente, sin embargo es imprescindible dado
  que es la base de la jerarquía del resto de componentes.
 \end_layout
 
 \begin_layout Enumerate
 Finalmente tenemos la clase 
 \family typewriter
-peón
+pawn
 \family default
 , esta como se ha mencionado previamente hereda de la clase 
 \family typewriter
@@ -518,14 +537,14 @@ actor
 \family default
 , teniendo acceso a las 3 funciones principales que esta contiene.
  Sin embargo, un peón es más avanzado que un actor, pues estos tienen acceso
- al control por inteligencia artifical y a las entradas de teclado.
+ al control por inteligencia artificial y a las entradas de teclado.
  En cuanto a las físicas que soporta, estas son las básicas ofrecidas por
- el editor sin ser las físicas avanzadas que pertenecen a la clase de personaj,
+ el editor sin ser las físicas avanzadas que pertenecen a la clase de personaje,
  la cual se centra en simular a un ser humano.
  A pesar de esto, esta clase es la que mejor encaja con los objetivos del
  trabajo puesto que las físicas se pueden modificar, además de ser el 
 \family typewriter
-peón
+pawn
 \family default
  la clase que cuenta con la función 
 \family typewriter
@@ -534,18 +553,48 @@ SetupPlayerInputComponent()
  la cual nos permite acceder a la mencionada entrada del teclado.
 \end_layout
 
+\begin_layout Enumerate
+Asimismo es muy importante mencionar los 
+\family typewriter
+blueprints
+\family default
+.
+ Estos son una herramienta visual para definir lógica e implementar funcionalida
+d a los elementos de Unreal, la ventaja es que para hacer uso de ellos no
+ es necesario tener conocimientos avanzados de programación.
+ Todo elemento dentro de Unreal puede ser un 
+\family typewriter
+blueprint
+\family default
+, desde las clases de C++, hasta materiales, texturas y mallas.
+ Dentro de los mismos se nos presenta la pestaña de 
+\family typewriter
+Event Graph
+\family default
+ o gráfico de eventos, donde podremos programar con la ayuda de nodos conectándo
+los entre si.
+ Estos nodos son los que se traducen en acciones o comportamientos y podemos
+ encontrarnos con una amplia variedad predefinidos por Unreal.
+ Si el desarrollador lo desea, también puede definir sus propios nodos dentro
+ de una clase de C++.
+ Con respecto a este tipo de clases, todas son susceptibles de convertirse
+ en un blueprint para poder realizar prototipados más rápidamente, hacerlos
+ accesibles y funcionales y ofrecer reutilización y modularidad.
+ 
+\end_layout
+
 \begin_layout Subsection
-Gitkraken:
+Gitkraken
 \end_layout
 
 \begin_layout Standard
 Esta es una herramienta multiplataforma, es decir, se encuentra disponible
- para múltiples sitemas operativos la cual simplifica el uso de Git con
+ para múltiples sistemas operativos la cual simplifica el uso de Git con
  el fin de mejorar la productividad.
  Este software nos permite crear repositorios, modificarlos y organizarlos
  de manera simple y visual.
  Este programa cuenta con una interfaz gráfica intuitiva y proporciona herramien
-tas de resolución de conflictos de fusion de ramas, integración de plataformas
+tas de resolución de conflictos de fusión de ramas, integración de plataformas
  de alojamiento y más funciones avanzadas de Git.
  
 \end_layout
@@ -558,7 +607,7 @@ El principal uso que se le ha dado es la organización del proyecto en GitHub,
 \end_layout
 
 \begin_layout Subsection
-Github:
+Github
 \end_layout
 
 \begin_layout Standard
@@ -577,7 +626,7 @@ El uso de esta plataforma ha sido crucial para la organización y control
 \end_layout
 
 \begin_layout Subsection
-ROS2:
+ROS2
 \end_layout
 
 \begin_layout Standard
@@ -593,8 +642,7 @@ System Development Kit
  de cualquier rama de la industria que implique el uso de robots.
  Este framework se desarrolló en 2007 por el Laboratorio de Inteligencia
  Artificial de Standford y su desarrollo ha continuado desde entonces facilitand
-o el desarrollo de software para multitud de sistemas robóticos..
- 
+o el desarrollo de software para multitud de sistemas robóticos.
 \end_layout
 
 \begin_layout Standard
@@ -626,12 +674,12 @@ externa
 \end_layout
 
 \begin_layout Subsection
-Aerostack2:
+Aerostack2
 \end_layout
 
 \begin_layout Standard
 Este es un framework multiplataforma open source el cual se utiliza para
- el desarrollo de sistemas autónomos en entornos aeroespaciales, proporcionando
+ el desarrollo de sistemas autónomos en entornos aéreos, proporcionando
  una plataforma para diseñar, implementar y controlar drones así como otro
  tipo de sistemas autónomos aéreos.
  Este tiene como objetivo ayudar en el desarrollo de aplicaciones robóticas
@@ -649,8 +697,34 @@ Asimismo, cuenta con una API bien definida y componentes predefinidos que
 \end_layout
 
 \begin_layout Standard
+Si miramos a su arquitectura, cabe resaltar que esta es una estructura modular
+ integrada mediante nodos de ROS2 y cuenta con un esquema de comunicaciones
+ específico para robor aéreos.
+ Esta modularidad la facilita el hecho de contar con ROS2, ya que nos da
+ la capacidad de crear plugins que se conecten a esta infraestructura.
+ O como los propios desarrolladores lo describen; 
+\begin_inset Quotes eld
+\end_inset
+
+Completa modularidad, lo que permite que los elementos sean cambiados o
+ intercambiados sin afectar al resto del sistema.
+ La arquitectura basada en complementos permite utilizar diferentes implementaci
+ones para cada tarea.
+ Orientado a proyectos, lo que permite instalar y utilizar solo los paquetes
+ y configuraciones necesarios para el desarrollo de la aplicación.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
 En este trabajo se usará como complemento para el visualizador de vuelo
- desarrollado.
+ integrando desarrollos con este framework.
+ Y tendrá como objetivo ser un plugin más, para ello será necesario cumplir
+ con dos condiciones, crear un sistema basado en ROS2 y poder conectarse
+ a los mensajes que existen dentro de Aerostack2.
+ 
 \end_layout
 
 \begin_layout Section
@@ -691,7 +765,7 @@ En referencia a los simuladores, los ultimo avances tecnológicos han potenciado
  básicamente orientadas a fines lúdicos.
  A nivel más profesional podemos encontrar algunos como AirSim[Mic17], simulador
  de vuelo creado por Microsoft en el motor de juego de Unreal Engine (UE),
- o Flightmare[yl21] , un simulador desarrollado para el motor de juego de
+ o Flightmare[yl21], un simulador desarrollado para el motor de juego de
  Unity, más enfocados en aplicaciones industriales.
  Sin embargo, este tipo de simuladores basan sus físicas en el sistema Gazebo,qu
 e presenta ciertas limitaciones operativas en referencia al sistema de colisione

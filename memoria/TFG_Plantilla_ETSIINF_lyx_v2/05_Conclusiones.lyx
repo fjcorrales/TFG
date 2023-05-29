@@ -311,7 +311,7 @@ Como producto final de este trabajo se ha obtenido un visualizador de vuelo
 \end_layout
 
 \begin_layout Standard
-El proyecto se ha desarrollado de forma líneal con las siguientes etapas
+El proyecto se ha desarrollado de forma lineal con las siguientes etapas
  intermedias: 
 \end_layout
 
@@ -324,7 +324,7 @@ Importación de un modelo tridimensional de un dron.
 \end_layout
 
 \begin_layout Enumerate
-Implementación de un control diferencial de la velociad.
+Implementación de un control diferencial de la velocidad.
  Que tendrá uso en futuras iteraciones.
 \end_layout
 
@@ -349,10 +349,16 @@ Este desarrollo constituye la base para el desarrollo final de un simulador
 \begin_layout Standard
 Desde mi perspectiva este trabajo ha sido una gran experiencia de aprendizaje,
  que me ha permitido investigar y desarrollar código utilizando lenguajes
- y entornos de gran interes.
- Así, he conseguido mis objetivos inicalmente planteados, que consistian
- en aprender un lenguaje que desconocia, C++, aprender a usar Unreal Engine
+ y entornos de gran interés.
+ Así, he conseguido mis objetivos inicialmente planteados, que consistían
+ en aprender un lenguaje que desconocía, C++, aprender a usar Unreal Engine
  5 y conocer más a fondo el apasionante mundo de los drones.
+ Cabe mencionar que esto no se consiguió de forma sencilla y conllevó un
+ largo periodo de aprendizaje para conseguir dominar las bases de Unreal
+ Engine y C++ por igual.
+ Estos dos elementos son altamente complejos y requieren de mucha dedicación
+ para controlarlos de forma fluida.
+ Sin embargo, esto hace que sea sino más interesante trabajar con ellos.
 \end_layout
 
 \begin_layout Standard

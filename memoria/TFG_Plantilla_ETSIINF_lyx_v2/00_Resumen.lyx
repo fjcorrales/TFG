@@ -158,6 +158,59 @@ Todo el código fuente aquí descrito y explicado se puede encontrar en la
  memoria.
 \end_layout
 
+\begin_layout Chapter*
+Abstract
+\end_layout
+
+\begin_layout Standard
+Drones are unmanned aerial vehicles that were initially created for military
+ purposes; however, we have been able to adapt them to a wide variety of
+ functions in both military and civilian domains.
+\end_layout
+
+\begin_layout Standard
+Drone simulation is a relatively new field that has experienced exponential
+ development in recent years.
+ Significant advances have been made during this time in studying the physics
+ of drone movement, which is essential for their subsequent simulation in
+ virtual environments, allowing exploration of the potential applications
+ of these versatile machines.
+\end_layout
+
+\begin_layout Standard
+The main objective of this work is to establish a foundation for the creation
+ of a drone flight simulator using the graphical environment of Unreal Engine
+ 5, utilizing the popular robot communication library known as ROS2.
+ Thus, a flight visualizer has been developed, similar to a simulator, where
+ the drone follows a predetermined path and displays its movement in a three-dim
+ensional environment.
+ Another goal of this work is to divide the most important objects within
+ the simulator into two main modules: the drone and the scenario.
+\end_layout
+
+\begin_layout Standard
+To achieve this second objective, development has been divided into milestones
+ following an informal agile development methodology.
+ A total of 7 milestones can be found, with 6 of them completed and a final
+ one currently under development.
+\end_layout
+
+\begin_layout Standard
+These initial 6 milestones make progress towards an iterative development
+ of this project.
+ The first milestone explores ways to move objects within Unreal, the second
+ studies the process of mesh importing, the third implements differential
+ speed control, the fourth develops a ROS2 publisher-subscriber system,
+ the fifth creates a pawn within Unreal that utilizes this publisher-subscriber
+ system, and finally, in the sixth milestone, the importation of a complete
+ scenario and its textures into the Unreal editor is documented.
+\end_layout
+
+\begin_layout Standard
+All the source code described and explained here can be found on the GitHub
+ page [Tap23a], as well as being included in the appendices of this report.
+\end_layout
+
 \begin_layout Standard
 
 \lang english

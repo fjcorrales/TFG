@@ -344,7 +344,11 @@ Los objetivos propuestos para este trabajo son los siguientes:
 \end_layout
 
 \begin_layout Enumerate
-Analizar los requisitos y especificaciones de dicho simulador.
+Desarrollo de un simulador de vuelo de drones en Unreal Engine 5
+\end_layout
+
+\begin_layout Enumerate
+Analizar los requisitos y especificaciones de un simulador.
  
 \end_layout
 

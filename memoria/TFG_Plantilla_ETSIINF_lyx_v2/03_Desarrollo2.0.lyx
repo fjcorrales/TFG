@@ -323,14 +323,14 @@ La metodología seguida a lo largo del trabajo ha sido una metodología ágil
  Estas iteraciones integran los progresos realizados siguiendo los hitos
  marcados por el tutor.
  El comienzo de una iteración se encuentra marcado por la definición de
- un requisito por parte del tutor y su fin lo marca el resultado obtenido
- por el desarrollo del alumno que ha de satisfacer los objetivos definidos
- por el tutor.
+ un requisito, via reunión de Microsoft Teams, por parte del tutor y su
+ fin lo marca el resultado obtenido por el desarrollo del alumno que ha
+ de satisfacer los objetivos definidos por el tutor.
  
 \end_layout
 
 \begin_layout Standard
-A continiuación se detallan los diferentes hitos fijados para este TFG.
+A continuación se detallan los diferentes hitos fijados para este TFG.
  
 \end_layout
 
@@ -339,18 +339,31 @@ Hito 1: Exploración del movimiento de un objeto en Unreal
 \end_layout
 
 \begin_layout Subsection
-Descripción:
+Descripción
 \end_layout
 
 \begin_layout Standard
 Par implementar un dron, el primer paso sería conocer la manera de proporcionar
  movimiento a objetos dentro del motor de juego.
- El objetivo de este hito es desarrollar una manera estable con la que poder
- mover objetos dentro de Unreal.
+ Como objetivos de este hito tenemos:
+\end_layout
+
+\begin_layout Enumerate
+Desarrollar una manera estable de mover objetos en Unreal
+\end_layout
+
+\begin_layout Enumerate
+Explorar el uso de las colisiones dentro del editor
+\end_layout
+
+\begin_layout Enumerate
+Implementación del código fuente para el desarrollo del modo de vuelo 
+\shape slanted
+Hover
 \end_layout
 
 \begin_layout Subsection
-Desarrollo:
+Desarrollo
 \end_layout
 
 \begin_layout Standard
@@ -617,8 +630,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename D:/TFG/software/Pruebas/moveTest/eventGraph.jpeg
-	lyxscale 30
-	scale 30
+	lyxscale 40
+	scale 40
 	rotateOrigin center
 
 \end_inset
@@ -757,15 +770,15 @@ lstparams "firstline=28,lastline=45,caption={Funciones Hover() y ResetPosition()
 \end_layout
 
 \begin_layout Subsection
-Resultados:
+Resultados
 \end_layout
 
 \begin_layout Standard
 Como resultado de este hito podemos encontrar los ficheros adjuntados en
  el anexo 
 \begin_inset CommandInset ref
-LatexCommand vpageref
-reference "H1Anexo.1"
+LatexCommand labelonly
+reference "DUPLICADO: H1Anexo.1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -804,19 +817,26 @@ Hito 2: Importación de mallas
 \end_layout
 
 \begin_layout Subsection
-Descripción:
+Descripción
 \end_layout
 
 \begin_layout Standard
 Además de movimiento, para poder realizar un simulador también es importante
  el apartado estético.
- Por ello el objetivo de este hito es investigar el funcionamiento de la
- importación de mallas para conseguir un modelo tridimensional de un cuadricópte
-ro dentro del propio entorno de Unreal.
+ Por ello los objetivos de ese hito son: 
+\end_layout
+
+\begin_layout Enumerate
+Investigar el funcionamiento de la importación de mallas 
+\end_layout
+
+\begin_layout Enumerate
+Conseguir un modelo tridimensional de un cuadricóptero dentro del propio
+ entorno de Unreal.
 \end_layout
 
 \begin_layout Subsection
-Desarrollo:
+Desarrollo
 \end_layout
 
 \begin_layout Standard
@@ -830,8 +850,7 @@ mesh
 \end_layout
 
 \begin_layout Standard
-Para empezar busqué en internet un modelo 3D gratuito de un cuadricópteroreferen
-cia a la página del modelo 3D del dron].
+Para empezar busqué en internet un modelo 3D gratuito de un cuadricóptero[Cgt23].
  Una vez descargado faltaba importarlo a la carpeta de contenidos de Unreal
  Engine para su uso.
  Cabe mencionar que estos modelos 3D han de ser exportados de sus respectivas
@@ -855,7 +874,7 @@ status open
 \begin_inset Graphics
 	filename D:/TFG/memoria/imagenes/ImortSettings.png
 	lyxscale 50
-	scale 30
+	scale 50
 
 \end_inset
 
@@ -903,7 +922,7 @@ Es importante mencionar que una vez se importa una malla es posible modificarla
 \end_layout
 
 \begin_layout Subsection
-Resultados:
+Resultados
 \end_layout
 
 \begin_layout Standard
@@ -961,20 +980,29 @@ Hito 3: Implementación de un control diferencial de la velocidad
 \end_layout
 
 \begin_layout Subsection
-Descripción:
+Descripción
 \end_layout
 
 \begin_layout Standard
-El objetivo de este hito es codificar las funciones necesarias para implementar
- un control diferencial de la velocidad en un peón de Unreal y controlar
- la velocidad con teclas para estudiar el funcionamiento de la entrada por
- teclado.
- Este tipo de controlador es muy útil ya que es una muy buena aproximación
+Este tipo de controlador es muy útil ya que es una muy buena aproximación
  de como se implementa realmente el movimiento de los drones.
+ Por ello los objetivos de este hito son:
+\end_layout
+
+\begin_layout Enumerate
+Implementar un control diferencial de la velocidad en un peón de Unreal.
+\end_layout
+
+\begin_layout Enumerate
+Configurar entradas de teclado.
+\end_layout
+
+\begin_layout Enumerate
+Controlar la velocidad con las entradas configuradas.
 \end_layout
 
 \begin_layout Subsection
-Desarrollo:
+Desarrollo
 \end_layout
 
 \begin_layout Standard
@@ -1184,7 +1212,7 @@ BindAction()
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "D:/TFG/software/droneSim/DronePawn.cpp"
-lstparams "firstline=36,lastline=47,caption={Configuración de la función SetupPlayerInputComponent()},label={Img.6}"
+lstparams "firstline=32,lastline=47,caption={Configuración de la función SetupPlayerInputComponent()},label={Img.6}"
 
 \end_inset
 
@@ -1252,15 +1280,15 @@ nombre_de_su_peón
 \end_layout
 
 \begin_layout Subsection
-Resultados:
+Resultados
 \end_layout
 
 \begin_layout Standard
 Como resultado de este hito podemos encontrar los ficheros adjuntados en
- el anexo
+ el anexo 
 \begin_inset CommandInset ref
-LatexCommand vpageref
-reference "H2Anexo.1"
+LatexCommand labelonly
+reference "DUPLICADO: H2Anexo.1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1332,40 +1360,40 @@ s esta última prueba concluimos que el movimiento del dron basado en este
  de mensajería ofrecidos por este framework.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Hito 4: Desarrollo de un sistema pub/sub de ROS2
 \end_layout
 
 \begin_layout Subsection
-Descripción:
+Descripción
 \end_layout
 
 \begin_layout Standard
 En la realidad, el control remoto de un dron es posible gracias a la biblioteca
  de C/C++ previamente descrita, ROS2.
- Es por esto por lo que el objetivo de este hito es crear un sistema publicador-
-suscriptor el cual permita crear una librería del suscriptor para, en un
- futuro, poder implementar su funcionalidad en un peón de Unreal.
- 
+ Es por esto por lo que se quiere es crear un sistema publicador-suscriptor
+ el cual permita crear una librería del suscriptor para, en un futuro, poder
+ implementar su funcionalidad en un peón de Unreal.
 \end_layout
 
 \begin_layout Standard
-Como especificaciones del sistema, el publicador ha de poder leer las coordenada
-s de la entrada estandar, convertirlas en un vector y publicarlas para ser
- recibidas por el suscriptor.
- Asimismo, ha de poder crearse una librería a partir del suscriptor, teniendo
- en mente la futura implementación de la librería en Unreal.
+Los objetivos definidos son los siguientes:
+\end_layout
+
+\begin_layout Enumerate
+Crear un sistema publicador subscritor de ROS2.
+\end_layout
+
+\begin_layout Enumerate
+Crear una librería a partir del suscriptor.
+\end_layout
+
+\begin_layout Enumerate
+Hacer que el publicador lea datos desde su entrada estándar.
 \end_layout
 
 \begin_layout Subsection
-Desarrollo:
+Desarrollo
 \end_layout
 
 \begin_layout Standard
@@ -1578,9 +1606,10 @@ Resultados:
 
 \begin_layout Standard
 Los resultados de este hito se incluyen en los archivos adjuntos en el anexo
+ 
 \begin_inset CommandInset ref
-LatexCommand vpageref
-reference "H4Anexo.1"
+LatexCommand labelonly
+reference "DUPLICADO: H4Anexo.1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1603,7 +1632,7 @@ Hito 5: Desarrollo del peón en UE5
 \end_layout
 
 \begin_layout Subsection
-Descripción:
+Descripción
 \end_layout
 
 \begin_layout Standard
@@ -1619,7 +1648,7 @@ Este peón será la pieza clave de un visualizador de vuelo que sentará la
 \end_layout
 
 \begin_layout Subsection
-Desarrollo:
+Desarrollo
 \end_layout
 
 \begin_layout Standard
@@ -1841,15 +1870,15 @@ lstparams "firstline=59,lastline=66,caption={Función EndPlay()},label={Img.14-1
 \end_layout
 
 \begin_layout Subsection
-Resultados: 
+Resultados
 \end_layout
 
 \begin_layout Standard
 Como resultado de este hito podemos encontrar los ficheros adjuntados en
- el anexo
+ el anexo 
 \begin_inset CommandInset ref
-LatexCommand vpageref
-reference "H5Anexo.1"
+LatexCommand labelonly
+reference "DUPLICADO: H5Anexo.1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1894,7 +1923,7 @@ Hito 6: Importación de escenarios a UE5
 \end_layout
 
 \begin_layout Subsection
-Descripción:
+Descripción
 \end_layout
 
 \begin_layout Standard
@@ -1906,7 +1935,7 @@ Este hito es similar al hito 2, en el que exploramos el funcionamiento de
 \end_layout
 
 \begin_layout Subsection
-Desarrollo:
+Desarrollo
 \end_layout
 
 \begin_layout Standard
@@ -1946,8 +1975,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename D:/TFG/memoria/imagenes/HighresScreenshot00005.png
-	lyxscale 50
-	scale 10
+	lyxscale 30
+	scale 15
 
 \end_inset
 
@@ -2009,8 +2038,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename D:/TFG/memoria/imagenes/Screenshot from 2023-05-26 11-52-15.png
-	lyxscale 50
-	scale 10
+	lyxscale 30
+	scale 20
 
 \end_inset
 
@@ -2037,9 +2066,20 @@ Esta versión texturizada del mapa de Londres, ha sido distribuida en 4 carpetas
  Estas representan cada una de las zonas de Londres, noreste, noroeste,
  sureste, suroeste, contando en su totalidad con casi 900 mallas.
  Las modificaciones que hemos de realizar en la ventana de importación se
- centran en su posición, pues hemos de modificar la x a x = –53199840 y
- la y a y = 18100590.
- Al mismo tiempo, hemos de hacer uso del material creado previamente; en
+ centran en su posición y son las siguientes:
+\end_layout
+
+\begin_layout Enumerate
+Modificar el valor de x a x = –53199840.
+\end_layout
+
+\begin_layout Enumerate
+Modificar el valor de y a y = 18100590.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Al mismo tiempo, hemos de hacer uso del material creado previamente; en
  la zona de MATERIAL hemos de seleccionar la opción de 
 \begin_inset Quotes erd
 \end_inset
@@ -2056,10 +2096,18 @@ Material Import...
 \begin_inset Quotes erd
 \end_inset
 
- y seleccionar nuestro material con su textura base, la que creamos en su
- grafico (en mi caso BaseColor).
- Puesto que esta configuración es la misma para todos los ficheros basta
- con configurarlo una vez y esta se mantiene entre importaciones.
+ 
+\end_layout
+
+\begin_layout Enumerate
+A continuacióin, seleccionar nuestro material con su textura base, la que
+ creamos en su grafico (en mi caso BaseColor).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Finalmente dado que esta configuración es la misma para todos los ficheros
+ basta con configurarlo una vez y esta se mantiene entre importaciones.
  Tras esto podemos importar todos los .fbx.
  Una vez tenemos todo en nuestro editor podemos seleccionarlos y arrastrarlos
  a la ventana del nivel para ver la ciudad de Londres a escala.
@@ -2092,8 +2140,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename D:/TFG/memoria/imagenes/Screenshot from 2023-05-26 11-54-23.png
-	lyxscale 50
-	scale 10
+	lyxscale 30
+	scale 20
 
 \end_inset
 
@@ -2131,8 +2179,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename D:/TFG/memoria/imagenes/HighresScreenshot00001.png
-	lyxscale 50
-	scale 10
+	lyxscale 20
+	scale 15
 
 \end_inset
 
@@ -2170,7 +2218,7 @@ Drama
 \end_layout
 
 \begin_layout Subsection
-Resultados:
+Resultados
 \end_layout
 
 \begin_layout Standard
@@ -2198,8 +2246,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename D:/TFG/memoria/imagenes/HighresScreenshot00002.png
-	lyxscale 50
-	scale 10
+	lyxscale 20
+	scale 15
 
 \end_inset
 
@@ -2225,13 +2273,26 @@ Hito 7: Integración con Aerostack2 (en desarrollo)
 \end_layout
 
 \begin_layout Subsection
-Descripción:
+Descripción
 \end_layout
 
 \begin_layout Standard
 Para realizar un visualizador más completo y que pueda replicar trayectorias
  reales de drones se busca añadir la herramienta de TF2 que nos permita
  recibir mensajes generados por Aerostack2.
+ 
+\end_layout
+
+\begin_layout Standard
+Los objetivos establecidos son los siguientes:
+\end_layout
+
+\begin_layout Enumerate
+Actualizar el suscriptor para que reciba mensajes TF2
+\end_layout
+
+\begin_layout Enumerate
+Actualizar el publicador para que publique mensajes TF2
 \end_layout
 
 \begin_layout Standard

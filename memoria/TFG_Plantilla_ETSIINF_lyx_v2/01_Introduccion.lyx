@@ -344,6 +344,10 @@ Los objetivos propuestos para este trabajo son los siguientes:
 \end_layout
 
 \begin_layout Enumerate
+Desarrollo de un simulador de vuelo de drones en Unreal Engine 5
+\end_layout
+
+\begin_layout Enumerate
 Analizar los requisitos y especificaciones de un simulador.
  
 \end_layout
@@ -366,6 +370,10 @@ Implementar el simulador como un nodo de ROS2 de acuerdo a la API y usando
 
 \begin_layout Enumerate
 Especificar y desarrollar la API del simulador con Gazebo.
+\end_layout
+
+\begin_layout Enumerate
+Integrar desarrollos con Aerostack2.
 \end_layout
 
 \begin_layout Standard

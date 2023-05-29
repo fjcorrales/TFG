@@ -329,7 +329,7 @@ Es por este amplio espectro de aplicaciones que los desarrollos como el
  permitirán optimizar los procesos de desarrollo minimizando la necesidad
  de fabricaciones de prototipos y piezas de repuesto con la consiguiente
  reducción de material potencialmente contaminante.
- 
+ Alineandose así con el objetivo de desarrollo sostenible número 12.
 \end_layout
 
 \begin_layout Standard
@@ -351,12 +351,22 @@ Las capacidades de estos robots y de este tipo de software solo están limitadas
  bosques, para facilitar las tareas de los guardas forestales, por ejemplo
  minimizando el riesgo de incendios y por lo tanto ayudando así al mantenimiento
  de la vida de ecosistemas terrestres.
+ Alineandose con el objetivo de desarrollo sostenoble número 15.
 \end_layout
 
 \begin_layout Standard
 En conclusión, las herramientas presentadas, son una prueba de concepto
  de que es posible crear un sistema informático que nos ayude a mejorar
  la tecnología y el mundo que nos rodea.
+\end_layout
+
+\begin_layout Standard
+Dentro de los siguientes pasos habría que contemplar la creación de objetos
+ basados en la unión de componentes independientes que mejoren la modularidad
+ del dron y permitan gestionar más eficazmente la comunicación entre los
+ componentes desde un actor propio.
+ Para ello proponemos la creación de un peón e implementar en el mismo un
+ control diferencial de la velocidad, prueba que describiremos más adelante.
 \end_layout
 
 \begin_layout Standard

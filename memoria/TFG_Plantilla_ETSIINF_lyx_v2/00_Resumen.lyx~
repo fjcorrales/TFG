@@ -134,14 +134,14 @@ ido y mostrará el movimiento en un entorno tridimensional.
 
 \begin_layout Standard
 Para cumplir este segundo objetivo se ha realizado un desarrollo dividido
- en hitos siguiendo una métodología de desarrollo ágil informal.
+ en hitos siguiendo una metodología de desarrollo ágil informal.
  En total se podrán encontrar 7 hitos, 6 de ellos completos y un último
  que se encuentra en desarrollo.
  
 \end_layout
 
 \begin_layout Standard
-En estos primeros 6 hitos se realizan progresos en vista a un desarollo
+En estos primeros 6 hitos se realizan progresos en vista a un desarrollo
  iterativo de este proyecto.
  En el primero se exploran formas de mover objetos dentro de Unreal, en
  el segundo se estudia cómo es el proceso de importación de mallas, en el
