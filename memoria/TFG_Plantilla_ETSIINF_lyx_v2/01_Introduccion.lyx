@@ -358,7 +358,7 @@ Diseñar la arquitectura software del mismo.
 \end_layout
 
 \begin_layout Enumerate
-Especificar y documentar la API del simulador en ROS2.
+Especificar y documentar la API del simulador con ROS2.
  
 \end_layout
 
@@ -373,7 +373,7 @@ Especificar y desarrollar la API del simulador con Gazebo.
 \end_layout
 
 \begin_layout Enumerate
-Integrar desarrollos con Aerostack2.
+Integrar el desarrollo con Aerostack2.
 \end_layout
 
 \begin_layout Standard

@@ -555,9 +555,9 @@ SetupPlayerInputComponent()
 
 \begin_layout Enumerate
 Asimismo es muy importante mencionar los 
-\family typewriter
+\shape italic
 blueprints
-\family default
+\shape default
 .
  Estos son una herramienta visual para definir lógica e implementar funcionalida
 d a los elementos de Unreal, la ventaja es que para hacer uso de ellos no

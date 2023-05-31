@@ -311,8 +311,8 @@ Como producto final de este trabajo se ha obtenido un visualizador de vuelo
 \end_layout
 
 \begin_layout Standard
-El proyecto se ha desarrollado de forma lineal con las siguientes etapas
- intermedias: 
+El proyecto se ha desarrollado siguiendo un esquema en espiral con las siguiente
+s etapas intermedias: 
 \end_layout
 
 \begin_layout Enumerate
@@ -348,7 +348,7 @@ Este desarrollo constituye la base para el desarrollo final de un simulador
 
 \begin_layout Standard
 Desde mi perspectiva este trabajo ha sido una gran experiencia de aprendizaje,
- que me ha permitido investigar y desarrollar código utilizando lenguajes
+ que me ha permitido aprender a desarrollar código utilizando lenguajes
  y entornos de gran interés.
  Así, he conseguido mis objetivos inicialmente planteados, que consistían
  en aprender un lenguaje que desconocía, C++, aprender a usar Unreal Engine
