@@ -90,7 +90,7 @@ int dummy(int num)
   return num;
 }
 
-int main(int argc, char *argv[])
+int main()
 {
   start();
   vector3_transfer data;
